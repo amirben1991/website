@@ -10,7 +10,8 @@
 
   <div class="page-head-card">
       <img [src]="imageUrl" [alt]="title">
-      <p>Date du jour: {{ date }}</p>
+      <button (click)="getUserInput()">What's your name</button>
+      <p>{{ userInput }}</p>
       <h2>{{ title }}</h2>
       <p>{{ description }}</p>
   </div>
