@@ -9,8 +9,14 @@
 <body>
 
   <div class="page-head-card">
+    <div>
       <img [src]="imageUrl" [alt]="title">
+    </div>
+
+    <div id="user-input-button">
       <button (click)="getUserInput()">What's your name</button>
+    </div>
+
       <p>{{ userInput }}</p>
       <h2>{{ title }}</h2>
       <p>{{ description }}</p>
@@ -18,7 +24,6 @@
 
   <div>
     <p>test image</p>
-    <img [src]="catUrl">
   </div>
 
 </body>
