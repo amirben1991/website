@@ -25,7 +25,6 @@ export class PageHeadComponent implements OnInit{
     this.description = "This is where you can visit my profile, and have an extended view about my skills";
     this.date = new Date();
     this.imageUrl = "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg";
-    this.catUrl ="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/640px-Cat03.jpg"
   }
 
   getUserInput() {
