@@ -25,7 +25,7 @@ export class PageHeadComponent implements OnInit{
     this.description = "This is where you can visit my profile, and have an extended view about my skills";
     this.date = new Date();
     this.imageUrl = "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg";
-  }
+   }
 
   getUserInput() {
     const input = prompt("Please enter your name");

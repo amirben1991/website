@@ -17,13 +17,19 @@
       <button (click)="getUserInput()">What's your name</button>
     </div>
 
-      <p>{{ userInput }}</p>
-      <h2>{{ title }}</h2>
-      <p>{{ description }}</p>
-  </div>
+    <!--TODO: find a way to center the utilisateur-input tag-->
+      <span id="utilisateur-input">
+        <p>{{ userInput }}</p>
+      </span>
 
-  <div>
-    <p>test image</p>
+      <span id="title">
+        <h2>{{ title }}</h2>
+      </span>
+
+      <span id="description">
+        <p>{{ description }}</p>
+      </span>
+
   </div>
 
 </body>
