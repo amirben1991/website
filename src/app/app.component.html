@@ -1,6 +1,19 @@
 <app-page-head></app-page-head>
+
 <app-principal-content></app-principal-content>
-<app-education-content></app-education-content>
-<app-experience-content></app-experience-content>
-<app-projects-content></app-projects-content>
+
+<app-education-content>
+  <button [routerLink]="'/EducationContentComponent'">Go to Education</button>
+</app-education-content>
+
+<app-experience-content>
+  <button [routerLink]="'/ExperienceContentComponent'">Experiences</button>
+</app-experience-content>
+
+<app-projects-content>
+  <button [routerLink]="'/ProjectsContentComponent'">Projects Realized</button>
+</app-projects-content>
+
+<router-outlet></router-outlet>
+
 <app-page-footer></app-page-footer>

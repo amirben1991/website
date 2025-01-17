@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {RouterLink, RouterOutlet} from '@angular/router';
 import { PageHeadComponent } from './page-head/page-head.component';
 import { PrincipalContentComponent } from './principal-content/principal-content.component';
 import { ExperienceContentComponent } from './principal-content/experience-content/experience-content.component';
@@ -12,13 +12,13 @@ import { NgOptimizedImage } from '@angular/common';
   selector: 'app-root',
   standalone: true,
   imports: [PageHeadComponent,
-  PrincipalContentComponent,
-  PageFooterComponent,
-  ExperienceContentComponent,
-  EducationContentComponent,
-  ProjectsContentComponent,
+    PrincipalContentComponent,
+    PageFooterComponent,
+    ExperienceContentComponent,
+    EducationContentComponent,
+    ProjectsContentComponent,
 
-  NgOptimizedImage],
+    NgOptimizedImage, RouterLink, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
