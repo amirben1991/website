@@ -23,3 +23,4 @@ import {ProjectsContentComponent} from "../principal-content/projects-content/pr
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
