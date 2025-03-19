@@ -22,7 +22,7 @@ export class PageHeadComponent implements OnInit{
 
   ngOnInit() : void {
     this.title = "Welcome to my personnal website: ";
-    this.description = "This is where you can visit my profile, and have an extended view about my skills";
+    this.description = "Currently fullstack developer in the banking industry";
     this.date = new Date();
     this.imageUrl = "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg";
    }
