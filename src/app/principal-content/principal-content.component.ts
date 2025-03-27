@@ -4,11 +4,10 @@ import { RouterModule } from '@angular/router';
 
 
 @Component({
-  selector: 'app-principal-content',
-  standalone: true,
-  imports: [ PrincipalContentComponent, RouterModule ],
-  templateUrl: './principal-content.component.html',
-  styleUrl: './principal-content.component.scss'
+    selector: 'app-principal-content',
+    imports: [PrincipalContentComponent, RouterModule],
+    templateUrl: './principal-content.component.html',
+    styleUrl: './principal-content.component.scss'
 })
 export class PrincipalContentComponent {
   constructor(private router: Router) {}

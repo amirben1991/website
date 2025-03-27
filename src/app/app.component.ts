@@ -9,18 +9,16 @@ import { PageFooterComponent } from './page-footer/page-footer.component';
 import { NgOptimizedImage } from '@angular/common';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [PageHeadComponent,
-    PrincipalContentComponent,
-    PageFooterComponent,
-    ExperienceContentComponent,
-    EducationContentComponent,
-    ProjectsContentComponent,
-
-    NgOptimizedImage, RouterLink, RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+    selector: 'app-root',
+    imports: [PageHeadComponent,
+        PrincipalContentComponent,
+        PageFooterComponent,
+        ExperienceContentComponent,
+        EducationContentComponent,
+        ProjectsContentComponent,
+        NgOptimizedImage, RouterLink, RouterOutlet],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss'
 })
 
 export class AppComponent {

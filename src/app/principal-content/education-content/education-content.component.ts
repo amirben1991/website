@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-education-content',
-  standalone: true,
-  imports: [],
-  templateUrl: './education-content.component.html',
-  styleUrl: './education-content.component.scss'
+    selector: 'app-education-content',
+    imports: [],
+    templateUrl: './education-content.component.html',
+    styleUrl: './education-content.component.scss'
 })
 export class EducationContentComponent {
   
