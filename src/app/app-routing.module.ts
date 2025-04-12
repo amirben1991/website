@@ -16,16 +16,12 @@ const routes: Routes = [
 
 
 @NgModule({
-  // declarations: [RouterModule,forRoot(routes)],
   imports: [
-    CommonModule, RouterModule
+    CommonModule, RouterModule.forRoot(routes)
   ],
   exports: [RouterModule],
 })
 
 export class AppRoutingModule { }
-function forRoot(routes: Routes): any[] | import("@angular/core").Type<any> {
-  throw new Error('Function not implemented.');
-}
 
 
