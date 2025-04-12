@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, NgZone } from '@angular/core';
 import {RouterLink, RouterOutlet} from '@angular/router';
 import { PageHeadComponent } from './page-head/page-head.component';
 import { PrincipalContentComponent } from './principal-content/principal-content.component';
@@ -16,11 +16,20 @@ import { NgOptimizedImage } from '@angular/common';
         ExperienceContentComponent,
         EducationContentComponent,
         ProjectsContentComponent,
-        NgOptimizedImage, RouterLink, RouterOutlet],
+        NgOptimizedImage, 
+        RouterLink, 
+        RouterOutlet],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'
 })
 
 export class AppComponent {
   title = 'structure';
+  imageUrl!: string;
+  // this.imageUrl = "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg";
+  // imageUrl = 'https://path.to/your/image.jpg';
+
+  ngOnInit(): void {
+    this.imageUrl = "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg";
+  }
 }

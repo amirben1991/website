@@ -10,5 +10,12 @@
 
 <a [routerLink]="'/ProjectsContentComponent'">Projects Realized</a>
 
+<div>
+    <h1>{{ title }}</h1>
+    <!-- Utilisation de NgOptimizedImage avec ngSrc -->
+    <img [ngSrc]="imageUrl" alt="Optimized Image" width="500" />
+</div>
+  
+
 <router-outlet></router-outlet>
 <app-page-footer></app-page-footer>

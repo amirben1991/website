@@ -9,22 +9,18 @@
 </head>
 <body>
 
+  <ng-container *ngIf="imageUrl">
+    <img [ngSrc]="imageUrl" alt="Optimized Image" />
+  </ng-container>
   <div class="page-head-card">
-    <div>
-      <img [src]="imageUrl" [alt]="title">
-    </div>
+
+
 
     <div id="user-input-button">
       <button (click)="getUserInput()">What's your name</button>
     </div>
 
     <!--TODO: find a way to center the utilisateur-input tag-->
-      
-      <span>
-        <h1 class="text-3xl font-bold underline">
-          Hello world!
-        </h1>
-      </span>
       <span id="utilisateur-input">
           <p>{{ userInput }}</p>
         </span>
