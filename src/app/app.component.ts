@@ -1,35 +1,28 @@
 import { Component, NgZone } from '@angular/core';
-import {RouterLink, RouterOutlet} from '@angular/router';
-import { PageHeadComponent } from './page-head/page-head.component';
+import {RouterLink, RouterModule, RouterOutlet} from '@angular/router';
 import { PrincipalContentComponent } from './principal-content/principal-content.component';
 import { ExperienceContentComponent } from './principal-content/experience-content/experience-content.component';
 import { EducationContentComponent } from './principal-content/education-content/education-content.component';
 import { ProjectsContentComponent } from './principal-content/projects-content/projects-content.component';
-import { PageFooterComponent } from './page-footer/page-footer.component';
 import { NgOptimizedImage } from '@angular/common';
+import { LayoutComponent } from './layout/layout.component';
+
 
 @Component({
     selector: 'app-root',
-    imports: [PageHeadComponent,
-        PrincipalContentComponent,
-        PageFooterComponent,
-        ExperienceContentComponent,
-        EducationContentComponent,
-        ProjectsContentComponent,
-        NgOptimizedImage, 
-        RouterLink, 
-        RouterOutlet],
+    standalone: true,
+    imports: [
+      PrincipalContentComponent,
+      LayoutComponent,
+      ExperienceContentComponent,
+      EducationContentComponent,
+      ProjectsContentComponent,
+      RouterModule
+    ],
     templateUrl: './app.component.html',
-    styleUrl: './app.component.scss'
+    styleUrls: ['./app.component.scss']
 })
 
 export class AppComponent {
-  title = 'structure';
-  imageUrl!: string;
-  // this.imageUrl = "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg";
-  // imageUrl = 'https://path.to/your/image.jpg';
 
-  ngOnInit(): void {
-    this.imageUrl = "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg";
-  }
 }

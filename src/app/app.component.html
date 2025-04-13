@@ -1,21 +1,12 @@
-<app-page-head></app-page-head>
-
 <app-principal-content></app-principal-content>
 
-<a [routerLink]="'/EducationContentComponent'">Go to Education</a>
+<app-layout>
+    <router-outlet></router-outlet>
+</app-layout>
+<app-experience-content></app-experience-content>
+<app-education-content></app-education-content>
+<app-projects-content></app-projects-content>
 
 
-<a [routerLink]="'/ExperienceContentComponent'">Experiences</a>
 
 
-<a [routerLink]="'/ProjectsContentComponent'">Projects Realized</a>
-
-<div>
-    <h1>{{ title }}</h1>
-    <!-- Utilisation de NgOptimizedImage avec ngSrc -->
-    <img [ngSrc]="imageUrl" alt="Optimized Image" width="500" />
-</div>
-  
-
-<router-outlet></router-outlet>
-<app-page-footer></app-page-footer>
