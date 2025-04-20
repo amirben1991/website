@@ -1,0 +1,13 @@
+::ng-deep .mat-menu-panel {
+    background-color: #1e1e2f;
+    color: white;
+    border-radius: 8px;
+}
+
+::ng-deep .mat-menu-panel {
+    font-weight: bold;
+}
+
+::ng-deep .mat-menu-item:hover {
+    background-color: #3a3a5c;
+}

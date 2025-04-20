@@ -6,7 +6,7 @@ import { EducationContentComponent } from './principal-content/education-content
 import { ProjectsContentComponent } from './principal-content/projects-content/projects-content.component';
 import { NgOptimizedImage } from '@angular/common';
 import { LayoutComponent } from './layout/layout.component';
-
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @Component({
     selector: 'app-root',
@@ -17,7 +17,8 @@ import { LayoutComponent } from './layout/layout.component';
       ExperienceContentComponent,
       EducationContentComponent,
       ProjectsContentComponent,
-      RouterModule
+      RouterModule,
+      NavbarComponent
     ],
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
