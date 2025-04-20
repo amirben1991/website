@@ -12,11 +12,11 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     selector: 'app-root',
     standalone: true,
     imports: [
-      PrincipalContentComponent,
+      // PrincipalContentComponent,
       LayoutComponent,
-      ExperienceContentComponent,
-      EducationContentComponent,
-      ProjectsContentComponent,
+      // ExperienceContentComponent,
+      // EducationContentComponent,
+      // ProjectsContentComponent,
       RouterModule,
       NavbarComponent
     ],
