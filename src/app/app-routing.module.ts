@@ -11,7 +11,7 @@ export const routes: Routes = [
   {
     path: '', component: LayoutComponent, 
     children: [
-      {path: '', component: PrincipalContentComponent},
+      {path: 'accueil', component: PrincipalContentComponent},
       {path: 'education', component: EducationContentComponent},
       {path: 'experience', component: ExperienceContentComponent},
       {path: 'projects', component: ProjectsContentComponent},
