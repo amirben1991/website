@@ -102,16 +102,43 @@ export class DataService {
     }
   ]);
 
-  getEducation(): Observable<Education[]> {
+  getEducation$(): Observable<Education[]> {
     return this.education$.asObservable();
   }
 
-  getExperience(): Observable<Experience[]> {
+  getExperience$(): Observable<Experience[]> {
     return this.experience$.asObservable();
   }
 
-  getProjects(): Observable<Project[]> {
+  getProjects$(): Observable<Project[]> {
     return this.projects$.asObservable();
   }
+
+  // Backwards compatibility aliases (optional)
+  getEducation(): Observable<Education[]> {
+    return this.getEducation$();
+  }
+
+  getExperience(): Observable<Experience[]> {
+    return this.getExperience$();
+  }
+
+  getProjects(): Observable<Project[]> {
+    return this.getProjects$();
+  }
+
+  // Add getters
+  getEducationValue(): Education[] {
+    return this.education$.getValue();
+  }
+
+  getExperienceValue(): Experience[] {
+    return this.experience$.getValue();
+  }
+
+  getProjectsValue(): Project[] {
+    return this.projects$.getValue();
+  } 
+
 }
 

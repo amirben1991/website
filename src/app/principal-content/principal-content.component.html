@@ -1,6 +1,20 @@
-<router-outlet></router-outlet>
-
-<h1>Balise de test</h1>
-<h1>Balise de test</h1>
-<h1>Balise de test</h1>
-<h1>Balise de test</h1>
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+  <div class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold text-gray-900 mb-8">Welcome to my Portfolio</h1>
+    <p class="text-lg text-gray-700 mb-6">Explore my education, experience, and projects below.</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+      <a routerLink="/education" class="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1">
+        <h2 class="text-2xl font-semibold text-indigo-600 mb-2">📚 Education</h2>
+        <p class="text-gray-600">My academic background and certifications</p>
+      </a>
+      <a routerLink="/experience" class="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1">
+        <h2 class="text-2xl font-semibold text-indigo-600 mb-2">💼 Experience</h2>
+        <p class="text-gray-600">Professional experience and roles</p>
+      </a>
+      <a routerLink="/projects" class="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1">
+        <h2 class="text-2xl font-semibold text-indigo-600 mb-2">🚀 Projects</h2>
+        <p class="text-gray-600">My latest work and portfolio projects</p>
+      </a>
+    </div>
+  </div>
+</div>

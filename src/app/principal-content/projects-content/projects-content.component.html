@@ -1,11 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>The Projects i worked on</h1>
-</body>
-</html>
+<div class="min-h-screen bg-gray-50 py-12">
+  <div class="max-w-6xl mx-auto px-4">
+    <h1 class="text-4xl font-bold text-gray-900 mb-12">My Projects</h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" *ngIf="projects$ | async as projects">
+      <div *ngFor="let project of projects" class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition transform hover:-translate-y-1">
+        <div *ngIf="project.imageURL" class="h-48 overflow-hidden bg-gray-200">
+          <img [src]="project.imageURL" [alt]="project.title" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <div class="flex items-start justify-between mb-2">
+            <h2 class="text-xl font-semibold text-gray-900">{{ project.title }}</h2>
+            <span *ngIf="project.featured" class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-semibold rounded-full">⭐ Featured</span>
+          </div>
+          <p class="text-gray-600 mb-4">{{ project.description }}</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span *ngFor="let tech of project.techStack" class="inline-block px-2 py-1 bg-gray-200 text-gray-700 text-xs rounded">
+              {{ tech }}
+            </span>
+          </div>
+          <div class="flex gap-3">
+            <a *ngIf="project.GitHubLink" [href]="project.GitHubLink" target="_blank" class="flex-1 text-center px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-900 transition">
+              GitHub
+            </a>
+            <a *ngIf="project.liveURL" [href]="project.liveURL" target="_blank" class="flex-1 text-center px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition">
+              Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="!(projects$ | async)" class="text-center py-12">
+      <p class="text-gray-500">Loading projects...</p>
+    </div>
+  </div>
+</div>

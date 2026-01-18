@@ -1,23 +1,11 @@
-import { Component, NgZone } from '@angular/core';
-import {RouterLink, RouterModule, RouterOutlet} from '@angular/router';
-import { LayoutComponent } from './layout/layout.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-
-
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
     selector: 'app-root',
     standalone: true,
-    imports: [
-      RouterOutlet,
-      LayoutComponent,
-      RouterModule,
-      NavbarComponent
-    ],
+    imports: [RouterOutlet],
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
 })
-
-export class AppComponent {
-
-}
+export class AppComponent {}

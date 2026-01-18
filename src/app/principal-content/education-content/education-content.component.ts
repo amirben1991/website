@@ -1,21 +1,30 @@
-import { Component } from '@angular/core';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatButtonModule} from '@angular/material/button';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { Router } from '@angular/router';
+import { DataService } from '../../services/data.service';
+import { Education } from '../../models';
+import { Observable } from 'rxjs';
+
 @Component({
     standalone: true,
     selector: 'app-education-content',
-    imports: [MatMenuModule, MatButtonModule, RouterModule],
+    imports: [CommonModule, RouterModule],
     templateUrl: './education-content.component.html',
     styleUrl: './education-content.component.scss'
 })
-export class EducationContentComponent {
+export class EducationContentComponent implements OnInit {
 
-    constructor (private router: Router){}
+    education$: Observable<Education[]>;
 
-    goToEducation() {
-        this.router.navigate(['/principal/education']);
+    constructor(private dataService: DataService) {
+        this.education$ = this.dataService.getEducation();
     }
-   
+
+    ngOnInit(): void {
+        // Optional: logging for debugging
+        this.education$.subscribe(data => {
+            console.log('Education data loaded:', data);
+        })
+    }
+
 }

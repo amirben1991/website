@@ -7,10 +7,10 @@ import { LayoutComponent } from './layout/layout.component';
 import { PrincipalContentComponent } from './principal-content/principal-content.component';
 
 export const routes: Routes = [
-
   {
     path: '', component: LayoutComponent, 
     children: [
+      {path: '', redirectTo: 'accueil', pathMatch: 'full'},
       {path: 'accueil', component: PrincipalContentComponent},
       {path: 'education', component: EducationContentComponent},
       {path: 'experience', component: ExperienceContentComponent},
