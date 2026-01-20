@@ -2,9 +2,9 @@ export interface Project {
     id: string;
     title: string;
     description: string;
-    techStack: string[];
-    GitHubLink?: string;
+    techStack: string;
+    githubLink?: string;
     featured: boolean;
-    liveURL?: string;
-    imageURL?: string;
+    liveUrl?: string;
+    imageUrl?: string;
 }

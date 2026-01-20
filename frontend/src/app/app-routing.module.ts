@@ -5,6 +5,8 @@ import { ExperienceContentComponent } from "./principal-content/experience-conte
 import { ProjectsContentComponent } from "./principal-content/projects-content/projects-content.component";
 import { LayoutComponent } from './layout/layout.component';
 import { PrincipalContentComponent } from './principal-content/principal-content.component';
+import { ProjectFormComponent } from './principal-content/project-form/project-form.component';
+
 
 export const routes: Routes = [
   {
@@ -15,6 +17,8 @@ export const routes: Routes = [
       {path: 'education', component: EducationContentComponent},
       {path: 'experience', component: ExperienceContentComponent},
       {path: 'projects', component: ProjectsContentComponent},
+      { path: 'projects/new', component: ProjectFormComponent },
+      { path: 'projects/:id/edit', component: ProjectFormComponent }
     ]
   },
 ];

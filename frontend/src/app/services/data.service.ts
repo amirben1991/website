@@ -45,5 +45,42 @@ export class DataService {
     return this.getProjects$();
   } 
 
+
+
+// Projects
+createProject(project: any): Observable<Project> {
+  return this.http.post<Project>(`${this.apiUrl}/projects`, project);
+}
+
+updateProject(id: string, project: any): Observable<Project> {
+  return this.http.put<Project>(`${this.apiUrl}/projects/${id}`, project);
+}
+
+deleteProject(id: string): Observable<void> {
+  return this.http.delete<void>(`${this.apiUrl}/projects/${id}`);
+}
+
+getProjectById(id: string): Observable<Project> {
+  return this.http.get<Project>(`${this.apiUrl}/projects/${id}`);
+}
+
+// Education
+createEducation(Education: any): Observable<Education> {
+  return this.http.post<Education>(`${this.apiUrl}/education`, Education);
+}
+
+updateEducation(id: string, Education: any): Observable<Education> {
+  return this.http.put<Education>(`${this.apiUrl}/education/${id}`, Education);
+}
+
+deleteEducation(id: string): Observable<void> {
+  return this.http.delete<void>(`${this.apiUrl}/education/${id}`);
+}
+
+getEducationById(id: string): Observable<Education> {
+  return this.http.get<Education>(`${this.apiUrl}/education/${id}`);
+}
+
+
 }
 
