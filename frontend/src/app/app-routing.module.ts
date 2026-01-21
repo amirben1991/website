@@ -7,10 +7,11 @@ import { LayoutComponent } from './layout/layout.component';
 import { PrincipalContentComponent } from './principal-content/principal-content.component';
 import { ProjectFormComponent } from './principal-content/project-form/project-form.component';
 import { LoginComponent } from './components/login/login.component';
-
+import { RegisterComponent } from './components/register/register.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   {
     path: '', component: LayoutComponent, 
     children: [
@@ -19,8 +20,8 @@ export const routes: Routes = [
       {path: 'education', component: EducationContentComponent},
       {path: 'experience', component: ExperienceContentComponent},
       {path: 'projects', component: ProjectsContentComponent},
-      { path: 'projects/new', component: ProjectFormComponent },
-      { path: 'projects/:id/edit', component: ProjectFormComponent }
+      {path: 'projects/new', component: ProjectFormComponent},
+      {path: 'projects/:id/edit', component: ProjectFormComponent}
     ]
   },
 ];
