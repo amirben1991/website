@@ -6,9 +6,11 @@ import { ProjectsContentComponent } from "./principal-content/projects-content/p
 import { LayoutComponent } from './layout/layout.component';
 import { PrincipalContentComponent } from './principal-content/principal-content.component';
 import { ProjectFormComponent } from './principal-content/project-form/project-form.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 export const routes: Routes = [
+  { path: 'login', component: LoginComponent },
   {
     path: '', component: LayoutComponent, 
     children: [
