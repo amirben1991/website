@@ -25,6 +25,17 @@
             <a *ngIf="project.liveUrl" [href]="project.liveUrl" target="_blank" class="flex-1 text-center px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition">
               Live Demo
             </a>
+                        <ng-container *ngIf="authService.isAdmin()">
+              <a [routerLink]="['/projects', project.id, 'edit']" class="flex-1 text-center px-4 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600 transition">
+                Edit
+              </a>
+              <button 
+                type="button" 
+                (click)="deleteProject(project.id)"
+                class="flex-1 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition">
+                Delete
+              </button>
+            </ng-container>
           </div>
         </div>
       </div>

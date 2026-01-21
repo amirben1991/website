@@ -82,5 +82,23 @@ getEducationById(id: string): Observable<Education> {
 }
 
 
+// Experience
+createExperience(experience: any): Observable<Experience> {
+  return this.http.post<Experience>(`${this.apiUrl}/experience`, experience);
+}
+
+updateExperience(id: string, experience: any): Observable<Experience> {
+  return this.http.put<Experience>(`${this.apiUrl}/experience/${id}`, experience);
+}
+
+deleteExperience(id: string): Observable<void> {
+  return this.http.delete<void>(`${this.apiUrl}/experience/${id}`);
+}
+
+getExperienceById(id: string): Observable<Experience> {
+  return this.http.get<Experience>(`${this.apiUrl}/experience/${id}`);
+}
+
+
 }
 
