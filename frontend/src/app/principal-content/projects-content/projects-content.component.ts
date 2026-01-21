@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
     selector: 'app-projects-content',
     imports: [RouterModule, CommonModule],
     templateUrl: './projects-content.component.html',
-    styleUrl: './projects-content.component.scss'
+    styleUrls: ['./projects-content.component.scss']
 })
 export class ProjectsContentComponent implements OnInit {
 

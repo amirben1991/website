@@ -4,8 +4,8 @@
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" *ngIf="projects$ | async as projects">
       <div *ngFor="let project of projects" class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition transform hover:-translate-y-1">
-        <div *ngIf="project.imageURL" class="h-48 overflow-hidden bg-gray-200">
-          <img [src]="project.imageURL" [alt]="project.title" class="w-full h-full object-cover">
+        <div *ngIf="project.imageUrl" class="h-48 overflow-hidden bg-gray-200">
+          <img [src]="project.imageUrl" [alt]="project.title" class="w-full h-full object-cover">
         </div>
         <div class="p-6">
           <div class="flex items-start justify-between mb-2">
@@ -14,15 +14,15 @@
           </div>
           <p class="text-gray-600 mb-4">{{ project.description }}</p>
           <div class="flex flex-wrap gap-2 mb-4">
-            <span *ngFor="let tech of project.techStack" class="inline-block px-2 py-1 bg-gray-200 text-gray-700 text-xs rounded">
-              {{ tech }}
+            <span *ngFor="let tech of project.techStack?.split(',')" class="inline-block px-2 py-1 bg-gray-200 text-gray-700 text-xs rounded">
+              {{ tech.trim() }}
             </span>
           </div>
           <div class="flex gap-3">
-            <a *ngIf="project.GitHubLink" [href]="project.GitHubLink" target="_blank" class="flex-1 text-center px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-900 transition">
+            <a *ngIf="project.githubLink" [href]="project.githubLink" target="_blank" class="flex-1 text-center px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-900 transition">
               GitHub
             </a>
-            <a *ngIf="project.liveURL" [href]="project.liveURL" target="_blank" class="flex-1 text-center px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition">
+            <a *ngIf="project.liveUrl" [href]="project.liveUrl" target="_blank" class="flex-1 text-center px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition">
               Live Demo
             </a>
           </div>
