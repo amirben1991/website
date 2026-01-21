@@ -8,6 +8,8 @@ import { PrincipalContentComponent } from './principal-content/principal-content
 import { ProjectFormComponent } from './principal-content/project-form/project-form.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { AuthGuard } from './guards/auth.guard';
+
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -20,8 +22,8 @@ export const routes: Routes = [
       {path: 'education', component: EducationContentComponent},
       {path: 'experience', component: ExperienceContentComponent},
       {path: 'projects', component: ProjectsContentComponent},
-      {path: 'projects/new', component: ProjectFormComponent},
-      {path: 'projects/:id/edit', component: ProjectFormComponent}
+      { path: 'projects/new', component: ProjectFormComponent, canActivate: [AuthGuard] },
+      { path: 'projects/:id/edit', component: ProjectFormComponent, canActivate: [AuthGuard] }
     ]
   },
 ];
