@@ -1,11 +1,13 @@
 .app-layout {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100vh;
     background-color: #2d3748;
+    overflow: hidden;
 }
 
 main {
     flex: 1;
     padding: 0;
+    overflow-y: auto;
 }

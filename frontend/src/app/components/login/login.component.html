@@ -1,7 +1,7 @@
-<div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-md w-full space-y-8">
+<div class="h-full flex items-center justify-center bg-[#2d3748] py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-md w-full space-y-8 bg-[#3f4b5d] p-8 rounded-lg shadow-xl">
     <div>
-      <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+      <h2 class="mt-6 text-center text-3xl font-extrabold text-[#f1f5f9]">
         Connexion
       </h2>
     </div>
@@ -15,10 +15,10 @@
             formControlName="username"
             type="text"
             required
-            class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+            class="appearance-none rounded-none relative block w-full px-3 py-2 border border-[#60a5fa] border-opacity-30 bg-[#2d3748] placeholder-gray-400 text-[#f1f5f9] rounded-t-md focus:outline-none focus:ring-[#60a5fa] focus:border-[#60a5fa] focus:z-10 sm:text-sm"
             placeholder="Nom d'utilisateur"
           />
-          <div *ngIf="username?.invalid && username?.touched" class="text-red-600 text-sm mt-1 px-3">
+          <div *ngIf="username?.invalid && username?.touched" class="text-red-400 text-sm mt-1 px-3">
             <span *ngIf="username?.errors?.['required']">Le nom d'utilisateur est requis</span>
             <span *ngIf="username?.errors?.['minlength']">Minimum 3 caractères</span>
           </div>
@@ -31,17 +31,17 @@
             formControlName="password"
             type="password"
             required
-            class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+            class="appearance-none rounded-none relative block w-full px-3 py-2 border border-[#60a5fa] border-opacity-30 bg-[#2d3748] placeholder-gray-400 text-[#f1f5f9] rounded-b-md focus:outline-none focus:ring-[#60a5fa] focus:border-[#60a5fa] focus:z-10 sm:text-sm"
             placeholder="Mot de passe"
           />
-          <div *ngIf="password?.invalid && password?.touched" class="text-red-600 text-sm mt-1 px-3">
+          <div *ngIf="password?.invalid && password?.touched" class="text-red-400 text-sm mt-1 px-3">
             <span *ngIf="password?.errors?.['required']">Le mot de passe est requis</span>
             <span *ngIf="password?.errors?.['minlength']">Minimum 6 caractères</span>
           </div>
         </div>
       </div>
 
-      <div *ngIf="errorMessage" class="text-red-600 text-sm text-center">
+      <div *ngIf="errorMessage" class="text-red-400 text-sm text-center">
         {{ errorMessage }}
       </div>
 
@@ -49,16 +49,17 @@
         <button
           type="submit"
           [disabled]="loginForm.invalid || isLoading"
-          class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed"
+          class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#60a5fa] hover:bg-[#3b82f6] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#60a5fa] disabled:opacity-50 disabled:cursor-not-allowed transition"
         >
           <span *ngIf="!isLoading">Se connecter</span>
           <span *ngIf="isLoading">Connexion...</span>
         </button>
       </div>
 
-      <div class="text-center">
-        <a routerLink="/register" class="font-medium text-indigo-600 hover:text-indigo-500">
-          Pas encore de compte ? S'inscrire
+      <div class="text-center mt-4">
+        <span class="text-[#cbd5e1]">Pas encore de compte ? </span>
+        <a routerLink="/register" class="font-semibold text-[#60a5fa] hover:text-[#3b82f6] transition">
+          S'inscrire
         </a>
       </div>
     </form>

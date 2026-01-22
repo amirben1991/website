@@ -1,67 +1,79 @@
-<div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-md w-full space-y-8">
+<div class="h-full flex items-center justify-center bg-[#2d3748] py-12 px-4 sm:px-6 lg:px-8 overflow-y-auto">
+  <div class="max-w-md w-full space-y-8 bg-[#3f4b5d] p-8 rounded-lg shadow-xl">
     <div>
-      <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+      <h2 class="mt-6 text-center text-3xl font-extrabold text-[#f1f5f9]">
         Créer un compte
       </h2>
+      <div class="flex justify-center gap-4 mt-4">
+        <a routerLink="/" class="inline-flex items-center text-[#60a5fa] hover:text-[#3b82f6] transition text-sm">
+          <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+          </svg>
+          Retour à l'accueil
+        </a>
+        <span class="text-[#cbd5e1]">|</span>
+        <a routerLink="/login" class="inline-flex items-center text-[#60a5fa] hover:text-[#3b82f6] transition text-sm">
+          Se connecter
+        </a>
+      </div>
     </div>
     
     <form class="mt-8 space-y-6" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
       <div class="rounded-md shadow-sm space-y-4">
         <div>
-          <label for="username" class="block text-sm font-medium text-gray-700">Nom d'utilisateur</label>
+          <label for="username" class="block text-sm font-medium text-[#e2e8f0]">Nom d'utilisateur</label>
           <input
             id="username"
             formControlName="username"
             type="text"
             required
-            class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+            class="appearance-none relative block w-full px-3 py-2 border border-[#60a5fa] border-opacity-30 bg-[#2d3748] placeholder-gray-400 text-[#f1f5f9] rounded-md focus:outline-none focus:ring-[#60a5fa] focus:border-[#60a5fa] focus:z-10 sm:text-sm"
             placeholder="Nom d'utilisateur"
           />
-          <div *ngIf="username?.invalid && username?.touched" class="text-red-600 text-sm mt-1">
+          <div *ngIf="username?.invalid && username?.touched" class="text-red-400 text-sm mt-1">
             <span *ngIf="username?.errors?.['required']">Le nom d'utilisateur est requis</span>
             <span *ngIf="username?.errors?.['minlength']">Minimum 3 caractères</span>
           </div>
         </div>
 
         <div>
-          <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+          <label for="email" class="block text-sm font-medium text-[#e2e8f0]">Email</label>
           <input
             id="email"
             formControlName="email"
             type="email"
             required
-            class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+            class="appearance-none relative block w-full px-3 py-2 border border-[#60a5fa] border-opacity-30 bg-[#2d3748] placeholder-gray-400 text-[#f1f5f9] rounded-md focus:outline-none focus:ring-[#60a5fa] focus:border-[#60a5fa] focus:z-10 sm:text-sm"
             placeholder="email@exemple.com"
           />
-          <div *ngIf="email?.invalid && email?.touched" class="text-red-600 text-sm mt-1">
+          <div *ngIf="email?.invalid && email?.touched" class="text-red-400 text-sm mt-1">
             <span *ngIf="email?.errors?.['required']">L'email est requis</span>
             <span *ngIf="email?.errors?.['email']">Format d'email invalide</span>
           </div>
         </div>
         
         <div>
-          <label for="password" class="block text-sm font-medium text-gray-700">Mot de passe</label>
+          <label for="password" class="block text-sm font-medium text-[#e2e8f0]">Mot de passe</label>
           <input
             id="password"
             formControlName="password"
             type="password"
             required
-            class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+            class="appearance-none relative block w-full px-3 py-2 border border-[#60a5fa] border-opacity-30 bg-[#2d3748] placeholder-gray-400 text-[#f1f5f9] rounded-md focus:outline-none focus:ring-[#60a5fa] focus:border-[#60a5fa] focus:z-10 sm:text-sm"
             placeholder="Mot de passe"
           />
-          <div *ngIf="password?.invalid && password?.touched" class="text-red-600 text-sm mt-1">
+          <div *ngIf="password?.invalid && password?.touched" class="text-red-400 text-sm mt-1">
             <span *ngIf="password?.errors?.['required']">Le mot de passe est requis</span>
             <span *ngIf="password?.errors?.['minlength']">Minimum 6 caractères</span>
           </div>
         </div>
 
         <div>
-          <label for="role" class="block text-sm font-medium text-gray-700">Rôle</label>
+          <label for="role" class="block text-sm font-medium text-[#e2e8f0]">Rôle</label>
           <select
             id="role"
             formControlName="role"
-            class="appearance-none relative block w-full px-3 py-2 border border-gray-300 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+            class="appearance-none relative block w-full px-3 py-2 border border-[#60a5fa] border-opacity-30 bg-[#2d3748] text-[#f1f5f9] rounded-md focus:outline-none focus:ring-[#60a5fa] focus:border-[#60a5fa] focus:z-10 sm:text-sm"
           >
             <option value="USER">Utilisateur (lecture seule)</option>
             <option value="ADMIN">Administrateur (accès complet)</option>
@@ -69,7 +81,7 @@
         </div>
       </div>
 
-      <div *ngIf="errorMessage" class="text-red-600 text-sm text-center">
+      <div *ngIf="errorMessage" class="text-red-400 text-sm text-center">
         {{ errorMessage }}
       </div>
 
@@ -77,16 +89,17 @@
         <button
           type="submit"
           [disabled]="registerForm.invalid || isLoading"
-          class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed"
+          class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#60a5fa] hover:bg-[#3b82f6] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#60a5fa] disabled:opacity-50 disabled:cursor-not-allowed transition"
         >
           <span *ngIf="!isLoading">S'inscrire</span>
           <span *ngIf="isLoading">Inscription...</span>
         </button>
       </div>
 
-      <div class="text-center">
-        <a routerLink="/login" class="font-medium text-indigo-600 hover:text-indigo-500">
-          Déjà un compte ? Se connecter
+      <div class="text-center mt-4">
+        <span class="text-[#cbd5e1]">Déjà un compte ? </span>
+        <a routerLink="/login" class="font-semibold text-[#60a5fa] hover:text-[#3b82f6] transition">
+          Se connecter
         </a>
       </div>
     </form>
