@@ -10,26 +10,19 @@ import { HttpClient } from '@angular/common/http';
 export class DataService {
 
   private apiUrl = 'http://localhost:8081/api';
-  private education$: Observable<Education[]>;
-  private experience$: Observable<Experience[]>;
-  private projects$: Observable<Project[]>;
 
-  constructor(private http: HttpClient) {
-    this.education$ = this.http.get<Education[]>(`${this.apiUrl}/education`);
-    this.experience$ = this.http.get<Experience[]>(`${this.apiUrl}/experience`);
-    this.projects$ = this.http.get<Project[]>(`${this.apiUrl}/projects`);
-  }
+  constructor(private http: HttpClient) {}
 
   getEducation$(): Observable<Education[]> {
-    return this.education$;
+    return this.http.get<Education[]>(`${this.apiUrl}/education`);
   }
 
   getExperience$(): Observable<Experience[]> {
-    return this.experience$;
+    return this.http.get<Experience[]>(`${this.apiUrl}/experience`);
   }
 
   getProjects$(): Observable<Project[]> {
-    return this.projects$;
+    return this.http.get<Project[]>(`${this.apiUrl}/projects`);
   }
 
   // Backwards compatibility aliases (optional)

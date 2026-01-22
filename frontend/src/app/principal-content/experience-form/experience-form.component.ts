@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-experience-form',
+  standalone: true,
   imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './experience-form.component.html',
   styleUrl: './experience-form.component.scss'

@@ -1,0 +1,109 @@
+<div class="max-w-2xl mx-auto p-8">
+  <h1 class="text-3xl font-bold mb-6">
+    {{ isEditMode ? 'Edit Education' : 'Add New Education' }}
+  </h1>
+
+  <form [formGroup]="educationForm" (ngSubmit)="onSubmit()">
+    
+    <!-- Error Message -->
+    <div *ngIf="errorMessage" class="mb-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
+      {{ errorMessage }}
+    </div>
+
+    <!-- School -->
+    <div class="mb-4">
+      <label class="block text-sm font-medium mb-2">School/University *</label>
+      <input 
+        type="text" 
+        formControlName="school" 
+        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        placeholder="e.g., University of Example"
+      />
+      <span *ngIf="educationForm.get('school')?.hasError('required') && educationForm.get('school')?.touched" 
+        class="text-red-500 text-sm">School is required</span>
+      <span *ngIf="educationForm.get('school')?.hasError('minlength') && educationForm.get('school')?.touched" 
+        class="text-red-500 text-sm">School must be at least 2 characters</span>
+    </div>
+
+    <!-- Degree -->
+    <div class="mb-4">
+      <label class="block text-sm font-medium mb-2">Degree *</label>
+      <input 
+        type="text" 
+        formControlName="degree" 
+        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        placeholder="e.g., Bachelor of Science"
+      />
+      <span *ngIf="educationForm.get('degree')?.hasError('required') && educationForm.get('degree')?.touched" 
+        class="text-red-500 text-sm">Degree is required</span>
+      <span *ngIf="educationForm.get('degree')?.hasError('minlength') && educationForm.get('degree')?.touched" 
+        class="text-red-500 text-sm">Degree must be at least 2 characters</span>
+    </div>
+
+    <!-- Field of Study -->
+    <div class="mb-4">
+      <label class="block text-sm font-medium mb-2">Field of Study *</label>
+      <input 
+        type="text" 
+        formControlName="field" 
+        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        placeholder="e.g., Computer Science"
+      />
+      <span *ngIf="educationForm.get('field')?.hasError('required') && educationForm.get('field')?.touched" 
+        class="text-red-500 text-sm">Field of study is required</span>
+      <span *ngIf="educationForm.get('field')?.hasError('minlength') && educationForm.get('field')?.touched" 
+        class="text-red-500 text-sm">Field of study must be at least 2 characters</span>
+    </div>
+
+    <!-- Start Date -->
+    <div class="mb-4">
+      <label class="block text-sm font-medium mb-2">Start Date *</label>
+      <input 
+        type="date" 
+        formControlName="startDate" 
+        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <span *ngIf="educationForm.get('startDate')?.hasError('required') && educationForm.get('startDate')?.touched" 
+        class="text-red-500 text-sm">Start date is required</span>
+    </div>
+
+    <!-- End Date -->
+    <div class="mb-4">
+      <label class="block text-sm font-medium mb-2">End Date (optional - leave blank if current)</label>
+      <input 
+        type="date" 
+        formControlName="endDate" 
+        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+    </div>
+
+    <!-- Description -->
+    <div class="mb-6">
+      <label class="block text-sm font-medium mb-2">Description (optional)</label>
+      <textarea 
+        formControlName="description" 
+        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        placeholder="Add any relevant details about your education"
+        rows="4"
+      ></textarea>
+    </div>
+
+    <!-- Buttons -->
+    <div class="flex gap-4">
+      <button 
+        type="submit" 
+        [disabled]="isLoading"
+        class="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 disabled:bg-gray-400"
+      >
+        {{ isLoading ? 'Saving...' : (isEditMode ? 'Update' : 'Create') }}
+      </button>
+      <button 
+        type="button" 
+        (click)="onCancel()"
+        class="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400"
+      >
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>

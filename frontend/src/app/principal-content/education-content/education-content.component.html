@@ -1,26 +1,46 @@
 <div class="min-h-screen bg-gray-50 py-12">
-  <div class="max-w-4xl mx-auto px-4">
-    <h1 class="text-4xl font-bold text-gray-900 mb-12">Education & Certifications</h1>
+  <div class="max-w-6xl mx-auto px-4">
+    <h1 class="text-4xl font-bold text-gray-900 mb-12">Education</h1>
     
-    <div class="space-y-6" *ngIf="education$ | async as education">
-      <div *ngFor="let item of education" class="bg-white p-6 rounded-lg shadow-md border-l-4 border-indigo-600">
-        <div class="flex justify-between items-start mb-4">
+    <div class="mb-8">
+      <a *ngIf="authService.isAdmin()" [routerLink]="['/education', 'new']" class="inline-block px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+        + Add New Education
+      </a>
+    </div>
+
+
+    <div class="space-y-6" *ngIf="education$ | async as educationList">
+      <div *ngFor="let edu of educationList" class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition">
+        <div class="flex items-start justify-between mb-4">
           <div>
-            <h2 class="text-2xl font-semibold text-gray-900">{{ item.degree }}</h2>
-            <p class="text-lg text-indigo-600 font-medium">{{ item.school }}</p>
+            <h2 class="text-2xl font-semibold text-gray-900">{{ edu.degree }}</h2>
+            <h3 class="text-xl text-indigo-600 font-medium">{{ edu.school }}</h3>
+            <p class="text-gray-600 text-sm mt-1">{{ edu.field }}</p>
+            <p class="text-gray-600 mt-1">
+              {{ edu.startDate | date:'MMM yyyy' }} - 
+              {{ edu.endDate ? (edu.endDate | date:'MMM yyyy') : 'Present' }}
+            </p>
           </div>
-          <span class="text-sm text-gray-500 whitespace-nowrap">
-            {{ item.startDate | date: 'MMM yyyy' }} - 
-            {{ item.endDate ? (item.endDate | date: 'MMM yyyy') : 'Present' }}
-          </span>
         </div>
-        <p class="text-gray-700 mb-3">📚 <strong>Field:</strong> {{ item.field }}</p>
-        <p class="text-gray-600">{{ item.description }}</p>
+        
+        <p class="text-gray-700 mb-4" *ngIf="edu.description">{{ edu.description }}</p>
+
+        <div class="flex gap-3" *ngIf="authService.isAdmin()">
+          <a [routerLink]="['/education', edu.id, 'edit']" class="px-4 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600 transition">
+            Edit
+          </a>
+          <button 
+            type="button" 
+            (click)="deleteEducation(edu.id)"
+            class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition">
+            Delete
+          </button>
+        </div>
       </div>
     </div>
 
     <div *ngIf="!(education$ | async)" class="text-center py-12">
-      <p class="text-gray-500">Loading education data...</p>
+      <p class="text-gray-500">Loading education...</p>
     </div>
   </div>
 </div>

@@ -10,6 +10,7 @@ import { ProjectFormComponent } from './principal-content/project-form/project-f
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthGuard } from './guards/auth.guard';
+import { EducationFormComponent } from './principal-content/education-form/education-form.component';
 
 
 export const routes: Routes = [
@@ -20,13 +21,15 @@ export const routes: Routes = [
     children: [
       {path: '', redirectTo: 'accueil', pathMatch: 'full'},
       {path: 'accueil', component: PrincipalContentComponent},
-      {path: 'education', component: EducationContentComponent},
-      {path: 'experience', component: ExperienceContentComponent},
+      {path: 'projects/new', component: ProjectFormComponent, canActivate: [AuthGuard] },
+      {path: 'projects/:id/edit', component: ProjectFormComponent, canActivate: [AuthGuard]},
+      {path: 'projects', component: ProjectsContentComponent},
       {path: 'experience/new', component: ExperienceFormComponent, canActivate: [AuthGuard]},
       {path: 'experience/:id/edit', component: ExperienceFormComponent, canActivate: [AuthGuard]},
-      {path: 'projects', component: ProjectsContentComponent},
-      {path: 'projects/new', component: ProjectFormComponent, canActivate: [AuthGuard] },
-      {path: 'projects/:id/edit', component: ProjectFormComponent, canActivate: [AuthGuard]}
+      {path: 'experience', component: ExperienceContentComponent},
+      {path: 'education/new', component: EducationFormComponent, canActivate: [AuthGuard]},
+      {path: 'education/:id/edit', component: EducationFormComponent, canActivate: [AuthGuard]},
+      {path: 'education', component: EducationContentComponent}
     ]
   },
 ];

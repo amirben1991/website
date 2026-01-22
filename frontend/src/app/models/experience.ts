@@ -5,5 +5,5 @@ export interface Experience {
     startDate: Date;
     endDate?: Date;
     description: string;
-    techStack: string[];
+    techStack: string;
 }
