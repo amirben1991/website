@@ -36,8 +36,20 @@ public class SecurityConfig {
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/**").permitAll()
-                        .requestMatchers("/api/projects", "/api/education", "/api/experience").permitAll()
-                        .requestMatchers("/api/projects/**", "/api/education/**", "/api/experience/**").hasRole("ADMIN")
+                        // GET requests are public for all users/visitors
+                        .requestMatchers(org.springframework.http.HttpMethod.GET, "/api/projects/**").permitAll()
+                        .requestMatchers(org.springframework.http.HttpMethod.GET, "/api/education/**").permitAll()
+                        .requestMatchers(org.springframework.http.HttpMethod.GET, "/api/experience/**").permitAll()
+                        // POST, PUT, DELETE require ADMIN role
+                        .requestMatchers(org.springframework.http.HttpMethod.POST, "/api/projects/**").hasRole("ADMIN")
+                        .requestMatchers(org.springframework.http.HttpMethod.PUT, "/api/projects/**").hasRole("ADMIN")
+                        .requestMatchers(org.springframework.http.HttpMethod.DELETE, "/api/projects/**").hasRole("ADMIN")
+                        .requestMatchers(org.springframework.http.HttpMethod.POST, "/api/education/**").hasRole("ADMIN")
+                        .requestMatchers(org.springframework.http.HttpMethod.PUT, "/api/education/**").hasRole("ADMIN")
+                        .requestMatchers(org.springframework.http.HttpMethod.DELETE, "/api/education/**").hasRole("ADMIN")
+                        .requestMatchers(org.springframework.http.HttpMethod.POST, "/api/experience/**").hasRole("ADMIN")
+                        .requestMatchers(org.springframework.http.HttpMethod.PUT, "/api/experience/**").hasRole("ADMIN")
+                        .requestMatchers(org.springframework.http.HttpMethod.DELETE, "/api/experience/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

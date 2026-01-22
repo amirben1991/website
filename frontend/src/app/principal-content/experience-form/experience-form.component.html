@@ -1,0 +1,107 @@
+<div class="max-w-2xl mx-auto p-8">
+  <h1 class="text-3xl font-bold mb-6">
+    {{ isEditMode ? 'Edit Experience' : 'Add New Experience' }}
+  </h1>
+
+  <form [formGroup]="experienceForm" (ngSubmit)="onSubmit()">
+    
+    <!-- Error Message -->
+    <div *ngIf="errorMessage" class="mb-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
+      {{ errorMessage }}
+    </div>
+
+    <!-- Company -->
+    <div class="mb-4">
+      <label class="block text-sm font-medium mb-2">Company *</label>
+      <input 
+        type="text" 
+        formControlName="company" 
+        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        placeholder="Enter company name"
+      />
+      <span *ngIf="experienceForm.get('company')?.hasError('required') && experienceForm.get('company')?.touched" 
+        class="text-red-500 text-sm">Company is required</span>
+      <span *ngIf="experienceForm.get('company')?.hasError('minlength') && experienceForm.get('company')?.touched" 
+        class="text-red-500 text-sm">Company must be at least 2 characters</span>
+    </div>
+
+    <!-- Position -->
+    <div class="mb-4">
+      <label class="block text-sm font-medium mb-2">Position *</label>
+      <input 
+        type="text" 
+        formControlName="position" 
+        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        placeholder="Enter job position"
+      />
+      <span *ngIf="experienceForm.get('position')?.hasError('required') && experienceForm.get('position')?.touched" 
+        class="text-red-500 text-sm">Position is required</span>
+      <span *ngIf="experienceForm.get('position')?.hasError('minlength') && experienceForm.get('position')?.touched" 
+        class="text-red-500 text-sm">Position must be at least 2 characters</span>
+    </div>
+
+    <!-- Start Date -->
+    <div class="mb-4">
+      <label class="block text-sm font-medium mb-2">Start Date *</label>
+      <input 
+        type="date" 
+        formControlName="startDate" 
+        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <span *ngIf="experienceForm.get('startDate')?.hasError('required') && experienceForm.get('startDate')?.touched" 
+        class="text-red-500 text-sm">Start date is required</span>
+    </div>
+
+    <!-- End Date -->
+    <div class="mb-4">
+      <label class="block text-sm font-medium mb-2">End Date (optional - leave blank if current)</label>
+      <input 
+        type="date" 
+        formControlName="endDate" 
+        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+    </div>
+
+    <!-- Description -->
+    <div class="mb-4">
+      <label class="block text-sm font-medium mb-2">Description *</label>
+      <textarea 
+        formControlName="description" 
+        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        placeholder="Describe your experience and responsibilities"
+        rows="4"
+      ></textarea>
+      <span *ngIf="experienceForm.get('description')?.hasError('required') && experienceForm.get('description')?.touched" 
+        class="text-red-500 text-sm">Description is required</span>
+    </div>
+
+    <!-- Tech Stack -->
+    <div class="mb-6">
+      <label class="block text-sm font-medium mb-2">Tech Stack (comma-separated)</label>
+      <input 
+        type="text" 
+        formControlName="techStack" 
+        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        placeholder="e.g., Angular, TypeScript, Java"
+      />
+    </div>
+
+    <!-- Buttons -->
+    <div class="flex gap-4">
+      <button 
+        type="submit" 
+        [disabled]="isLoading"
+        class="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 disabled:bg-gray-400"
+      >
+        {{ isLoading ? 'Saving...' : (isEditMode ? 'Update' : 'Create') }}
+      </button>
+      <button 
+        type="button" 
+        (click)="onCancel()"
+        class="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400"
+      >
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>
