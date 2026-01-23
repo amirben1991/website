@@ -4,11 +4,13 @@ import { routes } from './app-routing.module';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { authInterceptor } from './interceptors/auth.interceptor';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    provideHttpClient(withInterceptors([authInterceptor]))
+    provideHttpClient(withInterceptors([authInterceptor])),
+    provideAnimations()
   ]
 };
