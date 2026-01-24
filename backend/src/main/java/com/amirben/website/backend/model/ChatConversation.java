@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import com.amirben.website.backend.entity.User;
 
 @Entity
 @Table(name = "chat_conversations")
