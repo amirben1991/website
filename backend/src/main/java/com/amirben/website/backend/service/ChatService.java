@@ -11,6 +11,14 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.*;
+import org.springframework.web.client.RestTemplate;
+import com.amirben.website.backend.dto.OpenAIChatResponse;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
+
 
 import java.util.List;
 
@@ -70,5 +78,47 @@ public class ChatService {
                         "content", msg.getContent()
                 ))
                 .toList();
+    }
+
+    @Value("${openai.api.key}")
+    private String openAiApiKey;
+
+    private final RestTemplate restTemplate = new RestTemplate();
+
+    private static final String OPENAI_URL = "https://api.openai.com/v1/chat/completions";
+    private static final String OPENAI_MODEL = "gpt-4o-mini"; // ajuste si besoin
+    private static final String SYSTEM_PROMPT = """
+    Tu es un assistant IA spécialisé dans le portfolio de PrinceDev.
+    Tu répondras UNIQUEMENT aux questions sur :
+    - Les projets (technologies, descriptions)
+    - L'expérience professionnelle
+    - La formation et les certificats
+    - Les compétences techniques
+    Si la question sort de ce périmètre, réponds poliment que tu es limité à ces sujets.
+    """;
+
+        public String callOpenAI(List<Map<String, String>> messages) {
+        // On préfixe avec le message système
+        List<Map<String, String>> payloadMessages = new ArrayList<>();
+        payloadMessages.add(Map.of("role", "system", "content", SYSTEM_PROMPT));
+        payloadMessages.addAll(messages);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(openAiApiKey);
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        Map<String, Object> body = new HashMap<>();
+        body.put("model", OPENAI_MODEL);
+        body.put("messages", payloadMessages);
+
+        HttpEntity<Map<String, Object>> request = new HttpEntity<>(body, headers);
+        ResponseEntity<OpenAIChatResponse> response = restTemplate.postForEntity(
+                OPENAI_URL, request, OpenAIChatResponse.class);
+
+        OpenAIChatResponse dto = response.getBody();
+        if (dto == null || dto.getChoices() == null || dto.getChoices().isEmpty()) {
+            throw new IllegalStateException("OpenAI response is empty");
+        }
+        return dto.getChoices().get(0).getMessage().getContent();
     }
 }
