@@ -10,7 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
-
+import com.amirben.website.backend.repository.UserRepository;
 import java.util.List;
 import java.util.Map;
 
@@ -20,6 +20,7 @@ import java.util.Map;
 public class ChatController {
 
     private final ChatService chatService;
+    private final UserRepository userRepository;
 
     @PostMapping("/send")
     public ResponseEntity<Map<String, String>> sendMessage(
@@ -27,7 +28,9 @@ public class ChatController {
             Authentication authentication) {
 
         // ⚠️ Adapte cette ligne si ton principal n'est pas directement User
-        User user = (User) authentication.getPrincipal();
+        String username = authentication.getName();
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new RuntimeException("User not found"));
 
         ChatConversation conversation = chatService.getOrCreateConversation(user);
 
