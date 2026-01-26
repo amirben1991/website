@@ -34,14 +34,47 @@ export class ChatWidgetComponent {
   ) {}
 
   async ngOnInit() {
-    // Load history only when widget opens
+    // Ouvre automatiquement le widget si l'utilisateur est connecté
+    this.authService.isAuthenticated$.subscribe(isAuth => {
+      if (isAuth && !this.isOpen) {
+        setTimeout(() => {
+          this.isOpen = true;
+          this.loadHistoryOrWelcome();
+        }, 500);
+      }
+    });
+  }
+
+  async loadHistoryOrWelcome() {
+    try {
+      const history = await this.chat.getHistory().toPromise();
+      if (history && history.length > 0) {
+        this.messages = history.map(this.mapHistoryToUi);
+      } else {
+        // Aucun historique : message de bienvenue de Jarvis
+        this.messages.push({
+          role: 'assistant',
+          content: "Bonjour ! Je suis Jarvis, l'assistant personnel de PrinceDev. Je suis là pour répondre à vos questions sur son portfolio, ses projets, son expérience et ses compétences. Que souhaitez-vous savoir ?"
+        });
+      }
+      this.scrollToBottom();
+    } catch (e) {
+      // En cas d'erreur, affiche quand même le message de bienvenue
+      this.messages.push({
+        role: 'assistant',
+        content: "Bonjour ! Je suis Jarvis, l'assistant personnel de PrinceDev. Que puis-je faire pour vous aujourd'hui ?"
+      });
+      this.scrollToBottom();
+    }
   }
 
   toggleWidget() {
     if (!this.isOpen) {
       this.isOpen = true;
       this.isMinimized = false;
-      this.loadHistory();
+      if (this.messages.length === 0) {
+        this.loadHistoryOrWelcome();
+      }
     } else {
       this.isOpen = false;
     }
@@ -49,18 +82,6 @@ export class ChatWidgetComponent {
 
   toggleMinimize() {
     this.isMinimized = !this.isMinimized;
-  }
-
-  async loadHistory() {
-    try {
-      const history = await this.chat.getHistory().toPromise();
-      if (history) {
-        this.messages = history.map(this.mapHistoryToUi);
-        this.scrollToBottom();
-      }
-    } catch (e) {
-      // history may be empty
-    }
   }
 
   async send() {
