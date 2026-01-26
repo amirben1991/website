@@ -19,12 +19,17 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.client.RestClientException;
+import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
 import com.amirben.website.backend.dto.OpenAIChatResponse;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
+
+import com.amirben.website.backend.exception.OpenAIException;
 
 
 import java.util.List;
@@ -211,7 +216,7 @@ public class ChatService {
     public String callOpenAI(List<Map<String, String>> messages) {
         // Génère le prompt système avec les vraies données
         String systemPrompt = buildSystemPrompt();
-        
+
         List<Map<String, String>> payloadMessages = new ArrayList<>();
         payloadMessages.add(Map.of("role", "system", "content", systemPrompt));
         payloadMessages.addAll(messages);
@@ -225,13 +230,23 @@ public class ChatService {
         body.put("messages", payloadMessages);
 
         HttpEntity<Map<String, Object>> request = new HttpEntity<>(body, headers);
-        ResponseEntity<OpenAIChatResponse> response = restTemplate.postForEntity(
-                OPENAI_URL, request, OpenAIChatResponse.class);
 
-        OpenAIChatResponse dto = response.getBody();
-        if (dto == null || dto.getChoices() == null || dto.getChoices().isEmpty()) {
-            throw new IllegalStateException("OpenAI response is empty");
+        try {
+            ResponseEntity<OpenAIChatResponse> response = restTemplate.postForEntity(
+                    OPENAI_URL, request, OpenAIChatResponse.class);
+
+            OpenAIChatResponse dto = response.getBody();
+            if (dto == null || dto.getChoices() == null || dto.getChoices().isEmpty()) {
+                throw new OpenAIException("OpenAI response is empty");
+            }
+            return dto.getChoices().get(0).getMessage().getContent();
+        } catch (HttpStatusCodeException ex) {
+            if (ex.getStatusCode() == HttpStatus.TOO_MANY_REQUESTS) {
+                throw new OpenAIException("OpenAI rate limit reached, please retry in a moment.", ex);
+            }
+            throw new OpenAIException("OpenAI returned an error: " + ex.getStatusText(), ex);
+        } catch (RestClientException ex) {
+            throw new OpenAIException("OpenAI request failed. Please try again.", ex);
         }
-        return dto.getChoices().get(0).getMessage().getContent();
     }
 }

@@ -85,10 +85,10 @@ Frontend automatically proxies `/api/*` requests to backend via `proxy.conf.json
 ### Production Checklist
 
 Before deployment:
-1. Set static JWT secret in backend config (not random)
+1. Set static JWT secret in backend config (not random) via `JWT_SECRET`
 2. Use secure OpenAI API key management (AWS Secrets Manager, etc.)
-3. Enable rate limiting on `/api/chat/send`
-4. Configure CORS for production domain
+3. Enable rate limiting on `/api/chat/send` (10 req/min/user par défaut)
+4. Configure CORS pour le domaine de prod
 5. Set up PostgreSQL with proper credentials
 6. Review logs and error handling
 

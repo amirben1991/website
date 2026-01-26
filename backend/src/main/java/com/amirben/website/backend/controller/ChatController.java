@@ -5,6 +5,7 @@ import com.amirben.website.backend.model.ChatConversation;
 import com.amirben.website.backend.model.ChatMessage;
 import com.amirben.website.backend.model.MessageRole;
 import com.amirben.website.backend.service.ChatService;
+import com.amirben.website.backend.service.RateLimitService;
 import com.amirben.website.backend.entity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,7 @@ import java.util.Map;
 public class ChatController {
 
     private final ChatService chatService;
+        private final RateLimitService rateLimitService;
     private final UserRepository userRepository;
 
     @PostMapping("/send")
@@ -31,6 +33,9 @@ public class ChatController {
         String username = authentication.getName();
         User user = userRepository.findByUsername(username)
                 .orElseThrow(() -> new RuntimeException("User not found"));
+
+        // Rate limiting per user
+        rateLimitService.consumeOrThrow(user.getId());
 
         ChatConversation conversation = chatService.getOrCreateConversation(user);
 

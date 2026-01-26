@@ -6,6 +6,9 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import com.amirben.website.backend.exception.RateLimitExceededException;
+import com.amirben.website.backend.exception.OpenAIException;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,6 +30,23 @@ public class GlobalExceptionHandler {
             errors.put(error.getField(), error.getDefaultMessage())
         );
         return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(RateLimitExceededException.class)
+    public ResponseEntity<Map<String, String>> handleRateLimit(RateLimitExceededException ex) {
+        Map<String, String> error = new HashMap<>();
+        error.put("error", "Rate limit exceeded");
+        error.put("message", ex.getMessage());
+        error.put("retryAfterSeconds", String.valueOf(ex.getRetryAfterSeconds()));
+        return new ResponseEntity<>(error, HttpStatus.TOO_MANY_REQUESTS);
+    }
+
+    @ExceptionHandler(OpenAIException.class)
+    public ResponseEntity<Map<String, String>> handleOpenAI(OpenAIException ex) {
+        Map<String, String> error = new HashMap<>();
+        error.put("error", "OpenAI error");
+        error.put("message", ex.getMessage());
+        return new ResponseEntity<>(error, HttpStatus.BAD_GATEWAY);
     }
 
     @ExceptionHandler(Exception.class)
