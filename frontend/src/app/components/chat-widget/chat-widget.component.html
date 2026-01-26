@@ -1,0 +1,65 @@
+<!-- Widget fermé : affiche un bouton flottant -->
+<ng-container *ngIf="!isOpen && (authService.isAuthenticated$ | async)">
+  <button (click)="toggleWidget()"
+    class="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-[#3b82f6] hover:bg-[#2563eb] text-white shadow-lg flex items-center justify-center z-40 transition">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+    </svg>
+  </button>
+</ng-container>
+
+<!-- Widget ouvert -->
+<ng-container *ngIf="isOpen && (authService.isAuthenticated$ | async)">
+  <div class="fixed bottom-6 right-6 w-96 bg-[#1f2937] rounded-xl shadow-2xl flex flex-col z-50 border border-slate-700"
+    [class.h-96]="!isMinimized"
+    [class.h-16]="isMinimized">
+    
+    <!-- Header -->
+    <div class="flex items-center justify-between p-4 border-b border-slate-700 bg-[#111827] rounded-t-xl">
+      <h3 class="text-white font-semibold text-sm">Chat IA</h3>
+      <div class="flex gap-2">
+        <button (click)="toggleMinimize()"
+          class="text-slate-400 hover:text-slate-200 transition text-xs">
+          {{ isMinimized ? '▲' : '▼' }}
+        </button>
+        <button (click)="toggleWidget()"
+          class="text-slate-400 hover:text-slate-200 transition text-lg">
+          ✕
+        </button>
+      </div>
+    </div>
+
+    <!-- Messages (hidden if minimized) -->
+    <div *ngIf="!isMinimized" class="flex-1 overflow-y-auto space-y-2 p-3">
+      <div *ngFor="let msg of messages" class="flex" [class.justify-end]="msg.role==='user'">
+        <div
+          class="max-w-[70%] px-3 py-2 rounded-lg whitespace-pre-wrap break-words text-sm"
+          [ngClass]="{
+            'bg-[#3b82f6] text-white rounded-br-sm': msg.role==='user',
+            'bg-[#374151] text-slate-200 rounded-bl-sm': msg.role==='assistant'
+          }">
+          {{ msg.content }}
+        </div>
+      </div>
+      <div *ngIf="loading" class="text-slate-400 text-xs">L'assistant rédige…</div>
+    </div>
+
+    <!-- Input (hidden if minimized) -->
+    <div *ngIf="!isMinimized" class="border-t border-slate-700 p-2 bg-[#111827] rounded-b-xl">
+      <textarea
+        [(ngModel)]="input"
+        (keydown)="onKeydown($event)"
+        rows="2"
+        class="w-full bg-transparent text-slate-200 text-sm focus:outline-none resize-none"
+        placeholder="Posez votre question…"
+        [disabled]="loading"></textarea>
+      <div class="flex justify-between items-center mt-1">
+        <div class="text-xs text-red-400" *ngIf="error">{{ error }}</div>
+        <button (click)="send()" [disabled]="loading || !input.trim()"
+          class="px-3 py-1 rounded text-xs bg-[#3b82f6] text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#2563eb] transition">
+          Envoyer
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-container>

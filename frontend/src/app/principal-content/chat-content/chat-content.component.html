@@ -1,0 +1,36 @@
+<div class="max-w-4xl mx-auto h-[calc(100vh-140px)] flex flex-col px-4 py-6">
+  <h1 class="text-2xl font-semibold text-slate-200 mb-4 text-center">Chat IA</h1>
+
+  <div #scrollContainer class="flex-1 overflow-y-auto space-y-3 p-3 bg-[#1f2937] rounded-lg">
+    <div *ngFor="let msg of messages" class="flex" [class.justify-end]="msg.role==='user'">
+      <div
+        class="max-w-[75%] px-4 py-2 rounded-2xl whitespace-pre-wrap break-words"
+        [ngClass]="{
+          'bg-[#3b82f6] text-white rounded-br-sm': msg.role==='user',
+          'bg-[#374151] text-slate-200 rounded-bl-sm': msg.role==='assistant'
+        }">
+        {{ msg.content }}
+      </div>
+    </div>
+    <div *ngIf="loading" class="text-slate-400 text-sm">L'assistant rédige une réponse…</div>
+  </div>
+
+  <div class="mt-4">
+    <div class="bg-[#111827] rounded-xl border border-slate-700 p-2">
+      <textarea
+        [(ngModel)]="input"
+        (keydown)="onKeydown($event)"
+        rows="3"
+        class="w-full bg-transparent text-slate-200 focus:outline-none resize-none"
+        placeholder="Posez votre question (Entrée pour envoyer, Shift+Entrée pour retour)"
+        [disabled]="loading"></textarea>
+      <div class="flex justify-between items-center mt-2">
+        <div class="text-xs text-slate-400" *ngIf="error">{{ error }}</div>
+        <button (click)="send()" [disabled]="loading || !input.trim()"
+          class="px-4 py-2 rounded-lg bg-[#3b82f6] text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#2563eb] transition">
+          Envoyer
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

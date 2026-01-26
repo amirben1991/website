@@ -10,8 +10,8 @@ export class AuthGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
 
   canActivate(): boolean {
-    // Vérifier si l'utilisateur est connecté ET admin
-    if (this.authService.isAuthenticated() && this.authService.isAdmin()) {
+    // Vérifier si l'utilisateur est connecté
+    if (this.authService.isAuthenticated()) {
       return true; // Accès autorisé
     }
 
