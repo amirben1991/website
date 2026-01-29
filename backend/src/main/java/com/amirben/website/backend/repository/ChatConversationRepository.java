@@ -12,4 +12,6 @@ import java.util.UUID;
 public interface ChatConversationRepository extends JpaRepository<ChatConversation, UUID> {
     
     Optional<ChatConversation> findByUser(User user);
+    
+    long countByUserId(UUID userId);
 }

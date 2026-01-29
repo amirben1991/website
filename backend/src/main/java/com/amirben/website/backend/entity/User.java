@@ -1,6 +1,9 @@
 package com.amirben.website.backend.entity;
 
+import com.amirben.website.backend.model.ChatConversation;
 import jakarta.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -23,6 +26,9 @@ public class User {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ChatConversation> conversations = new ArrayList<>();
 
     // Constructeur par défaut (requis par JPA)
     public User() {}
