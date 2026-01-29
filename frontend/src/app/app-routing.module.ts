@@ -10,7 +10,9 @@ import { ProjectFormComponent } from './principal-content/project-form/project-f
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthGuard } from './guards/auth.guard';
+import { AdminGuard } from './guards/admin.guard';
 import { EducationFormComponent } from './principal-content/education-form/education-form.component';
+import { AdminUsersComponent } from './components/admin-users/admin-users.component';
 
 
 export const routes: Routes = [
@@ -29,7 +31,8 @@ export const routes: Routes = [
       {path: 'experience', component: ExperienceContentComponent},
       {path: 'education/new', component: EducationFormComponent, canActivate: [AuthGuard]},
       {path: 'education/:id/edit', component: EducationFormComponent, canActivate: [AuthGuard]},
-      {path: 'education', component: EducationContentComponent}
+      {path: 'education', component: EducationContentComponent},
+      {path: 'admin/users', component: AdminUsersComponent, canActivate: [AdminGuard]}
     ]
   },
 ];

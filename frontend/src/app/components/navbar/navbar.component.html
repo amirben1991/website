@@ -26,6 +26,10 @@
         class="text-[#cbd5e1] hover:text-[#3b82f6] transition font-medium">
         Formation
       </a>
+      <a *ngIf="authService.isAdmin()" routerLink="/admin/users" routerLinkActive="active"
+        class="text-[#cbd5e1] hover:text-[#3b82f6] transition font-medium">
+        Admin
+      </a>
       <a href="https://github.com" target="_blank"
         class="text-[#cbd5e1] hover:text-[#3b82f6] transition font-medium">
         GitHub

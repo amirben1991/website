@@ -92,6 +92,14 @@ getExperienceById(id: string): Observable<Experience> {
   return this.http.get<Experience>(`${this.apiUrl}/experience/${id}`);
 }
 
+// Admin - User Management
+getAllUsers(): Observable<any[]> {
+  return this.http.get<any[]>(`${this.apiUrl}/admin/users`);
+}
+
+deleteUser(id: string): Observable<any> {
+  return this.http.delete<any>(`${this.apiUrl}/admin/users/${id}`);
+}
 
 }
 
