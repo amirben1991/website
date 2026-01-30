@@ -60,16 +60,28 @@
             <td class="px-6 py-4 whitespace-nowrap">
               <div class="text-xs text-gray-400 font-mono">{{ user.id }}</div>
             </td>
-            <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
+            <td class="px-6 py-4 whitespace-nowrap text-right text-sm flex flex-col gap-2 items-end">
               <button
                 (click)="deleteUser(user.id, user.username)"
-                class="font-medium transition-colors"
+                class="font-medium transition-colors mb-1"
                 [class.text-red-600]="!isCurrentUser(user)"
                 [class.hover:text-red-900]="!isCurrentUser(user)"
                 [class.text-gray-400]="isCurrentUser(user)"
                 [class.cursor-not-allowed]="isCurrentUser(user)"
                 [disabled]="loading || isCurrentUser(user)">
                 {{ isCurrentUser(user) ? 'You' : 'Delete' }}
+              </button>
+              <button *ngIf="user.role === 'USER' && !isCurrentUser(user)"
+                (click)="promoteUser(user)"
+                class="text-blue-600 hover:text-blue-900 font-medium transition-colors text-xs"
+                [disabled]="loading">
+                Promouvoir ADMIN
+              </button>
+              <button *ngIf="user.role === 'ADMIN' && !isCurrentUser(user)"
+                (click)="demoteUser(user)"
+                class="text-yellow-600 hover:text-yellow-900 font-medium transition-colors text-xs"
+                [disabled]="loading">
+                Rétrograder USER
               </button>
             </td>
           </tr>
@@ -87,5 +99,8 @@
       Total users: {{ users.length }} 
       ({{ adminCount }} admins, {{ userCount }} users)
     </div>
+
+    <!-- Audit Log Section -->
+    <app-admin-audit-log></app-admin-audit-log>
   </div>
 </div>

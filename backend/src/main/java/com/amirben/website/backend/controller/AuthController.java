@@ -78,6 +78,13 @@ public class AuthController {
             User user = userRepository.findByUsername(request.getUsername())
                     .orElseThrow(() -> new RuntimeException("User not found"));
 
+            // Vérifier si le user est actif
+            if (!user.isActive()) {
+                Map<String, String> error = new HashMap<>();
+                error.put("error", "User account is deactivated. Contact an administrator.");
+                return ResponseEntity.status(HttpStatus.FORBIDDEN).body(error);
+            }
+
             // Générer le token
             String token = jwtUtil.generateToken(user.getUsername(), user.getRole().name());
 

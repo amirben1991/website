@@ -30,6 +30,9 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ChatConversation> conversations = new ArrayList<>();
 
+    @Column(nullable = false)
+    private boolean active = true;
+
     // Constructeur par défaut (requis par JPA)
     public User() {}
 
@@ -39,6 +42,14 @@ public class User {
         this.email = email;
         this.password = password;
         this.role = role;
+        this.active = true;
+    }
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     // Getters et Setters

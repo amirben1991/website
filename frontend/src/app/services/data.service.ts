@@ -1,17 +1,41 @@
+    // Admin - Audit Log
+    getAllAuditLogs(): Observable<any[]> {
+      return this.http.get<any[]>(`${this.apiUrl}/admin/audit-logs`);
+    }
+  promoteUser(id: string): Observable<any> {
+    return this.http.patch<any>(`${this.apiUrl}/admin/users/${id}/role`, { role: 'ADMIN' });
+  }
+
+  demoteUser(id: string): Observable<any> {
+    return this.http.patch<any>(`${this.apiUrl}/admin/users/${id}/role`, { role: 'USER' });
+  }
+
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Education, Experience, Project } from '../models';
 import { HttpClient } from '@angular/common/http';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-
   private apiUrl = 'http://localhost:8081/api';
-
   constructor(private http: HttpClient) {}
+
+  // Admin - Audit Log
+  getAllAuditLogs(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/admin/audit-logs`);
+  }
+
+  promoteUser(id: string): Observable<any> {
+    return this.http.patch<any>(`${this.apiUrl}/admin/users/${id}/role`, { role: 'ADMIN' });
+  }
+
+  demoteUser(id: string): Observable<any> {
+    return this.http.patch<any>(`${this.apiUrl}/admin/users/${id}/role`, { role: 'USER' });
+  }
 
   getEducation$(): Observable<Education[]> {
     return this.http.get<Education[]>(`${this.apiUrl}/education`);
