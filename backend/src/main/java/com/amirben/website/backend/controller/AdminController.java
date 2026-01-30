@@ -1,3 +1,4 @@
+package com.amirben.website.backend.controller;
 
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
