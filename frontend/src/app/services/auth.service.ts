@@ -28,6 +28,7 @@ export class AuthService {
   private tokenKey = 'auth_token';
   private usernameKey = 'auth_username';
   private roleKey = 'auth_role';
+  private storage: Storage = sessionStorage;
 
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(this.hasToken());
   public isAuthenticated$ = this.isAuthenticatedSubject.asObservable();
@@ -50,31 +51,31 @@ export class AuthService {
   }
 
   logout(): void {
-    localStorage.removeItem(this.tokenKey);
-    localStorage.removeItem(this.usernameKey);
-    localStorage.removeItem(this.roleKey);
+    this.storage.removeItem(this.tokenKey);
+    this.storage.removeItem(this.usernameKey);
+    this.storage.removeItem(this.roleKey);
     this.isAuthenticatedSubject.next(false);
     this.currentUserSubject.next(null);
   }
 
   private handleAuthSuccess(response: AuthResponse): void {
-    localStorage.setItem(this.tokenKey, response.token);
-    localStorage.setItem(this.usernameKey, response.username);
-    localStorage.setItem(this.roleKey, response.role);
+    this.storage.setItem(this.tokenKey, response.token);
+    this.storage.setItem(this.usernameKey, response.username);
+    this.storage.setItem(this.roleKey, response.role);
     this.isAuthenticatedSubject.next(true);
     this.currentUserSubject.next(response.username);
   }
 
   getToken(): string | null {
-    return localStorage.getItem(this.tokenKey);
+    return this.storage.getItem(this.tokenKey);
   }
 
   getUsername(): string | null {
-    return localStorage.getItem(this.usernameKey);
+    return this.storage.getItem(this.usernameKey);
   }
 
   getRole(): string | null {
-    return localStorage.getItem(this.roleKey);
+    return this.storage.getItem(this.roleKey);
   }
 
   isAuthenticated(): boolean {

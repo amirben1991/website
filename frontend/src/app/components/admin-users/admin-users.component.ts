@@ -55,6 +55,10 @@ export class AdminUsersComponent implements OnInit {
   }
 
   deleteUser(userId: string, username: string): void {
+    if (this.authService.getUsername() === username) {
+      this.error = 'You cannot delete your own account.';
+      return;
+    }
     if (!confirm(`Are you sure you want to delete user "${username}"? This will also delete all associated conversations.`)) {
       return;
     }
@@ -79,5 +83,9 @@ export class AdminUsersComponent implements OnInit {
 
   get userCount(): number {
     return this.users.filter(u => u.role === 'USER').length;
+  }
+
+  isCurrentUser(user: User): boolean {
+    return this.authService.getUsername() === user.username;
   }
 }
