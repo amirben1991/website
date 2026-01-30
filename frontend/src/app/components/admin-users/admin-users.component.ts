@@ -1,42 +1,3 @@
-  promoteUser(user: User): void {
-    if (this.isCurrentUser(user)) {
-      this.error = 'You cannot change your own role.';
-      this.snackBar.open(this.error, 'Fermer', { duration: 3000, panelClass: 'snackbar-error' });
-      return;
-    }
-    this.loading = true;
-    this.dataService.promoteUser(user.id).subscribe({
-      next: () => {
-        this.snackBar.open('Utilisateur promu ADMIN', 'Fermer', { duration: 3000, panelClass: 'snackbar-success' });
-        this.loadUsers();
-      },
-      error: (err) => {
-        this.error = `Failed to promote user: ${err.error?.error || err.message}`;
-        this.snackBar.open(this.error, 'Fermer', { duration: 3000, panelClass: 'snackbar-error' });
-        this.loading = false;
-      }
-    });
-  }
-
-  demoteUser(user: User): void {
-    if (this.isCurrentUser(user)) {
-      this.error = 'You cannot change your own role.';
-      this.snackBar.open(this.error, 'Fermer', { duration: 3000, panelClass: 'snackbar-error' });
-      return;
-    }
-    this.loading = true;
-    this.dataService.demoteUser(user.id).subscribe({
-      next: () => {
-        this.snackBar.open('Utilisateur rétrogradé USER', 'Fermer', { duration: 3000, panelClass: 'snackbar-success' });
-        this.loadUsers();
-      },
-      error: (err) => {
-        this.error = `Failed to demote user: ${err.error?.error || err.message}`;
-        this.snackBar.open(this.error, 'Fermer', { duration: 3000, panelClass: 'snackbar-error' });
-        this.loading = false;
-      }
-    });
-  }
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataService } from '../../services/data.service';
@@ -131,5 +92,45 @@ export class AdminUsersComponent implements OnInit {
 
   isCurrentUser(user: User): boolean {
     return this.authService.getUsername() === user.username;
+  }
+
+  promoteUser(user: User): void {
+    if (this.isCurrentUser(user)) {
+      this.error = 'You cannot change your own role.';
+      this.snackBar.open(this.error, 'Fermer', { duration: 3000, panelClass: 'snackbar-error' });
+      return;
+    }
+    this.loading = true;
+    this.dataService.promoteUser(user.id).subscribe({
+      next: () => {
+        this.snackBar.open('Utilisateur promu ADMIN', 'Fermer', { duration: 3000, panelClass: 'snackbar-success' });
+        this.loadUsers();
+      },
+      error: (err) => {
+        this.error = `Failed to promote user: ${err.error?.error || err.message}`;
+        this.snackBar.open(this.error, 'Fermer', { duration: 3000, panelClass: 'snackbar-error' });
+        this.loading = false;
+      }
+    });
+  }
+
+  demoteUser(user: User): void {
+    if (this.isCurrentUser(user)) {
+      this.error = 'You cannot change your own role.';
+      this.snackBar.open(this.error, 'Fermer', { duration: 3000, panelClass: 'snackbar-error' });
+      return;
+    }
+    this.loading = true;
+    this.dataService.demoteUser(user.id).subscribe({
+      next: () => {
+        this.snackBar.open('Utilisateur rétrogradé USER', 'Fermer', { duration: 3000, panelClass: 'snackbar-success' });
+        this.loadUsers();
+      },
+      error: (err) => {
+        this.error = `Failed to demote user: ${err.error?.error || err.message}`;
+        this.snackBar.open(this.error, 'Fermer', { duration: 3000, panelClass: 'snackbar-error' });
+        this.loading = false;
+      }
+    });
   }
 }

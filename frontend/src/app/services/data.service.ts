@@ -1,15 +1,3 @@
-    // Admin - Audit Log
-    getAllAuditLogs(): Observable<any[]> {
-      return this.http.get<any[]>(`${this.apiUrl}/admin/audit-logs`);
-    }
-  promoteUser(id: string): Observable<any> {
-    return this.http.patch<any>(`${this.apiUrl}/admin/users/${id}/role`, { role: 'ADMIN' });
-  }
-
-  demoteUser(id: string): Observable<any> {
-    return this.http.patch<any>(`${this.apiUrl}/admin/users/${id}/role`, { role: 'USER' });
-  }
-
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Education, Experience, Project } from '../models';
@@ -127,3 +115,11 @@ deleteUser(id: string): Observable<any> {
 
 }
 
+/**
+ * @deprecated Use the DataService method instead.
+ */
+function getAllAuditLogs(): void {
+  // This is a placeholder for a standalone function, but the actual implementation
+  // should use the DataService.getAllAuditLogs() method within an Angular component or service.
+  throw new Error('Use DataService.getAllAuditLogs() instead.');
+}

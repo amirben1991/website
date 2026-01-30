@@ -1,89 +1,42 @@
 
-package com.amirben.website.backend.controller;
-/**
- * Change user role (ADMIN only)
- */
-@PatchMapping("/users/{id}/role")
-public ResponseEntity<?> changeUserRole(@PathVariable UUID id, @RequestBody Map<String, String> body) {
-    User user = userRepository.findById(id).orElse(null);
-    if (user == null) {
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("error", "User not found"));
+import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import java.util.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.amirben.website.backend.repository.UserRepository;
+import com.amirben.website.backend.repository.ConversationRepository;
+import com.amirben.website.backend.repository.AdminActionLogRepository;
+import com.amirben.website.backend.entity.User;
+
+@RestController
+@RequestMapping("/admin")
+public class AdminController {
+
+    private final UserRepository userRepository;
+    private final ConversationRepository conversationRepository;
+    private final AdminActionLogRepository adminActionLogRepository;
+    private final Logger log = LoggerFactory.getLogger(AdminController.class);
+
+    public AdminController(UserRepository userRepository,
+                           ConversationRepository conversationRepository,
+                           AdminActionLogRepository adminActionLogRepository) {
+        this.userRepository = userRepository;
+        this.conversationRepository = conversationRepository;
+        this.adminActionLogRepository = adminActionLogRepository;
     }
 
-    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-    String currentUsername = authentication != null ? authentication.getName() : null;
-    if (currentUsername != null && currentUsername.equalsIgnoreCase(user.getUsername())) {
-        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(Map.of("error", "You cannot change your own role"));
+    @GetMapping("/users")
+    public ResponseEntity<List<User>> getAllUsers() {
+        // Ne retourne que les users actifs (soft delete)
+        List<User> users = userRepository.findAll().stream()
+                .filter(User::isActive)
+                .toList();
+        return ResponseEntity.ok(users);
     }
-
-    String newRole = body.get("role");
-    if (newRole == null || (!newRole.equals("ADMIN") && !newRole.equals("USER"))) {
-        return ResponseEntity.badRequest().body(Map.of("error", "Invalid role value"));
-    }
-
-    com.amirben.website.backend.entity.Role previousRole = user.getRole();
-    user.setRole(com.amirben.website.backend.entity.Role.valueOf(newRole));
-    userRepository.save(user);
-    log.info("Admin changed role of user {} to {}", user.getUsername(), newRole);
-
-    // Audit log
-    if (currentUsername != null) {
-        String details = String.format("Changed role from %s to %s", previousRole, newRole);
-        adminActionLogRepository.save(new com.amirben.website.backend.entity.AdminActionLog(
-                currentUsername,
-                package com.amirben.website.backend.controller;
-
-    /**
-     * Change user role (ADMIN only)
-     */
-    @PatchMapping("/users/{id}/role")
-    public ResponseEntity<?> changeUserRole(@PathVariable UUID id, @RequestBody Map<String, String> body) {
-        User user = userRepository.findById(id).orElse(null);
-        if (user == null) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("error", "User not found"));
-        }
-
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String currentUsername = authentication != null ? authentication.getName() : null;
-        if (currentUsername != null && currentUsername.equalsIgnoreCase(user.getUsername())) {
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(Map.of("error", "You cannot change your own role"));
-        }
-
-        String newRole = body.get("role");
-        if (newRole == null || (!newRole.equals("ADMIN") && !newRole.equals("USER"))) {
-            return ResponseEntity.badRequest().body(Map.of("error", "Invalid role value"));
-        }
-
-        com.amirben.website.backend.entity.Role previousRole = user.getRole();
-        user.setRole(com.amirben.website.backend.entity.Role.valueOf(newRole));
-        userRepository.save(user);
-        log.info("Admin changed role of user {} to {}", user.getUsername(), newRole);
-
-        // Audit log
-        if (currentUsername != null) {
-            String details = String.format("Changed role from %s to %s", previousRole, newRole);
-            adminActionLogRepository.save(new com.amirben.website.backend.entity.AdminActionLog(
-                    currentUsername,
-                    "CHANGE_ROLE",
-                    user.getUsername(),
-                    details
-            ));
-        }
-
-        return ResponseEntity.ok(Map.of(
-                "userId", user.getId(),
-                "username", user.getUsername(),
-                "role", user.getRole().name()
-        ));
-    }
-@GetMapping("/users")
-public ResponseEntity<List<User>> getAllUsers() {
-    // Ne retourne que les users actifs (soft delete)
-    List<User> users = userRepository.findAll().stream()
-            .filter(User::isActive)
-            .toList();
-    return ResponseEntity.ok(users);
-}
 
 /**
  * Get all admin action logs (ADMIN only)
@@ -148,4 +101,5 @@ public ResponseEntity<Map<String, Object>> deleteUser(@PathVariable UUID id) {
 
     return ResponseEntity.ok(response);
 }
+
 }
