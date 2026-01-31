@@ -9,38 +9,58 @@
     </div>
 
 
-    <div class="space-y-6" *ngIf="education$ | async as educationList">
-      <div *ngFor="let edu of educationList" class="bg-[#3f4b5d] rounded-lg shadow-md p-6 hover:shadow-xl transition border border-[#60a5fa] border-opacity-20">
-        <div class="flex items-start justify-between mb-4">
-          <div>
-            <h2 class="text-2xl font-semibold text-[#f1f5f9]">{{ edu.degree }}</h2>
-            <h3 class="text-xl text-[#60a5fa] font-medium">{{ edu.school }}</h3>
-            <p class="text-[#e2e8f0] text-sm mt-1">{{ edu.field }}</p>
-            <p class="text-[#e2e8f0] mt-1">
-              {{ edu.startDate | date:'MMM yyyy' }} - 
-              {{ edu.endDate ? (edu.endDate | date:'MMM yyyy') : 'Present' }}
-            </p>
+    <section>
+      <h2 class="text-xl font-bold mb-2 text-white">Diplômes (finis ou en cours)</h2>
+      <ul>
+        <li *ngFor="let diploma of diplomas" class="mb-2 bg-[#3f4b5d] rounded-lg shadow-md p-6 hover:shadow-xl transition border border-[#60a5fa] border-opacity-20">
+          <div class="font-semibold text-white">{{ diploma.degree }}</div>
+          <div class="text-sm text-[#60a5fa] font-medium">{{ diploma.school }}</div>
+          <div class="text-white text-sm mt-1">{{ diploma.field }}</div>
+          <div class="text-white mt-1">
+            {{ diploma.startDate | date:'MMM yyyy' }} -
+            {{ diploma.endDate ? (diploma.endDate | date:'MMM yyyy') : 'En cours' }}
           </div>
-        </div>
-        
-        <p class="text-[#e2e8f0] mb-4" *ngIf="edu.description">{{ edu.description }}</p>
+          <p class="text-white mb-4" *ngIf="diploma.description">{{ diploma.description }}</p>
+          <div class="flex gap-3" *ngIf="authService.isAdmin()">
+            <a [routerLink]="['/education', diploma.id, 'edit']" class="px-4 py-2 bg-[#f59e0b] text-white rounded hover:bg-[#d97706] transition">
+              Edit
+            </a>
+            <button 
+              type="button" 
+              (click)="deleteEducation(diploma.id)"
+              class="px-4 py-2 bg-[#60a5fa] text-white rounded hover:bg-[#3b82f6] transition">
+              Delete
+            </button>
+          </div>
+        </li>
+      </ul>
+    </section>
 
-        <div class="flex gap-3" *ngIf="authService.isAdmin()">
-          <a [routerLink]="['/education', edu.id, 'edit']" class="px-4 py-2 bg-[#f59e0b] text-white rounded hover:bg-[#d97706] transition">
-            Edit
-          </a>
-          <button 
-            type="button" 
-            (click)="deleteEducation(edu.id)"
-            class="px-4 py-2 bg-[#60a5fa] text-white rounded hover:bg-[#3b82f6] transition">
-            Delete
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div *ngIf="!(education$ | async)" class="text-center py-12">
-      <p class="text-[#cbd5e1]">Loading education...</p>
-    </div>
+    <section class="mt-8">
+      <h2 class="text-xl font-bold mb-2 text-white">Certifications professionnelles (en ligne)</h2>
+      <ul>
+        <li *ngFor="let cert of certifications" class="mb-2 bg-[#3f4b5d] rounded-lg shadow-md p-6 hover:shadow-xl transition border border-[#60a5fa] border-opacity-20">
+          <div class="font-semibold text-white">{{ cert.degree }}</div>
+          <div class="text-sm text-[#60a5fa] font-medium">{{ cert.school }}</div>
+          <div class="text-white text-sm mt-1">{{ cert.field }}</div>
+          <div class="text-white mt-1">
+            {{ cert.startDate | date:'MMM yyyy' }} -
+            {{ cert.endDate ? (cert.endDate | date:'MMM yyyy') : 'En cours' }}
+          </div>
+          <p class="text-white mb-4" *ngIf="cert.description">{{ cert.description }}</p>
+          <div class="flex gap-3" *ngIf="authService.isAdmin()">
+            <a [routerLink]="['/education', cert.id, 'edit']" class="px-4 py-2 bg-[#f59e0b] text-white rounded hover:bg-[#d97706] transition">
+              Edit
+            </a>
+            <button 
+              type="button" 
+              (click)="deleteEducation(cert.id)"
+              class="px-4 py-2 bg-[#60a5fa] text-white rounded hover:bg-[#3b82f6] transition">
+              Delete
+            </button>
+          </div>
+        </li>
+      </ul>
+    </section>
   </div>
 </div>

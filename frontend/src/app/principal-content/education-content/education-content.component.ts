@@ -14,7 +14,8 @@ import { Observable } from 'rxjs';
   imports: [CommonModule, RouterModule]
 })
 export class EducationContentComponent implements OnInit {
-  education$!: Observable<Education[]>;
+  diplomas: Education[] = [];
+  certifications: Education[] = [];
 
   constructor(
     private dataService: DataService,
@@ -22,18 +23,22 @@ export class EducationContentComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.loadEducation();
+    this.dataService.getEducation().subscribe((educationList) => {
+      this.diplomas = educationList.filter(e => e.type === 'diplome');
+      this.certifications = educationList.filter(e => e.type === 'certification');
+    });
   }
 
-  loadEducation(): void {
-    this.education$ = this.dataService.getEducation();
-  }
 
   deleteEducation(id: string): void {
     if (confirm('Are you sure you want to delete this education?')) {
       this.dataService.deleteEducation(id).subscribe({
         next: () => {
-          this.loadEducation();
+          // Recharge la liste après suppression
+          this.dataService.getEducation().subscribe((educationList) => {
+            this.diplomas = educationList.filter(e => e.type === 'diplome');
+            this.certifications = educationList.filter(e => e.type === 'certification');
+          });
         },
         error: (err) => {
           console.error('Error deleting education:', err);
