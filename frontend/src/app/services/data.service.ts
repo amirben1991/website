@@ -117,4 +117,5 @@ deleteUser(id: string): Observable<any> {
 
 /**
  * @deprecated Use the DataService method instead.
+ */
 

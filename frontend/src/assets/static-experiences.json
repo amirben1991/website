@@ -1,0 +1,101 @@
+[
+  {
+    "id": "bpce-2024",
+    "company": "BPCE Solutions informatiques",
+    "position": "Software Developer",
+    "startDate": "2024-10-01",
+    "description": "Maintenance du portefeuille applicatif existant. Développement de nouvelles fonctionnalités. Migration AngularJS → Angular 19. Modernisation des APIs. Travail en Agile (Scrum).",
+    "techStack": "TypeScript, Angular, Java, Spring Boot, Jenkins, Bitbucket, XL Release, tests unitaires"
+  },
+  {
+    "id": "m2i-2024",
+    "company": "M2i Formation",
+    "position": "Fullstack Java Developer (Stage)",
+    "startDate": "2024-06-01",
+    "endDate": "2024-10-01",
+    "description": "Développement fullstack Java/Angular. Participation à des projets de formation à distance.",
+    "techStack": "Java, Jakarta EE, Spring, Angular, JavaScript, TypeScript, Bootstrap"
+  },
+  {
+    "id": "jedha-ta-2023",
+    "company": "Jedha Bootcamp",
+    "position": "Data Scientist - Teacher Assistant (Freelance)",
+    "startDate": "2023-09-01",
+    "endDate": "2024-06-01",
+    "description": "Assistance sur Python, EDA, Machine Learning, Déploiement.",
+    "techStack": "Docker, Python, MLflow, Streamlit, Scikit-learn, PostgreSQL, Apache Spark"
+  },
+  {
+    "id": "pause-2023",
+    "company": "Pause professionnelle",
+    "position": "Pause professionnelle",
+    "startDate": "2023-07-01",
+    "endDate": "2023-09-01",
+    "description": "Pause professionnelle."
+  },
+  {
+    "id": "quantmetry-2023",
+    "company": "Quantmetry - Capgemini Invent",
+    "position": "Machine Learning Engineer",
+    "startDate": "2023-02-01",
+    "endDate": "2023-05-01",
+    "description": "Développement et tests de modèles Machine Learning.",
+    "techStack": "Python, Scikit-learn, tests unitaires"
+  },
+  {
+    "id": "d4g-2021",
+    "company": "Data for Good",
+    "position": "Data Scientist",
+    "startDate": "2021-12-01",
+    "endDate": "2022-04-01",
+    "description": "Participation à des projets Data Science à impact social."
+  },
+  {
+    "id": "jedha-ds-2021",
+    "company": "Jedha Bootcamp",
+    "position": "Data Scientist",
+    "startDate": "2021-09-01",
+    "endDate": "2021-11-01",
+    "description": "Bootcamp Data Science."
+  },
+  {
+    "id": "textbrokers-2017",
+    "company": "TextBrokers",
+    "position": "Rédacteur indépendant",
+    "startDate": "2017-01-01",
+    "endDate": "2021-02-01",
+    "description": "Rédaction d’articles SEO pour divers secteurs."
+  },
+  {
+    "id": "cdr-2019",
+    "company": "Citigate Dewe Rogerson",
+    "position": "Financial communications",
+    "startDate": "2019-05-01",
+    "endDate": "2019-11-01",
+    "description": "Communication financière."
+  },
+  {
+    "id": "monoprix-2017",
+    "company": "Monoprix",
+    "position": "Equipier Commercial",
+    "startDate": "2017-12-01",
+    "endDate": "2019-01-01",
+    "description": "Vente et gestion de rayon."
+  },
+  {
+    "id": "veolia-2015",
+    "company": "Veolia",
+    "position": "Internal Communications Intern",
+    "startDate": "2015-02-01",
+    "endDate": "2015-08-01",
+    "description": "Gestion de la communication interne, création de supports, reporting RH."
+  },
+  {
+    "id": "dusens-2013",
+    "company": "Tequilarapido (Dusens Group)",
+    "position": "Digital communication intern",
+    "startDate": "2013-02-01",
+    "endDate": "2013-05-01",
+    "description": "Refonte de site web, gestion de contenus pour Dassault Aviation et Renault."
+  }
+]

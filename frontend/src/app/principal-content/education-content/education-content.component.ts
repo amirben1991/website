@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { DataService } from '../../services/data.service';
 import { Education } from '../../models';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
-import { Observable } from 'rxjs';
+import educationData from '../../../assets/static-education.json';
 
 @Component({
   selector: 'app-education-content',
@@ -18,33 +17,22 @@ export class EducationContentComponent implements OnInit {
   certifications: Education[] = [];
 
   constructor(
-    private dataService: DataService,
     public authService: AuthService
   ) {}
 
   ngOnInit(): void {
-    this.dataService.getEducation().subscribe((educationList) => {
-      this.diplomas = educationList.filter(e => e.type === 'diplome');
-      this.certifications = educationList.filter(e => e.type === 'certification');
-    });
+    // Conversion des dates string -> Date
+    const allEducation = (educationData as any[]).map(e => ({
+      ...e,
+      startDate: new Date(e.startDate),
+      endDate: e.endDate ? new Date(e.endDate) : undefined
+    }));
+    this.diplomas = allEducation.filter(e => e.type === 'diplome');
+    this.certifications = allEducation.filter(e => e.type === 'certification');
   }
 
-
+  // Suppression désactivée pour la version statique
   deleteEducation(id: string): void {
-    if (confirm('Are you sure you want to delete this education?')) {
-      this.dataService.deleteEducation(id).subscribe({
-        next: () => {
-          // Recharge la liste après suppression
-          this.dataService.getEducation().subscribe((educationList) => {
-            this.diplomas = educationList.filter(e => e.type === 'diplome');
-            this.certifications = educationList.filter(e => e.type === 'certification');
-          });
-        },
-        error: (err) => {
-          console.error('Error deleting education:', err);
-          alert('Error deleting education');
-        }
-      });
-    }
+    alert('Suppression désactivée en mode statique.');
   }
 }

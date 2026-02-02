@@ -1,0 +1,62 @@
+[
+  {
+    "id": "jedha-lead-2023",
+    "school": "Jedha",
+    "degree": "Lead Data Engineering",
+    "field": "Data Engineering",
+    "startDate": "2023-04-01",
+    "endDate": "2023-08-01",
+    "description": "Modules : Distributed Machine Learning, Reinforcement Learning, Data Pipelines, Automation & Workflow, ML Monitoring. Compétences : Docker, Kubernetes, Airflow, Kafka.",
+    "type": "diplome"
+  },
+  {
+    "id": "yotta-2022",
+    "school": "Yotta Academy",
+    "degree": "RNCP Niveau 7 (Master) - Machine Learning Engineer, Artificial Intelligence",
+    "field": "Machine Learning Engineer, Artificial Intelligence",
+    "startDate": "2022-09-01",
+    "endDate": "2023-01-01",
+    "description": "Modules : Data Science, Machine Learning, Deep Learning, NLP, DevOps for Data Science, Cloud Computing, MLOps. Compétences : Analyse de données, IA, Deep learning, Gestion de projet.",
+    "type": "diplome"
+  },
+  {
+    "id": "jedha-ds-2021",
+    "school": "Jedha",
+    "degree": "Fullstack Data Science",
+    "field": "Data Science",
+    "startDate": "2021-09-01",
+    "endDate": "2021-11-01",
+    "description": "Modules : EDA, Web Scraping, Big Data, Machine Learning (supervisé/non supervisé), Deep Learning.",
+    "type": "diplome"
+  },
+  {
+    "id": "iae-paris-2017",
+    "school": "IAE Paris - Sorbonne Business School",
+    "degree": "Master's degree, Business Administration (MBA)",
+    "field": "Business Administration, Quantitative Skills, Big Data & Management",
+    "startDate": "2017-01-01",
+    "endDate": "2019-01-01",
+    "description": "Spécialisation : Quantitative Skills, Big Data & Management. Cours principaux : Strategy, Corporate Finance, Accounting, Information system management, Marketing, Supply Chain, Corporate Law.",
+    "type": "diplome"
+  },
+  {
+    "id": "hec-2018",
+    "school": "HEC Paris",
+    "degree": "MOOC: International Certificate in Corporate Finance (ICCF)",
+    "field": "Corporate Finance",
+    "startDate": "2018-01-01",
+    "endDate": "2018-12-31",
+    "description": "Certification professionnelle en analyse financière, valorisation d'entreprise, décisions d'investissement et de financement, M&A et LBO.",
+    "type": "certification"
+  },
+  {
+    "id": "uca-2016",
+    "school": "Université Côte d’Azur",
+    "degree": "Bachelor's degree, Communication",
+    "field": "Communication, General",
+    "startDate": "2016-01-01",
+    "endDate": "2016-12-31",
+    "description": "Mémoire : 'Is Communication Replacing Politics? The Influence of Spin Doctors'. Cours : Marketing Mix, Identity Strategies, Project Culture, Management of Communication Tools, Communication Law, Corporate Communications.",
+    "type": "diplome"
+  }
+]

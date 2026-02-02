@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { DataService } from '../../services/data.service';
 import { Experience } from '../../models';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
-import { Observable } from 'rxjs';
+
+// Importation des données statiques
+import experiencesData from '../../../assets/static-experiences.json';
 
 @Component({
   selector: 'app-experience-content',
@@ -14,32 +15,23 @@ import { Observable } from 'rxjs';
   imports: [CommonModule, RouterModule]
 })
 export class ExperienceContentComponent implements OnInit {
-  experiences$!: Observable<Experience[]>;
+  experiences: Experience[] = [];
 
   constructor(
-    private dataService: DataService,
     public authService: AuthService
   ) {}
 
   ngOnInit(): void {
-    this.loadExperiences();
+    // Conversion des dates string -> Date
+    this.experiences = (experiencesData as any[]).map(e => ({
+      ...e,
+      startDate: new Date(e.startDate),
+      endDate: e.endDate ? new Date(e.endDate) : undefined
+    }));
   }
 
-  loadExperiences(): void {
-    this.experiences$ = this.dataService.getExperience();
-  }
-
+  // Suppression désactivée pour la version statique
   deleteExperience(id: string): void {
-    if (confirm('Are you sure you want to delete this experience?')) {
-      this.dataService.deleteExperience(id).subscribe({
-        next: () => {
-          this.loadExperiences();
-        },
-        error: (err) => {
-          console.error('Error deleting experience:', err);
-          alert('Error deleting experience');
-        }
-      });
-    }
+    alert('Suppression désactivée en mode statique.');
   }
 }
