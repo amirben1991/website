@@ -35,7 +35,13 @@ export class LoginComponent {
       this.authService.login(this.loginForm.value).subscribe({
         next: (response) => {
           this.isLoading = false;
-          console.log('Login successful:', response);
+          // console.log('Login successful:', response);
+          if (response.token) {
+            localStorage.setItem('auth_token', response.token);
+            // console.log('[login.component] Token stocké dans localStorage:', response.token);
+          } else {
+            // console.warn('[login.component] Pas de token dans la réponse !');
+          }
           this.router.navigate(['/accueil']);
         },
         error: (error) => {

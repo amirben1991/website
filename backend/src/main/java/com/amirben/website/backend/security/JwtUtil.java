@@ -26,69 +26,99 @@ public class JwtUtil {
 
     @PostConstruct
     public void init() {
+        System.out.println("[JwtUtil] Initializing JWT util with secret length: " + (secret != null ? secret.length() : "null"));
         if (secret == null || secret.length() < 32) {
+            System.out.println("[JwtUtil] ERROR: JWT secret too short or missing!");
             throw new IllegalStateException("JWT secret must be at least 32 characters. Set jwt.secret env variable.");
         }
         this.secretKey = Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
+        System.out.println("[JwtUtil] SecretKey initialized.");
     }
 
     // Extraire le username du token
     public String extractUsername(String token) {
-        return extractClaim(token, Claims::getSubject);
+        System.out.println("[JwtUtil] Extracting username from token: " + token);
+        String username = extractClaim(token, Claims::getSubject);
+        System.out.println("[JwtUtil] Username extracted: " + username);
+        return username;
     }
 
     // Extraire la date d'expiration
     public Date extractExpiration(String token) {
-        return extractClaim(token, Claims::getExpiration);
+        System.out.println("[JwtUtil] Extracting expiration from token.");
+        Date exp = extractClaim(token, Claims::getExpiration);
+        System.out.println("[JwtUtil] Expiration: " + exp);
+        return exp;
     }
 
     // Extraire un claim spécifique
     public <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
+        System.out.println("[JwtUtil] Extracting claim from token.");
         final Claims claims = extractAllClaims(token);
-        return claimsResolver.apply(claims);
+        T result = claimsResolver.apply(claims);
+        System.out.println("[JwtUtil] Claim extracted: " + result);
+        return result;
     }
 
     // Extraire tous les claims
     private Claims extractAllClaims(String token) {
-        return Jwts.parser()
+        System.out.println("[JwtUtil] Extracting all claims from token.");
+        Claims claims = Jwts.parser()
             .verifyWith(secretKey)
                 .build()
                 .parseSignedClaims(token)
                 .getPayload();
+        System.out.println("[JwtUtil] Claims: " + claims);
+        return claims;
     }
 
     // Vérifier si le token est expiré
     private Boolean isTokenExpired(String token) {
-        return extractExpiration(token).before(new Date());
+        Date exp = extractExpiration(token);
+        boolean expired = exp.before(new Date());
+        System.out.println("[JwtUtil] Token expired? " + expired);
+        return expired;
     }
 
     // Générer un token
     public String generateToken(String username, String role) {
+        System.out.println("[JwtUtil] Generating token for username: " + username + ", role: " + role);
         Map<String, Object> claims = new HashMap<>();
         claims.put("role", role);
-        return createToken(claims, username);
+        String token = createToken(claims, username);
+        System.out.println("[JwtUtil] Token generated: " + token);
+        return token;
     }
 
     // Créer le token
     private String createToken(Map<String, Object> claims, String subject) {
-        return Jwts.builder()
+        System.out.println("[JwtUtil] Creating token for subject: " + subject);
+        String token = Jwts.builder()
                 .setClaims(claims)
                 .setSubject(subject)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + JWT_EXPIRATION))
                 .signWith(secretKey)
                 .compact();
+        System.out.println("[JwtUtil] Token created: " + token);
+        return token;
     }
 
     // Valider le token
     public Boolean validateToken(String token, String username) {
+        System.out.println("[JwtUtil] Validating token for username: " + username);
         final String extractedUsername = extractUsername(token);
-        return (extractedUsername.equals(username) && !isTokenExpired(token));
+        boolean valid = (extractedUsername.equals(username) && !isTokenExpired(token));
+        System.out.println("[JwtUtil] Token valid? " + valid);
+        return valid;
     }
 
     // Extraire le rôle du token
     public String extractRole(String token) {
+        System.out.println("[JwtUtil] Extracting role from token.");
         Claims claims = extractAllClaims(token);
-        return claims.get("role", String.class);
+        String role = claims.get("role", String.class);
+        System.out.println("[JwtUtil] Role: " + role);
+        return role;
     }
 }

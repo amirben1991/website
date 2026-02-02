@@ -40,8 +40,8 @@ public class SecurityConfig {
                 .requestMatchers(org.springframework.http.HttpMethod.GET, "/api/projects/**").permitAll()
                 .requestMatchers(org.springframework.http.HttpMethod.GET, "/api/education/**").permitAll()
                 .requestMatchers(org.springframework.http.HttpMethod.GET, "/api/experience/**").permitAll()
-                        // DEBUG : Autoriser tout accès à /api/chat/**
-                        .requestMatchers("/api/chat/**").permitAll()
+                        // Requiert authentification pour le chat (sinon Authentication est null)
+                        .requestMatchers("/api/chat/**").authenticated()
                 // POST, PUT, DELETE require ADMIN role
                 .requestMatchers(org.springframework.http.HttpMethod.POST, "/api/projects/**").hasRole("ADMIN")
                 .requestMatchers(org.springframework.http.HttpMethod.PUT, "/api/projects/**").hasRole("ADMIN")
