@@ -13,6 +13,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,6 +23,7 @@ import java.util.Map;
 @RequestMapping("/api/auth")
 @CrossOrigin(origins = "http://localhost:4200")
 public class AuthController {
+    private static final Logger log = LoggerFactory.getLogger(AuthController.class);
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
@@ -69,6 +72,7 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest request) {
         try {
+            log.info("Tentative de connexion pour username: {}", request.getUsername());
             // Authentifier l'utilisateur
             Authentication authentication = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword())
@@ -78,12 +82,15 @@ public class AuthController {
             User user = userRepository.findByUsername(request.getUsername())
                     .orElseThrow(() -> new RuntimeException("User not found"));
 
+            log.info("Utilisateur trouvé: {} | Rôle: {} | Hash stocké: {}", user.getUsername(), user.getRole(), user.getPassword());
+
             // Générer le token
             String token = jwtUtil.generateToken(user.getUsername(), user.getRole().name());
 
             return ResponseEntity.ok(new AuthResponse(token, user.getUsername(), user.getRole().name()));
 
         } catch (Exception e) {
+            log.warn("Échec de connexion pour username: {} | Mot de passe fourni: {} | Erreur: {}", request.getUsername(), request.getPassword(), e.getMessage());
             Map<String, String> error = new HashMap<>();
             error.put("error", "Invalid username or password");
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(error);

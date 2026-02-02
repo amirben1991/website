@@ -117,9 +117,4 @@ deleteUser(id: string): Observable<any> {
 
 /**
  * @deprecated Use the DataService method instead.
- */
-function getAllAuditLogs(): void {
-  // This is a placeholder for a standalone function, but the actual implementation
-  // should use the DataService.getAllAuditLogs() method within an Angular component or service.
-  throw new Error('Use DataService.getAllAuditLogs() instead.');
-}
+
