@@ -23,7 +23,20 @@
               <li><span class="font-medium">École :</span> {{ diploma.school }}</li>
               <li><span class="font-medium">Spécialité :</span> {{ diploma.field }}</li>
               <li><span class="font-medium">Période :</span> {{ diploma.startDate | date:'MMM yyyy' }} - {{ diploma.endDate ? (diploma.endDate | date:'MMM yyyy') : 'En cours' }}</li>
-              <li *ngIf="diploma.description"><span class="font-medium">Description :</span> {{ diploma.description }}</li>
+              <li *ngIf="diploma.description">
+                <span class="font-medium">Description :</span>
+                <ng-container *ngIf="diploma.description.includes('Outils') || diploma.description.includes('Modules') || diploma.description.includes('Compétences') || diploma.description.includes('Technologies')">
+                  <ng-container *ngFor="let part of splitDescriptionParts(diploma.description)" >
+                    <ng-container *ngIf="getTechUrl(part.trim())">
+                      <a [href]="getTechUrl(part.trim())" target="_blank" rel="noopener noreferrer" class="underline text-[#60a5fa] hover:text-[#3b82f6]">{{ part.trim() }}</a>
+                    </ng-container>
+                    <ng-container *ngIf="!getTechUrl(part.trim())">{{ part }}</ng-container>
+                  </ng-container>
+                </ng-container>
+                <ng-container *ngIf="!(diploma.description.includes('Outils') || diploma.description.includes('Modules') || diploma.description.includes('Compétences') || diploma.description.includes('Technologies'))">
+                  {{ diploma.description }}
+                </ng-container>
+              </li>
             </ul>
             <div class="flex gap-3 mt-2" *ngIf="authService.isAdmin()">
               <a [routerLink]="['/education', diploma.id, 'edit']" class="px-4 py-2 bg-[#f59e0b] text-white rounded hover:bg-[#d97706] transition">
@@ -54,7 +67,20 @@
               <li><span class="font-medium">École :</span> {{ cert.school }}</li>
               <li><span class="font-medium">Spécialité :</span> {{ cert.field }}</li>
               <li><span class="font-medium">Période :</span> {{ cert.startDate | date:'MMM yyyy' }} - {{ cert.endDate ? (cert.endDate | date:'MMM yyyy') : 'En cours' }}</li>
-              <li *ngIf="cert.description"><span class="font-medium">Description :</span> {{ cert.description }}</li>
+              <li *ngIf="cert.description">
+                <span class="font-medium">Description :</span>
+                <ng-container *ngIf="cert.description.includes('Outils') || cert.description.includes('Modules') || cert.description.includes('Compétences') || cert.description.includes('Technologies')">
+                  <ng-container *ngFor="let part of splitDescriptionParts(cert.description)" >
+                    <ng-container *ngIf="getTechUrl(part.trim())">
+                      <a [href]="getTechUrl(part.trim())" target="_blank" rel="noopener noreferrer" class="underline text-[#60a5fa] hover:text-[#3b82f6]">{{ part.trim() }}</a>
+                    </ng-container>
+                    <ng-container *ngIf="!getTechUrl(part.trim())">{{ part }}</ng-container>
+                  </ng-container>
+                </ng-container>
+                <ng-container *ngIf="!(cert.description.includes('Outils') || cert.description.includes('Modules') || cert.description.includes('Compétences') || cert.description.includes('Technologies'))">
+                  {{ cert.description }}
+                </ng-container>
+              </li>
             </ul>
             <div class="flex gap-3 mt-2" *ngIf="authService.isAdmin()">
               <a [routerLink]="['/education', cert.id, 'edit']" class="px-4 py-2 bg-[#f59e0b] text-white rounded hover:bg-[#d97706] transition">

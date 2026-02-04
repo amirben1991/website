@@ -4,6 +4,7 @@ import { Education } from '../../models';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
 import educationData from '../../../assets/static-education.json';
+import { TECH_URLS } from '../experience-content/tech-urls';
 
 @Component({
   selector: 'app-education-content',
@@ -35,5 +36,9 @@ export class EducationContentComponent implements OnInit {
   // Suppression désactivée pour la version statique
   deleteEducation(id: string): void {
     alert('Suppression désactivée en mode statique.');
+  }
+
+  getTechUrl(tech: string): string | null {
+    return TECH_URLS[tech.trim()] || null;
   }
 }
