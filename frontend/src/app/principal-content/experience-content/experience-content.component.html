@@ -9,36 +9,41 @@
     </div>
 
     <div class="space-y-6" *ngIf="experiences.length > 0">
-      <div *ngFor="let experience of experiences" class="bg-[#3f4b5d] rounded-lg shadow-md p-6 hover:shadow-xl transition border border-[#60a5fa] border-opacity-20">
-        <div class="flex items-start justify-between mb-4">
-          <div>
-            <h2 class="text-2xl font-semibold text-[#f1f5f9]">{{ experience.position }}</h2>
-            <h3 class="text-xl text-[#60a5fa] font-medium">{{ experience.company }}</h3>
-            <p class="text-[#e2e8f0] mt-1">
-              {{ experience.startDate | date:'MMM yyyy' }} - 
-              {{ experience.endDate ? (experience.endDate | date:'MMM yyyy') : 'Present' }}
-            </p>
+      <div *ngFor="let experience of experiences" class="bg-[#3f4b5d] rounded-lg shadow-md p-2 hover:shadow-xl transition border border-[#60a5fa] border-opacity-20">
+        <button (click)="experience.expanded = !experience.expanded" class="w-full text-left flex items-center justify-between focus:outline-none">
+          <span class="font-semibold text-white">{{ experience.position }} au sein de {{ experience.company }}</span>
+          <span class="text-[#60a5fa]">{{ experience.expanded ? '▲' : '▼' }}</span>
+        </button>
+        <div *ngIf="experience.expanded" class="mt-2">
+          <ul class="list-disc ml-6 text-white">
+            <li><span class="font-medium">Période :</span> {{ experience.startDate | date:'MMM yyyy' }} - {{ experience.endDate ? (experience.endDate | date:'MMM yyyy') : 'Présent' }}</li>
+            <li *ngIf="experience.description"><span class="font-medium">Description :</span> {{ experience.description }}</li>
+            <li *ngIf="experience.techStack && experience.techStack.length > 0">
+              <span class="font-medium">Technologies :</span>
+              <ng-container *ngFor="let tech of experience.techStack.split(',')">
+                <a *ngIf="getTechUrl(tech)"
+                   [href]="getTechUrl(tech)" target="_blank" rel="noopener noreferrer"
+                   class="inline-block px-3 py-1 bg-[#60a5fa] bg-opacity-20 text-[#60a5fa] text-sm rounded-full ml-1 underline hover:text-[#3b82f6]">
+                  {{ tech.trim() }}
+                </a>
+                <span *ngIf="!getTechUrl(tech)"
+                      class="inline-block px-3 py-1 bg-[#60a5fa] bg-opacity-20 text-[#60a5fa] text-sm rounded-full ml-1">
+                  {{ tech.trim() }}
+                </span>
+              </ng-container>
+            </li>
+          </ul>
+          <div class="flex gap-3 mt-2" *ngIf="authService.isAdmin()">
+            <a [routerLink]="['/experience', experience.id, 'edit']" class="px-4 py-2 bg-[#f59e0b] text-white rounded hover:bg-[#d97706] transition">
+              Edit
+            </a>
+            <button 
+              type="button" 
+              (click)="deleteExperience(experience.id)"
+              class="px-4 py-2 bg-[#60a5fa] text-white rounded hover:bg-[#3b82f6] transition">
+              Delete
+            </button>
           </div>
-        </div>
-        
-        <p class="text-[#e2e8f0] mb-4">{{ experience.description }}</p>
-        
-        <div class="flex flex-wrap gap-2 mb-4" *ngIf="experience.techStack && experience.techStack.length > 0">
-          <span *ngFor="let tech of experience.techStack.split(',')" class="inline-block px-3 py-1 bg-[#60a5fa] bg-opacity-20 text-[#60a5fa] text-sm rounded-full">
-            {{ tech.trim() }}
-          </span>
-        </div>
-
-        <div class="flex gap-3" *ngIf="authService.isAdmin()">
-          <a [routerLink]="['/experience', experience.id, 'edit']" class="px-4 py-2 bg-[#f59e0b] text-white rounded hover:bg-[#d97706] transition">
-            Edit
-          </a>
-          <button 
-            type="button" 
-            (click)="deleteExperience(experience.id)"
-            class="px-4 py-2 bg-[#60a5fa] text-white rounded hover:bg-[#3b82f6] transition">
-            Delete
-          </button>
         </div>
       </div>
     </div>

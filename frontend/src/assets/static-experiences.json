@@ -18,7 +18,7 @@
   },
   {
     "id": "jedha-ta-2023",
-    "company": "Jedha Bootcamp",
+    "company": "Jedha AI School",
     "position": "Data Scientist - Teacher Assistant (Freelance)",
     "startDate": "2023-09-01",
     "endDate": "2024-06-01",
@@ -52,7 +52,7 @@
   },
   {
     "id": "jedha-ds-2021",
-    "company": "Jedha Bootcamp",
+    "company": "Jedha AI School",
     "position": "Data Scientist",
     "startDate": "2021-09-01",
     "endDate": "2021-11-01",
@@ -72,15 +72,7 @@
     "position": "Financial communications",
     "startDate": "2019-05-01",
     "endDate": "2019-11-01",
-    "description": "Communication financière."
-  },
-  {
-    "id": "monoprix-2017",
-    "company": "Monoprix",
-    "position": "Equipier Commercial",
-    "startDate": "2017-12-01",
-    "endDate": "2019-01-01",
-    "description": "Vente et gestion de rayon."
+    "description": "Gestion de portefeuille de clients côtés en bourse.\nEcriture de communiqués de presse.\nDiffusion de communiqués de presse."
   },
   {
     "id": "veolia-2015",
@@ -88,7 +80,7 @@
     "position": "Internal Communications Intern",
     "startDate": "2015-02-01",
     "endDate": "2015-08-01",
-    "description": "Gestion de la communication interne, création de supports, reporting RH."
+    "description": "Refonte de l'intranet de la Business Unit OTV LMP."
   },
   {
     "id": "dusens-2013",

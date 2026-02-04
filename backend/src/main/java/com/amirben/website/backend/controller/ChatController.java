@@ -57,7 +57,10 @@ public class ChatController {
 
     @GetMapping("/history")
     public ResponseEntity<List<Map<String, String>>> getHistory(Authentication authentication) {
-        User user = (User) authentication.getPrincipal();
+        String username = authentication.getName();
+        User user = userRepository.findByUsername(username)
+            .orElseThrow(() -> new RuntimeException("User not found"));
+            
         ChatConversation conversation = chatService.getOrCreateConversation(user);
         List<ChatMessage> history = chatService.getConversationHistory(conversation);
 

@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { Experience } from '../../models';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
+import { TECH_URLS } from './tech-urls';
 
 // Importation des données statiques
 import experiencesData from '../../../assets/static-experiences.json';
@@ -22,12 +23,17 @@ export class ExperienceContentComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Conversion des dates string -> Date
+    // Conversion des dates string -> Date et ajout de la propriété expanded
     this.experiences = (experiencesData as any[]).map(e => ({
       ...e,
       startDate: new Date(e.startDate),
-      endDate: e.endDate ? new Date(e.endDate) : undefined
+      endDate: e.endDate ? new Date(e.endDate) : undefined,
+      expanded: false
     }));
+  }
+
+  getTechUrl(tech: string): string | null {
+    return TECH_URLS[tech.trim()] || null;
   }
 
   // Suppression désactivée pour la version statique

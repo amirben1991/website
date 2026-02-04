@@ -1,7 +1,17 @@
 [
   {
+    "id": "eni-2024",
+    "school": "ENI Ecole Informatique, Nantes (à distance)",
+    "degree": "RNCP Niveau 6 - Concepteur Développeur d'Applications",
+    "field": "Développement d’Applications (Backend, Frontend, Base de Données, IA)",
+    "startDate": "2024-10-01",
+    "endDate": "2026-07-01",
+    "description": "Formation en Alternance en développement d’Applications. Outils : Java, Spring Boot, Angular, Symfony, Python, Machine Learning, Microsoft SQL Server.",
+    "type": "diplome"
+  },
+  {
     "id": "jedha-lead-2023",
-    "school": "Jedha",
+    "school": "Jedha AI School",
     "degree": "Lead Data Engineering",
     "field": "Data Engineering",
     "startDate": "2023-04-01",
@@ -21,7 +31,7 @@
   },
   {
     "id": "jedha-ds-2021",
-    "school": "Jedha",
+    "school": "Jedha AI School",
     "degree": "Fullstack Data Science",
     "field": "Data Science",
     "startDate": "2021-09-01",

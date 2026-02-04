@@ -21,11 +21,12 @@ export class EducationContentComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Conversion des dates string -> Date
+    // Conversion des dates string -> Date et ajout de la propriété expanded
     const allEducation = (educationData as any[]).map(e => ({
       ...e,
       startDate: new Date(e.startDate),
-      endDate: e.endDate ? new Date(e.endDate) : undefined
+      endDate: e.endDate ? new Date(e.endDate) : undefined,
+      expanded: false
     }));
     this.diplomas = allEducation.filter(e => e.type === 'diplome');
     this.certifications = allEducation.filter(e => e.type === 'certification');
