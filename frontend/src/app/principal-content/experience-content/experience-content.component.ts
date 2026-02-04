@@ -1,3 +1,4 @@
+import { COMPANY_URLS } from './company-urls';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Experience } from '../../models';
@@ -17,6 +18,9 @@ import experiencesData from '../../../assets/static-experiences.json';
 })
 export class ExperienceContentComponent implements OnInit {
   experiences: Experience[] = [];
+  getCompanyUrl(company: string): string | null {
+    return COMPANY_URLS[company.trim()] || null;
+  }
 
   constructor(
     public authService: AuthService

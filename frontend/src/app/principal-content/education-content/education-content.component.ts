@@ -1,3 +1,4 @@
+import { SCHOOL_URLS } from './school-urls';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Education } from '../../models';
@@ -16,6 +17,14 @@ import { TECH_URLS } from '../experience-content/tech-urls';
 export class EducationContentComponent implements OnInit {
   diplomas: Education[] = [];
   certifications: Education[] = [];
+
+  /**
+   * Découpe la description en parties (séparateur : virgule, point-virgule, ou saut de ligne)
+   */
+  splitDescriptionParts(description: string): string[] {
+    if (!description) return [];
+    return description.split(/[,;\n]/g);
+  }
 
   constructor(
     public authService: AuthService
@@ -40,5 +49,9 @@ export class EducationContentComponent implements OnInit {
 
   getTechUrl(tech: string): string | null {
     return TECH_URLS[tech.trim()] || null;
+  }
+
+  getSchoolUrl(school: string): string | null {
+    return SCHOOL_URLS[school.trim()] || null;
   }
 }

@@ -20,7 +20,12 @@
           </button>
           <div *ngIf="diploma.expanded" class="mt-2">
             <ul class="list-disc ml-6 text-white">
-              <li><span class="font-medium">École :</span> {{ diploma.school }}</li>
+              <li><span class="font-medium">École :</span> 
+                <ng-container *ngIf="getSchoolUrl(diploma.school); else plainSchool">
+                  <a [href]="getSchoolUrl(diploma.school)" target="_blank" rel="noopener noreferrer" class="underline text-[#60a5fa] hover:text-[#3b82f6]">{{ diploma.school }}</a>
+                </ng-container>
+                <ng-template #plainSchool>{{ diploma.school }}</ng-template>
+              </li>
               <li><span class="font-medium">Spécialité :</span> {{ diploma.field }}</li>
               <li><span class="font-medium">Période :</span> {{ diploma.startDate | date:'MMM yyyy' }} - {{ diploma.endDate ? (diploma.endDate | date:'MMM yyyy') : 'En cours' }}</li>
               <li *ngIf="diploma.description">
@@ -64,7 +69,12 @@
           </button>
           <div *ngIf="cert.expanded" class="mt-2">
             <ul class="list-disc ml-6 text-white">
-              <li><span class="font-medium">École :</span> {{ cert.school }}</li>
+              <li><span class="font-medium">École :</span> 
+                <ng-container *ngIf="getSchoolUrl(cert.school); else plainSchoolCert">
+                  <a [href]="getSchoolUrl(cert.school)" target="_blank" rel="noopener noreferrer" class="underline text-[#60a5fa] hover:text-[#3b82f6]">{{ cert.school }}</a>
+                </ng-container>
+                <ng-template #plainSchoolCert>{{ cert.school }}</ng-template>
+              </li>
               <li><span class="font-medium">Spécialité :</span> {{ cert.field }}</li>
               <li><span class="font-medium">Période :</span> {{ cert.startDate | date:'MMM yyyy' }} - {{ cert.endDate ? (cert.endDate | date:'MMM yyyy') : 'En cours' }}</li>
               <li *ngIf="cert.description">

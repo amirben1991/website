@@ -11,7 +11,12 @@
     <div class="space-y-6" *ngIf="experiences.length > 0">
       <div *ngFor="let experience of experiences" class="bg-[#3f4b5d] rounded-lg shadow-md p-2 hover:shadow-xl transition border border-[#60a5fa] border-opacity-20">
         <button (click)="experience.expanded = !experience.expanded" class="w-full text-left flex items-center justify-between focus:outline-none">
-          <span class="font-semibold text-white">{{ experience.position }} au sein de {{ experience.company }}</span>
+          <span class="font-semibold text-white">{{ experience.position }} au sein de 
+            <ng-container *ngIf="getCompanyUrl(experience.company); else plainCompany">
+              <a [href]="getCompanyUrl(experience.company)" target="_blank" rel="noopener noreferrer" class="underline text-[#60a5fa] hover:text-[#3b82f6]">{{ experience.company }}</a>
+            </ng-container>
+            <ng-template #plainCompany>{{ experience.company }}</ng-template>
+          </span>
           <span class="text-[#60a5fa]">{{ experience.expanded ? '▲' : '▼' }}</span>
         </button>
         <div *ngIf="experience.expanded" class="mt-2">
