@@ -2,11 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { DataService } from '../../services/data.service';
-import { AuthService } from '../../services/auth.service';
-import { Project } from '../../models';
-import { Observable } from 'rxjs';
-
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs'; // Import Observable
+import { AuthService } from '../../services/auth.service'; // Import AuthService
+import { Project } from '../../models/project.model'; // Import Project model
 
 @Component({
     standalone: true,
@@ -17,32 +16,21 @@ import { Observable } from 'rxjs';
 })
 export class ProjectsContentComponent implements OnInit {
 
-  projects$: Observable<Project[]>;
+  projects$: Observable<Project[]>; // Properly typed Observable
 
-  constructor(private dataService: DataService, public authService: AuthService) {
-    this.projects$ = this.dataService.getProjects();
+  constructor(private http: HttpClient, public authService: AuthService) { // Changed AuthService to public
+    this.projects$ = this.http.get<Project[]>('/assets/static-projects.json');
   }
 
   ngOnInit(): void {
     // Optional: logging for debugging
-    this.projects$.subscribe(data => {
+    this.projects$.subscribe((data: Project[]) => { // Explicitly type data
         console.log('Projects data loaded:', data);
-    })
+    });
   }
 
-    deleteProject(id: string): void {
-    if (confirm('Are you sure you want to delete this project?')) {
-      this.dataService.deleteProject(id).subscribe({
-        next: () => {
-          console.log('Project deleted successfully');
-          // Recharger les projets
-          this.projects$ = this.dataService.getProjects();
-        },
-        error: (err) => {
-          console.error('Error deleting project:', err);
-          alert('Error deleting project');
-        }
-      });
-    }
+  deleteProject(id: string): void {
+    console.error('Delete functionality is not supported with static data.');
+    alert('Delete functionality is not available in static mode.');
   }
 }

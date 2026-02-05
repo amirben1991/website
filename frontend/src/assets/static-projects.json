@@ -1,0 +1,65 @@
+[
+  {
+    "id": "logistics-shipping-rates",
+    "title": "Logistics Shipping Rates",
+    "description": "A Python project for calculating and optimizing shipping rates for logistics companies.",
+    "tech_stack": ["Python"],
+    "github_link": "https://github.com/amirben1991/LogisticsShippingRates"
+  },
+  {
+    "id": "coursera-practice",
+    "title": "Coursera Practice",
+    "description": "A repository for practicing labs and exercises from Coursera courses.",
+    "tech_stack": ["Python"],
+    "github_link": "https://github.com/amirben1991/coursera_practice"
+  },
+  {
+    "id": "my-youtube",
+    "title": "My YouTube",
+    "description": "A YouTube clone built with Angular, showcasing video streaming and user interaction features.",
+    "tech_stack": ["TypeScript", "Angular"],
+    "github_link": "https://github.com/amirben1991/MyYoutube"
+  },
+  {
+    "id": "demo-git-2410",
+    "title": "Demo Git 2410",
+    "description": "A demo repository for Git practices and demonstrations.",
+    "tech_stack": ["Git"],
+    "github_link": "https://github.com/amirben1991/demoGit2410"
+  },
+  {
+    "id": "ludotheque",
+    "title": "Ludothèque",
+    "description": "A Java project using Spring Boot for managing a library of games.",
+    "tech_stack": ["Java", "Spring Boot"],
+    "github_link": "https://github.com/amirben1991/Ludotheque"
+  },
+  {
+    "id": "practice-bootstrap",
+    "title": "Practice Bootstrap",
+    "description": "A project for practicing Bootstrap-based layouts and responsive design.",
+    "tech_stack": ["HTML", "CSS", "Bootstrap"],
+    "github_link": "https://github.com/amirben1991/practice_bootstrap"
+  },
+  {
+    "id": "gkpbt-css-circle",
+    "title": "GKPBT CSS Circle",
+    "description": "A forked project from IBM showcasing CSS techniques for creating circular layouts.",
+    "tech_stack": ["HTML", "CSS"],
+    "github_link": "https://github.com/amirben1991/gkpbt-css-circle"
+  },
+  {
+    "id": "prince",
+    "title": "Prince",
+    "description": "A GitHub profile README showcasing personal projects and achievements.",
+    "tech_stack": ["Markdown"],
+    "github_link": "https://github.com/amirben1991/prince"
+  },
+  {
+    "id": "euromillion",
+    "title": "Euromillion",
+    "description": "A full-stack project for web scraping and deploying an application for lottery analysis.",
+    "tech_stack": ["Python", "Web Scraping", "Deployment"],
+    "github_link": "https://github.com/amirben1991/euromillion"
+  }
+]

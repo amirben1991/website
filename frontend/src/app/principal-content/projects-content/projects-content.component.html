@@ -6,7 +6,7 @@
         + Ajouter un projet
       </a>
     </div>
-    
+
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" *ngIf="projects$ | async as projects">
       <div *ngFor="let project of projects" class="bg-[#3f4b5d] rounded-lg shadow-md overflow-hidden hover:shadow-xl transition transform hover:-translate-y-1 border border-[#60a5fa] border-opacity-20">
         <div *ngIf="project.imageUrl" class="h-48 overflow-hidden bg-[#2d3748]">
@@ -30,7 +30,7 @@
             <a *ngIf="project.liveUrl" [href]="project.liveUrl" target="_blank" class="flex-1 text-center px-4 py-2 bg-[#60a5fa] text-white rounded hover:bg-[#3b82f6] transition">
               Live Demo
             </a>
-                        <ng-container *ngIf="authService.isAdmin()">
+            <ng-container *ngIf="authService.isAdmin()">
               <a [routerLink]="['/projects', project.id, 'edit']" class="flex-1 text-center px-4 py-2 bg-[#f59e0b] text-white rounded hover:bg-[#d97706] transition">
                 Edit
               </a>
@@ -44,10 +44,6 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <div *ngIf="!(projects$ | async)" class="text-center py-12">
-      <p class="text-[#cbd5e1]">Loading projects...</p>
     </div>
   </div>
 </div>
