@@ -1,56 +1,65 @@
-<div class="h-full bg-[#2d3748] py-12 overflow-y-auto">
+<div class="h-full bg-gradient-to-br from-[#1a1f2e] via-[#1e2538] to-[#252d42] py-12 overflow-y-auto">
   <div class="max-w-6xl mx-auto px-8">
-    <h1 class="text-4xl font-bold text-[#f1f5f9] mb-12 text-center">Parcours Académique</h1>
+    <h1 class="text-4xl font-bold text-white mb-12 text-center animate-fade-in-up">
+      <span class="bg-gradient-to-r from-[#60a5fa] to-[#a78bfa] bg-clip-text text-transparent">Parcours Académique</span>
+    </h1>
     
-    <div class="mb-8">
-      <a *ngIf="authService.isAdmin()" [routerLink]="['/education', 'new']" class="inline-block px-6 py-2 bg-[#60a5fa] text-white rounded-lg hover:bg-[#3b82f6] transition">
+    <div class="mb-8 animate-fade-in-up" style="animation-delay: 0.1s;">
+      <a *ngIf="authService.isAdmin()" [routerLink]="['/education', 'new']" 
+        class="inline-block px-6 py-2 bg-gradient-to-r from-[#60a5fa] to-[#3b82f6] text-white rounded-lg hover:from-[#3b82f6] hover:to-[#2563eb] transition-all duration-300 hover:shadow-glow">
         + Ajouter une formation
       </a>
     </div>
 
-
-
-    <section>
-      <h2 class="text-xl font-bold mb-2 text-white">Diplômes (finis ou en cours)</h2>
-      <ul>
-        <li *ngFor="let diploma of diplomas" class="mb-2 bg-[#3f4b5d] rounded-lg shadow-md p-2 hover:shadow-xl transition border border-[#60a5fa] border-opacity-20">
-          <button (click)="diploma.expanded = !diploma.expanded" class="w-full text-left flex items-center justify-between focus:outline-none">
-            <span class="font-semibold text-white">{{ diploma.degree }}</span>
-            <span class="text-[#60a5fa]">{{ diploma.expanded ? '▲' : '▼' }}</span>
+    <section class="animate-fade-in-up" style="animation-delay: 0.2s;">
+      <h2 class="text-xl font-bold mb-4 text-white flex items-center gap-2">
+        <span class="w-8 h-8 bg-[#60a5fa]/20 rounded-lg flex items-center justify-center text-[#60a5fa]">🎓</span>
+        Diplômes (finis ou en cours)
+      </h2>
+      <ul class="space-y-3">
+        <li *ngFor="let diploma of diplomas; let i = index" 
+          class="bg-[#252d42]/80 backdrop-blur-sm rounded-xl shadow-card p-4 hover:shadow-card-hover transition-all duration-300 border border-[#60a5fa]/10 hover:border-[#60a5fa]/30 animate-fade-in-up"
+          [style.animation-delay]="(0.3 + i * 0.1) + 's'">
+          <button (click)="diploma.expanded = !diploma.expanded" class="w-full text-left flex items-center justify-between focus:outline-none group">
+            <span class="font-semibold text-white group-hover:text-[#60a5fa] transition-colors duration-300">{{ diploma.degree }}</span>
+            <span class="text-[#60a5fa] transition-transform duration-300" [class.rotate-180]="diploma.expanded">▼</span>
           </button>
-          <div *ngIf="diploma.expanded" class="mt-2">
-            <ul class="list-disc ml-6 text-white">
-              <li><span class="font-medium">École :</span> 
+          <div *ngIf="diploma.expanded" class="mt-4 pt-4 border-t border-[#60a5fa]/10 animate-slide-down">
+            <ul class="space-y-2 text-[#e2e8f0]">
+              <li class="flex items-start gap-2">
+                <span class="text-[#60a5fa] font-medium min-w-[100px]">École :</span> 
                 <ng-container *ngIf="getSchoolUrl(diploma.school); else plainSchool">
-                  <a [href]="getSchoolUrl(diploma.school)" target="_blank" rel="noopener noreferrer" class="underline text-[#60a5fa] hover:text-[#3b82f6]">{{ diploma.school }}</a>
+                  <a [href]="getSchoolUrl(diploma.school)" target="_blank" rel="noopener noreferrer" class="text-[#60a5fa] hover:text-[#93c5fd] underline transition-colors duration-300">{{ diploma.school }}</a>
                 </ng-container>
                 <ng-template #plainSchool>{{ diploma.school }}</ng-template>
               </li>
-              <li><span class="font-medium">Spécialité :</span> {{ diploma.field }}</li>
-              <li><span class="font-medium">Période :</span> {{ diploma.startDate | date:'MMM yyyy' }} - {{ diploma.endDate ? (diploma.endDate | date:'MMM yyyy') : 'En cours' }}</li>
-              <li *ngIf="diploma.description">
-                <span class="font-medium">Description :</span>
-                <ng-container *ngIf="diploma.description.includes('Outils') || diploma.description.includes('Modules') || diploma.description.includes('Compétences') || diploma.description.includes('Technologies')">
-                  <ng-container *ngFor="let part of splitDescriptionParts(diploma.description)" >
-                    <ng-container *ngIf="getTechUrl(part.trim())">
-                      <a [href]="getTechUrl(part.trim())" target="_blank" rel="noopener noreferrer" class="underline text-[#60a5fa] hover:text-[#3b82f6]">{{ part.trim() }}</a>
-                    </ng-container>
-                    <ng-container *ngIf="!getTechUrl(part.trim())">{{ part }}</ng-container>
-                  </ng-container>
-                </ng-container>
-                <ng-container *ngIf="!(diploma.description.includes('Outils') || diploma.description.includes('Modules') || diploma.description.includes('Compétences') || diploma.description.includes('Technologies'))">
-                  {{ diploma.description }}
-                </ng-container>
+              <li class="flex items-start gap-2">
+                <span class="text-[#60a5fa] font-medium min-w-[100px]">Spécialité :</span> {{ diploma.field }}
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#60a5fa] font-medium min-w-[100px]">Période :</span> {{ diploma.startDate | date:'MMM yyyy' }} - {{ diploma.endDate ? (diploma.endDate | date:'MMM yyyy') : 'En cours' }}
+              </li>
+              <li *ngIf="diploma.description" class="flex items-start gap-2">
+                <span class="text-[#60a5fa] font-medium min-w-[100px]">Description :</span> {{ diploma.description }}
+              </li>
+              <li *ngIf="diploma.highlights && diploma.highlights.length > 0" class="mt-3">
+                <span class="text-[#60a5fa] font-medium">Compétences acquises :</span>
+                <ul class="mt-2 space-y-1">
+                  <li *ngFor="let highlight of diploma.highlights" class="flex items-start gap-2 text-[#cbd5e1]">
+                    <span class="text-[#60a5fa] mt-1">•</span>
+                    {{ highlight }}
+                  </li>
+                </ul>
               </li>
             </ul>
-            <div class="flex gap-3 mt-2" *ngIf="authService.isAdmin()">
-              <a [routerLink]="['/education', diploma.id, 'edit']" class="px-4 py-2 bg-[#f59e0b] text-white rounded hover:bg-[#d97706] transition">
+            <div class="flex gap-3 mt-4" *ngIf="authService.isAdmin()">
+              <a [routerLink]="['/education', diploma.id, 'edit']" class="px-4 py-2 bg-gradient-to-r from-[#f59e0b] to-[#d97706] text-white rounded-lg hover:shadow-glow transition-all duration-300">
                 Edit
               </a>
               <button 
                 type="button" 
                 (click)="deleteEducation(diploma.id)"
-                class="px-4 py-2 bg-[#60a5fa] text-white rounded hover:bg-[#3b82f6] transition">
+                class="px-4 py-2 bg-gradient-to-r from-[#ef4444] to-[#dc2626] text-white rounded-lg hover:shadow-glow transition-all duration-300">
                 Delete
               </button>
             </div>
@@ -59,47 +68,55 @@
       </ul>
     </section>
 
-    <section class="mt-8">
-      <h2 class="text-xl font-bold mb-2 text-white">Certifications professionnelles (en ligne)</h2>
-      <ul>
-        <li *ngFor="let cert of certifications" class="mb-2 bg-[#3f4b5d] rounded-lg shadow-md p-2 hover:shadow-xl transition border border-[#60a5fa] border-opacity-20">
-          <button (click)="cert.expanded = !cert.expanded" class="w-full text-left flex items-center justify-between focus:outline-none">
-            <span class="font-semibold text-white">{{ cert.degree }}</span>
-            <span class="text-[#60a5fa]">{{ cert.expanded ? '▲' : '▼' }}</span>
+    <section class="mt-10 animate-fade-in-up" style="animation-delay: 0.4s;">
+      <h2 class="text-xl font-bold mb-4 text-white flex items-center gap-2">
+        <span class="w-8 h-8 bg-[#a78bfa]/20 rounded-lg flex items-center justify-center text-[#a78bfa]">📜</span>
+        Certifications professionnelles (en ligne)
+      </h2>
+      <ul class="space-y-3">
+        <li *ngFor="let cert of certifications; let i = index" 
+          class="bg-[#252d42]/80 backdrop-blur-sm rounded-xl shadow-card p-4 hover:shadow-card-hover transition-all duration-300 border border-[#a78bfa]/10 hover:border-[#a78bfa]/30 animate-fade-in-up"
+          [style.animation-delay]="(0.5 + i * 0.1) + 's'">
+          <button (click)="cert.expanded = !cert.expanded" class="w-full text-left flex items-center justify-between focus:outline-none group">
+            <span class="font-semibold text-white group-hover:text-[#a78bfa] transition-colors duration-300">{{ cert.degree }}</span>
+            <span class="text-[#a78bfa] transition-transform duration-300" [class.rotate-180]="cert.expanded">▼</span>
           </button>
-          <div *ngIf="cert.expanded" class="mt-2">
-            <ul class="list-disc ml-6 text-white">
-              <li><span class="font-medium">École :</span> 
+          <div *ngIf="cert.expanded" class="mt-4 pt-4 border-t border-[#a78bfa]/10 animate-slide-down">
+            <ul class="space-y-2 text-[#e2e8f0]">
+              <li class="flex items-start gap-2">
+                <span class="text-[#a78bfa] font-medium min-w-[100px]">École :</span> 
                 <ng-container *ngIf="getSchoolUrl(cert.school); else plainSchoolCert">
-                  <a [href]="getSchoolUrl(cert.school)" target="_blank" rel="noopener noreferrer" class="underline text-[#60a5fa] hover:text-[#3b82f6]">{{ cert.school }}</a>
+                  <a [href]="getSchoolUrl(cert.school)" target="_blank" rel="noopener noreferrer" class="text-[#a78bfa] hover:text-[#c4b5fd] underline transition-colors duration-300">{{ cert.school }}</a>
                 </ng-container>
                 <ng-template #plainSchoolCert>{{ cert.school }}</ng-template>
               </li>
-              <li><span class="font-medium">Spécialité :</span> {{ cert.field }}</li>
-              <li><span class="font-medium">Période :</span> {{ cert.startDate | date:'MMM yyyy' }} - {{ cert.endDate ? (cert.endDate | date:'MMM yyyy') : 'En cours' }}</li>
-              <li *ngIf="cert.description">
-                <span class="font-medium">Description :</span>
-                <ng-container *ngIf="cert.description.includes('Outils') || cert.description.includes('Modules') || cert.description.includes('Compétences') || cert.description.includes('Technologies')">
-                  <ng-container *ngFor="let part of splitDescriptionParts(cert.description)" >
-                    <ng-container *ngIf="getTechUrl(part.trim())">
-                      <a [href]="getTechUrl(part.trim())" target="_blank" rel="noopener noreferrer" class="underline text-[#60a5fa] hover:text-[#3b82f6]">{{ part.trim() }}</a>
-                    </ng-container>
-                    <ng-container *ngIf="!getTechUrl(part.trim())">{{ part }}</ng-container>
-                  </ng-container>
-                </ng-container>
-                <ng-container *ngIf="!(cert.description.includes('Outils') || cert.description.includes('Modules') || cert.description.includes('Compétences') || cert.description.includes('Technologies'))">
-                  {{ cert.description }}
-                </ng-container>
+              <li class="flex items-start gap-2">
+                <span class="text-[#a78bfa] font-medium min-w-[100px]">Spécialité :</span> {{ cert.field }}
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#a78bfa] font-medium min-w-[100px]">Période :</span> {{ cert.startDate | date:'MMM yyyy' }} - {{ cert.endDate ? (cert.endDate | date:'MMM yyyy') : 'En cours' }}
+              </li>
+              <li *ngIf="cert.description" class="flex items-start gap-2">
+                <span class="text-[#a78bfa] font-medium min-w-[100px]">Description :</span> {{ cert.description }}
+              </li>
+              <li *ngIf="cert.highlights && cert.highlights.length > 0" class="mt-3">
+                <span class="text-[#a78bfa] font-medium">Compétences acquises :</span>
+                <ul class="mt-2 space-y-1">
+                  <li *ngFor="let highlight of cert.highlights" class="flex items-start gap-2 text-[#cbd5e1]">
+                    <span class="text-[#a78bfa] mt-1">•</span>
+                    {{ highlight }}
+                  </li>
+                </ul>
               </li>
             </ul>
-            <div class="flex gap-3 mt-2" *ngIf="authService.isAdmin()">
-              <a [routerLink]="['/education', cert.id, 'edit']" class="px-4 py-2 bg-[#f59e0b] text-white rounded hover:bg-[#d97706] transition">
+            <div class="flex gap-3 mt-4" *ngIf="authService.isAdmin()">
+              <a [routerLink]="['/education', cert.id, 'edit']" class="px-4 py-2 bg-gradient-to-r from-[#f59e0b] to-[#d97706] text-white rounded-lg hover:shadow-glow transition-all duration-300">
                 Edit
               </a>
               <button 
                 type="button" 
                 (click)="deleteEducation(cert.id)"
-                class="px-4 py-2 bg-[#60a5fa] text-white rounded hover:bg-[#3b82f6] transition">
+                class="px-4 py-2 bg-gradient-to-r from-[#ef4444] to-[#dc2626] text-white rounded-lg hover:shadow-glow transition-all duration-300">
                 Delete
               </button>
             </div>

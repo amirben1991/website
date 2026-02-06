@@ -15,4 +15,9 @@ public interface ChatMessageRepository extends JpaRepository<ChatMessage, UUID> 
      * Récupère tous les messages d'une conversation, triés par date croissante.
      */
     List<ChatMessage> findByConversationOrderByCreatedAtAsc(ChatConversation conversation);
+
+    /**
+     * Supprime tous les messages d'une conversation.
+     */
+    void deleteByConversation(ChatConversation conversation);
 }

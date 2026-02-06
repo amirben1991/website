@@ -7,5 +7,6 @@ export interface Education {
     endDate?: Date;
     description: string;
     type: 'diplome' | 'certification';
+    highlights?: string[];
     expanded?: boolean;
 }

@@ -24,4 +24,8 @@ export class ChatService {
   getHistory(): Observable<ChatHistoryItem[]> {
     return this.http.get<ChatHistoryItem[]>('/api/chat/history');
   }
+
+  clearHistory(): Observable<{ message: string }> {
+    return this.http.delete<{ message: string }>('/api/chat/history');
+  }
 }

@@ -1,0 +1,91 @@
+{
+  "NAV": {
+    "HOME": "Accueil",
+    "EDUCATION": "Parcours Académique",
+    "EXPERIENCE": "Expérience",
+    "PROJECTS": "Projets",
+    "LOGIN": "Se connecter",
+    "LOGOUT": "Déconnexion",
+    "REGISTER": "S'inscrire",
+    "ADMIN": "Admin"
+  },
+  "HOME": {
+    "TITLE": "Bienvenue",
+    "SUBTITLE": "Développeur Fullstack & Data Scientist"
+  },
+  "EDUCATION": {
+    "TITLE": "Parcours Académique",
+    "DIPLOMAS": "Diplômes (finis ou en cours)",
+    "CERTIFICATIONS": "Certifications professionnelles (en ligne)",
+    "ADD": "+ Ajouter une formation",
+    "SCHOOL": "École",
+    "FIELD": "Spécialité",
+    "PERIOD": "Période",
+    "DESCRIPTION": "Description",
+    "SKILLS": "Compétences acquises",
+    "IN_PROGRESS": "En cours",
+    "EDIT": "Modifier",
+    "DELETE": "Supprimer"
+  },
+  "EXPERIENCE": {
+    "TITLE": "Expérience Professionnelle",
+    "ADD": "+ Ajouter une expérience",
+    "AT": "au sein de",
+    "PERIOD": "Période",
+    "DESCRIPTION": "Description",
+    "MISSIONS": "Missions principales",
+    "TECHNOLOGIES": "Technologies",
+    "PRESENT": "Présent",
+    "EDIT": "Modifier",
+    "DELETE": "Supprimer",
+    "NO_EXPERIENCE": "Aucune expérience à afficher."
+  },
+  "PROJECTS": {
+    "TITLE": "Mes Projets",
+    "ADD": "+ Ajouter un projet",
+    "GITHUB": "GitHub",
+    "LIVE_DEMO": "Live Demo",
+    "FEATURED": "⭐ Featured",
+    "EDIT": "Modifier",
+    "DELETE": "Supprimer"
+  },
+  "AUTH": {
+    "LOGIN_TITLE": "Se connecter",
+    "REGISTER_TITLE": "Créer un compte",
+    "USERNAME": "Nom d'utilisateur",
+    "EMAIL": "Email",
+    "PASSWORD": "Mot de passe",
+    "CONFIRM_PASSWORD": "Confirmer le mot de passe",
+    "ROLE": "Rôle",
+    "ROLE_USER": "Utilisateur (lecture seule)",
+    "ROLE_ADMIN": "Administrateur (accès complet)",
+    "SUBMIT_LOGIN": "Se connecter",
+    "SUBMIT_REGISTER": "S'inscrire",
+    "LOADING": "Chargement...",
+    "NO_ACCOUNT": "Pas de compte ?",
+    "HAS_ACCOUNT": "Déjà un compte ?",
+    "BACK_HOME": "Retour à l'accueil",
+    "ERRORS": {
+      "USERNAME_REQUIRED": "Le nom d'utilisateur est requis",
+      "USERNAME_MIN": "Minimum 3 caractères",
+      "EMAIL_REQUIRED": "L'email est requis",
+      "EMAIL_INVALID": "Format d'email invalide",
+      "PASSWORD_REQUIRED": "Le mot de passe est requis",
+      "PASSWORD_MIN": "Minimum 6 caractères",
+      "CONFIRM_REQUIRED": "La confirmation est requise",
+      "PASSWORD_MISMATCH": "Les mots de passe ne correspondent pas"
+    }
+  },
+  "CHAT": {
+    "WELCOME": "Bonjour ! Je suis Jarvis, l'assistant personnel de PrinceDev. Je suis là pour répondre à vos questions sur son portfolio, ses projets, son expérience et ses compétences. Que souhaitez-vous savoir ?",
+    "PLACEHOLDER": "Écrivez votre message...",
+    "SEND": "Envoyer"
+  },
+  "COMMON": {
+    "LOADING": "Chargement...",
+    "ERROR": "Une erreur est survenue",
+    "SAVE": "Enregistrer",
+    "CANCEL": "Annuler",
+    "CLOSE": "Fermer"
+  }
+}

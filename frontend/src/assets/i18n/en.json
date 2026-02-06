@@ -1,0 +1,91 @@
+{
+  "NAV": {
+    "HOME": "Home",
+    "EDUCATION": "Education",
+    "EXPERIENCE": "Experience",
+    "PROJECTS": "Projects",
+    "LOGIN": "Login",
+    "LOGOUT": "Logout",
+    "REGISTER": "Register",
+    "ADMIN": "Admin"
+  },
+  "HOME": {
+    "TITLE": "Welcome",
+    "SUBTITLE": "Fullstack Developer & Data Scientist"
+  },
+  "EDUCATION": {
+    "TITLE": "Education",
+    "DIPLOMAS": "Degrees (completed or in progress)",
+    "CERTIFICATIONS": "Professional Certifications (online)",
+    "ADD": "+ Add education",
+    "SCHOOL": "School",
+    "FIELD": "Field",
+    "PERIOD": "Period",
+    "DESCRIPTION": "Description",
+    "SKILLS": "Skills acquired",
+    "IN_PROGRESS": "In progress",
+    "EDIT": "Edit",
+    "DELETE": "Delete"
+  },
+  "EXPERIENCE": {
+    "TITLE": "Professional Experience",
+    "ADD": "+ Add experience",
+    "AT": "at",
+    "PERIOD": "Period",
+    "DESCRIPTION": "Description",
+    "MISSIONS": "Main responsibilities",
+    "TECHNOLOGIES": "Technologies",
+    "PRESENT": "Present",
+    "EDIT": "Edit",
+    "DELETE": "Delete",
+    "NO_EXPERIENCE": "No experience to display."
+  },
+  "PROJECTS": {
+    "TITLE": "My Projects",
+    "ADD": "+ Add project",
+    "GITHUB": "GitHub",
+    "LIVE_DEMO": "Live Demo",
+    "FEATURED": "⭐ Featured",
+    "EDIT": "Edit",
+    "DELETE": "Delete"
+  },
+  "AUTH": {
+    "LOGIN_TITLE": "Login",
+    "REGISTER_TITLE": "Create an account",
+    "USERNAME": "Username",
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "CONFIRM_PASSWORD": "Confirm password",
+    "ROLE": "Role",
+    "ROLE_USER": "User (read only)",
+    "ROLE_ADMIN": "Administrator (full access)",
+    "SUBMIT_LOGIN": "Login",
+    "SUBMIT_REGISTER": "Register",
+    "LOADING": "Loading...",
+    "NO_ACCOUNT": "No account?",
+    "HAS_ACCOUNT": "Already have an account?",
+    "BACK_HOME": "Back to home",
+    "ERRORS": {
+      "USERNAME_REQUIRED": "Username is required",
+      "USERNAME_MIN": "Minimum 3 characters",
+      "EMAIL_REQUIRED": "Email is required",
+      "EMAIL_INVALID": "Invalid email format",
+      "PASSWORD_REQUIRED": "Password is required",
+      "PASSWORD_MIN": "Minimum 6 characters",
+      "CONFIRM_REQUIRED": "Confirmation is required",
+      "PASSWORD_MISMATCH": "Passwords do not match"
+    }
+  },
+  "CHAT": {
+    "WELCOME": "Hello! I'm Jarvis, PrinceDev's personal assistant. I'm here to answer your questions about his portfolio, projects, experience, and skills. What would you like to know?",
+    "PLACEHOLDER": "Type your message...",
+    "SEND": "Send"
+  },
+  "COMMON": {
+    "LOADING": "Loading...",
+    "ERROR": "An error occurred",
+    "SAVE": "Save",
+    "CANCEL": "Cancel",
+    "CLOSE": "Close"
+  }
+}

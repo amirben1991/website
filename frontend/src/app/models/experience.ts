@@ -6,5 +6,6 @@ export interface Experience {
     endDate?: Date;
     description: string;
     techStack: string;
+    highlights?: string[];
     expanded?: boolean;
 }

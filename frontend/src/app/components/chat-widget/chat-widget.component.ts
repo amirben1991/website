@@ -34,6 +34,11 @@ export class ChatWidgetComponent {
   ) {}
 
   async ngOnInit() {
+    // Écoute les événements de login pour réinitialiser Jarvis
+    this.authService.loginEvent$.subscribe(() => {
+      this.resetJarvis();
+    });
+
     // Ouvre automatiquement le widget si l'utilisateur est connecté
     this.authService.isAuthenticated$.subscribe(isAuth => {
       if (isAuth && !this.isOpen) {
@@ -43,6 +48,23 @@ export class ChatWidgetComponent {
         }, 500);
       }
     });
+  }
+
+  /**
+   * Réinitialise Jarvis : supprime l'historique et affiche le message de bienvenue
+   */
+  async resetJarvis() {
+    try {
+      await this.chat.clearHistory().toPromise();
+      this.messages = [];
+      this.messages.push({
+        role: 'assistant',
+        content: "Bonjour ! Je suis Jarvis, l'assistant personnel de PrinceDev. Je suis là pour répondre à vos questions sur son portfolio, ses projets, son expérience et ses compétences. Que souhaitez-vous savoir ?"
+      });
+      this.scrollToBottom();
+    } catch (e) {
+      console.error('Erreur lors de la réinitialisation de Jarvis:', e);
+    }
   }
 
   async loadHistoryOrWelcome() {

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
@@ -24,8 +24,21 @@ export class RegisterComponent {
         username: ['', [Validators.required, Validators.minLength(3)]],
         email: ['', [Validators.required, Validators.email]],
         password: ['', [Validators.required, Validators.minLength(6)]],
+        confirmPassword: ['', [Validators.required]],
         role: ['user', [Validators.required]]
-      });
+      }, { validators: this.passwordMatchValidator });
+    }
+
+    // Validateur personnalisé pour vérifier que les mots de passe correspondent
+    passwordMatchValidator(control: AbstractControl): ValidationErrors | null {
+      const password = control.get('password');
+      const confirmPassword = control.get('confirmPassword');
+      
+      if (password && confirmPassword && password.value !== confirmPassword.value) {
+        confirmPassword.setErrors({ passwordMismatch: true });
+        return { passwordMismatch: true };
+      }
+      return null;
     }
     onSubmit(): void {
       if (this.registerForm.valid) {
@@ -58,7 +71,11 @@ export class RegisterComponent {
 
     get password() {
       return this.registerForm.get('password');
-    } 
+    }
+
+    get confirmPassword() {
+      return this.registerForm.get('confirmPassword');
+    }
 
     get role() {
       return this.registerForm.get('role');

@@ -83,6 +83,14 @@ public class ChatService {
     }
 
     /**
+     * Supprime tous les messages d'une conversation (réinitialise Jarvis).
+     */
+    public void clearConversation(ChatConversation conversation) {
+        messageRepository.deleteByConversation(conversation);
+        log.info("Conversation cleared for conversation ID: {}", conversation.getId());
+    }
+
+    /**
      * Formate les messages pour l'API OpenAI.
      * OpenAI attend : [{"role": "user", "content": "..."}, {"role": "assistant", "content": "..."}]
      */

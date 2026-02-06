@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, BehaviorSubject, tap } from 'rxjs';
+import { Observable, BehaviorSubject, Subject, tap } from 'rxjs';
 
 export interface LoginRequest {
   username: string;
@@ -36,6 +36,10 @@ export class AuthService {
   private currentUserSubject = new BehaviorSubject<string | null>(this.getUsername());
   public currentUser$ = this.currentUserSubject.asObservable();
 
+  // Subject pour notifier les composants lors d'un login (réinitialisation de Jarvis)
+  private loginEventSubject = new Subject<void>();
+  public loginEvent$ = this.loginEventSubject.asObservable();
+
   constructor(private http: HttpClient) {}
 
   register(request: RegisterRequest): Observable<AuthResponse> {
@@ -64,6 +68,8 @@ export class AuthService {
     this.storage.setItem(this.roleKey, response.role);
     this.isAuthenticatedSubject.next(true);
     this.currentUserSubject.next(response.username);
+    // Émet l'événement de login pour réinitialiser Jarvis
+    this.loginEventSubject.next();
   }
 
   getToken(): string | null {

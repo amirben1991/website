@@ -1,11 +1,19 @@
-[
+﻿[
   {
     "id": "bpce-2024",
     "company": "BPCE Solutions informatiques",
     "position": "Software Developer",
     "startDate": "2024-10-01",
-    "description": "Maintenance du portefeuille applicatif existant. Développement de nouvelles fonctionnalités. Migration AngularJS → Angular 19. Modernisation des APIs. Travail en Agile (Scrum).",
-    "techStack": "TypeScript, Angular, Java, Spring Boot, Jenkins, Bitbucket, XL Release, tests unitaires"
+    "description": "Développement fullstack dans le secteur bancaire en méthodologie Agile.",
+    "techStack": "TypeScript, Angular, Java, Spring Boot, Jenkins, Bitbucket, XL Release, tests unitaires",
+    "highlights": [
+      "Maintenance et évolution du portefeuille applicatif existant",
+      "Développement de nouvelles fonctionnalités métier",
+      "Migration AngularJS vers Angular 19 (modernisation frontend)",
+      "Modernisation des APIs REST avec Spring Boot",
+      "Mise en place de tests unitaires et d'intégration",
+      "Travail en équipe Agile (Scrum) avec sprints de 2 semaines"
+    ]
   },
   {
     "id": "m2i-2024",
@@ -13,8 +21,14 @@
     "position": "Fullstack Java Developer (Stage)",
     "startDate": "2024-06-01",
     "endDate": "2024-10-01",
-    "description": "Développement fullstack Java/Angular. Participation à des projets de formation à distance.",
-    "techStack": "Java, Jakarta EE, Spring, Angular, JavaScript, TypeScript, Bootstrap"
+    "description": "Développement fullstack Java/Angular pour des projets de formation.",
+    "techStack": "Java, Jakarta EE, Spring, Angular, JavaScript, TypeScript, Bootstrap",
+    "highlights": [
+      "Développement d'applications web avec Java et Angular",
+      "Conception et implémentation d'APIs REST",
+      "Intégration de bases de données relationnelles",
+      "Participation aux revues de code et bonnes pratiques"
+    ]
   },
   {
     "id": "jedha-ta-2023",
@@ -22,8 +36,14 @@
     "position": "Data Scientist - Teacher Assistant (Freelance)",
     "startDate": "2023-09-01",
     "endDate": "2024-06-01",
-    "description": "Assistance sur Python, EDA, Machine Learning, Déploiement.",
-    "techStack": "Docker, Python, MLflow, Streamlit, Scikit-learn, PostgreSQL, Apache Spark"
+    "description": "Accompagnement des étudiants sur les formations Data Science.",
+    "techStack": "Docker, Python, MLflow, Streamlit, Scikit-learn, PostgreSQL, Apache Spark",
+    "highlights": [
+      "Assistance technique sur Python, EDA et Machine Learning",
+      "Aide au déploiement de modèles ML (MLflow, Streamlit)",
+      "Correction et feedback sur les projets étudiants",
+      "Support sur les outils Big Data (Spark, PostgreSQL)"
+    ]
   },
   {
     "id": "pause-2023",
@@ -31,7 +51,7 @@
     "position": "Pause professionnelle",
     "startDate": "2023-07-01",
     "endDate": "2023-09-01",
-    "description": "Pause professionnelle."
+    "description": "Pause professionnelle pour reconversion et formation."
   },
   {
     "id": "quantmetry-2023",
@@ -39,8 +59,14 @@
     "position": "Machine Learning Engineer",
     "startDate": "2023-02-01",
     "endDate": "2023-05-01",
-    "description": "Développement et tests de modèles Machine Learning.",
-    "techStack": "Python, Scikit-learn, tests unitaires"
+    "description": "Développement et industrialisation de modèles Machine Learning.",
+    "techStack": "Python, Scikit-learn, tests unitaires",
+    "highlights": [
+      "Développement de modèles ML pour des clients grands comptes",
+      "Mise en place de pipelines de traitement de données",
+      "Tests unitaires et validation des modèles",
+      "Documentation technique et transfert de connaissances"
+    ]
   },
   {
     "id": "d4g-2021",
@@ -48,7 +74,12 @@
     "position": "Data Scientist",
     "startDate": "2021-12-01",
     "endDate": "2022-04-01",
-    "description": "Participation à des projets Data Science à impact social."
+    "description": "Bénévolat sur des projets Data Science à impact social.",
+    "highlights": [
+      "Participation à des projets open source à impact sociétal",
+      "Analyse de données pour des associations et ONG",
+      "Collaboration avec des équipes pluridisciplinaires"
+    ]
   },
   {
     "id": "jedha-ds-2021",
@@ -56,7 +87,12 @@
     "position": "Data Scientist",
     "startDate": "2021-09-01",
     "endDate": "2021-11-01",
-    "description": "Bootcamp Data Science."
+    "description": "Bootcamp intensif Data Science.",
+    "highlights": [
+      "Formation intensive sur les fondamentaux de la Data Science",
+      "Projets pratiques sur des datasets réels",
+      "Apprentissage des techniques de Machine Learning supervisé et non supervisé"
+    ]
   },
   {
     "id": "textbrokers-2017",
@@ -64,7 +100,12 @@
     "position": "Rédacteur indépendant",
     "startDate": "2017-01-01",
     "endDate": "2021-02-01",
-    "description": "Rédaction d’articles SEO pour divers secteurs."
+    "description": "Rédaction d'articles SEO pour divers secteurs.",
+    "highlights": [
+      "Rédaction de contenus optimisés pour le référencement (SEO)",
+      "Articles pour les secteurs tech, finance et lifestyle",
+      "Gestion autonome des deadlines et livrables"
+    ]
   },
   {
     "id": "cdr-2019",
@@ -72,7 +113,13 @@
     "position": "Financial communications",
     "startDate": "2019-05-01",
     "endDate": "2019-11-01",
-    "description": "Gestion de portefeuille de clients côtés en bourse.\nEcriture de communiqués de presse.\nDiffusion de communiqués de presse."
+    "description": "Communication financière pour des entreprises cotées en bourse.",
+    "highlights": [
+      "Gestion de portefeuille clients (entreprises cotées CAC40 et SBF120)",
+      "Rédaction de communiqués de presse financiers",
+      "Coordination de la diffusion sur les canaux réglementaires",
+      "Veille médiatique et analyse de retombées presse"
+    ]
   },
   {
     "id": "veolia-2015",
@@ -80,7 +127,12 @@
     "position": "Internal Communications Intern",
     "startDate": "2015-02-01",
     "endDate": "2015-08-01",
-    "description": "Refonte de l'intranet de la Business Unit OTV LMP."
+    "description": "Communication interne pour la Business Unit OTV LMP.",
+    "highlights": [
+      "Refonte complète de l'intranet de la Business Unit",
+      "Création de contenus pour la communication interne",
+      "Coordination avec les équipes RH et Direction"
+    ]
   },
   {
     "id": "dusens-2013",
@@ -88,6 +140,11 @@
     "position": "Digital communication intern",
     "startDate": "2013-02-01",
     "endDate": "2013-05-01",
-    "description": "Refonte de site web, gestion de contenus pour Dassault Aviation et Renault."
+    "description": "Communication digitale pour des clients grands comptes.",
+    "highlights": [
+      "Refonte de sites web pour Dassault Aviation et Renault",
+      "Gestion de contenus et CMS",
+      "Support à la stratégie digitale des clients"
+    ]
   }
 ]

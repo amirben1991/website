@@ -12,3 +12,222 @@ html, body {
   height: 100%;
   overflow: hidden;
 }
+
+/* ========================================
+   ANIMATIONS PERSONNALISÉES
+   ======================================== */
+
+/* Animation de fondu d'entrée */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(96, 165, 250, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(96, 165, 250, 0.6);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 500px;
+  }
+}
+
+/* Classes d'animation utilitaires */
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.5s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.5s ease-out forwards;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Animation avec délai pour les listes */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+
+/* ========================================
+   AMÉLIORATION DES TRANSITIONS
+   ======================================== */
+
+/* Transition smooth pour tous les éléments interactifs */
+a, button, input, select, textarea {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Effet de survol amélioré pour les cartes */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(96, 165, 250, 0.2);
+  }
+}
+
+/* Effet de survol pour les boutons */
+.btn-hover {
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+  
+  &:hover::before {
+    left: 100%;
+  }
+}
+
+/* ========================================
+   AMÉLIORATION DES COULEURS
+   ======================================== */
+
+/* Gradient de fond subtil */
+.bg-gradient-dark {
+  background: linear-gradient(135deg, #1a1f2e 0%, #2d3748 50%, #1a1f2e 100%);
+}
+
+.bg-gradient-card {
+  background: linear-gradient(145deg, #3f4b5d 0%, #2d3748 100%);
+}
+
+/* Texte avec meilleur contraste */
+.text-high-contrast {
+  color: #f8fafc;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Bordure lumineuse */
+.border-glow {
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  transition: border-color 0.3s ease;
+  
+  &:hover {
+    border-color: rgba(96, 165, 250, 0.6);
+  }
+}
+
+/* Focus amélioré pour l'accessibilité */
+.focus-ring {
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.5);
+  }
+}
+
+/* ========================================
+   SCROLLBAR PERSONNALISÉE
+   ======================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1f2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #60a5fa;
+  border-radius: 4px;
+  
+  &:hover {
+    background: #3b82f6;
+  }
+}
+
+/* ========================================
+   LOADER / SKELETON
+   ======================================== */
+
+.skeleton {
+  background: linear-gradient(90deg, #3f4b5d 25%, #4a5568 50%, #3f4b5d 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}

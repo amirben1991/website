@@ -73,4 +73,16 @@ public class ChatController {
 
         return ResponseEntity.ok(dto);
     }
+
+    @DeleteMapping("/history")
+    public ResponseEntity<Map<String, String>> clearHistory(Authentication authentication) {
+        String username = authentication.getName();
+        User user = userRepository.findByUsername(username)
+            .orElseThrow(() -> new RuntimeException("User not found"));
+            
+        ChatConversation conversation = chatService.getOrCreateConversation(user);
+        chatService.clearConversation(conversation);
+
+        return ResponseEntity.ok(Map.of("message", "Historique effacé avec succès"));
+    }
 }
