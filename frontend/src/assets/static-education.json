@@ -7,6 +7,8 @@
     "startDate": "2024-10-01",
     "endDate": "2026-07-01",
     "description": "Formation en Alternance en développement d'Applications.",
+    "descriptionFr": "Formation en Alternance en développement d'Applications.",
+    "descriptionEn": "Work-study program in Application Development.",
     "type": "diplome",
     "highlights": [
       "Développement Backend avec Java et Spring Boot",
@@ -14,7 +16,9 @@
       "Conception et gestion de bases de données (SQL Server)",
       "Introduction à l'Intelligence Artificielle et au Machine Learning",
       "Méthodologies Agile et gestion de projet"
-    ]
+    ],
+    "highlightsFr": "Développement Backend : création d'APIs REST sécurisées avec Java 21 et Spring Boot 3.x\nDéveloppement Frontend : applications réactives avec Angular 19, RxJS et state management\nBases de données : modélisation UML, conception de schémas normalisés, requêtes SQL avancées\nDevOps : CI/CD avec Jenkins, conteneurisation Docker, déploiement cloud\nMéthodologies Agile : gestion de projet Scrum, sprints, revues de code et pair programming",
+    "highlightsEn": "Backend Development: creating secure REST APIs with Java 21 and Spring Boot 3.x\nFrontend Development: reactive applications with Angular 19, RxJS and state management\nDatabases: UML modeling, normalized schema design, advanced SQL queries\nDevOps: CI/CD with Jenkins, Docker containerization, cloud deployment\nAgile methodologies: Scrum project management, sprints, code reviews and pair programming"
   },
   {
     "id": "jedha-lead-2023",
@@ -24,6 +28,8 @@
     "startDate": "2023-04-01",
     "endDate": "2023-08-01",
     "description": "Formation avancée en Data Engineering et MLOps.",
+    "descriptionFr": "Formation avancée en Data Engineering et MLOps.",
+    "descriptionEn": "Advanced training in Data Engineering and MLOps.",
     "type": "diplome",
     "highlights": [
       "Distributed Machine Learning avec Apache Spark",
@@ -31,7 +37,9 @@
       "Data Pipelines et orchestration avec Airflow",
       "Containerisation avec Docker et Kubernetes",
       "ML Monitoring et mise en production"
-    ]
+    ],
+    "highlightsFr": "Big Data : traitement distribué avec Apache Spark (PySpark), optimisation des jobs MapReduce\nMLOps : déploiement de modèles ML avec MLflow, versioning des expériences et artefacts\nOrchestration : conception de DAGs complexes avec Apache Airflow, scheduling et monitoring\nConteneurisation : microservices avec Docker, orchestration Kubernetes, Helm charts\nCloud : infrastructure AWS (S3, EC2, Lambda), architecture serverless, cost optimization",
+    "highlightsEn": "Big Data: distributed processing with Apache Spark (PySpark), MapReduce job optimization\nMLOps: ML model deployment with MLflow, experiment and artifact versioning\nOrchestration: complex DAG design with Apache Airflow, scheduling and monitoring\nContainerization: microservices with Docker, Kubernetes orchestration, Helm charts\nCloud: AWS infrastructure (S3, EC2, Lambda), serverless architecture, cost optimization"
   },
   {
     "id": "yotta-2022",
@@ -41,6 +49,8 @@
     "startDate": "2022-09-01",
     "endDate": "2023-01-01",
     "description": "Formation intensive en Machine Learning et IA.",
+    "descriptionFr": "Formation intensive en Machine Learning et IA.",
+    "descriptionEn": "Intensive Machine Learning and AI training.",
     "type": "diplome",
     "highlights": [
       "Data Science et analyse statistique avancée",
@@ -48,7 +58,9 @@
       "Deep Learning avec TensorFlow et PyTorch",
       "Natural Language Processing (NLP)",
       "MLOps et déploiement cloud (AWS, GCP)"
-    ]
+    ],
+    "highlightsFr": "Machine Learning : modèles de régression, classification, clustering (Random Forest, XGBoost, SVM)\nDeep Learning : réseaux de neurones CNN et RNN avec TensorFlow 2.x et PyTorch\nNLP : traitement du langage naturel, word embeddings, transformers (BERT, GPT)\nComputer Vision : détection d'objets, segmentation d'images, transfer learning\nProduction ML : API REST avec FastAPI, conteneurisation, monitoring avec Prometheus/Grafana",
+    "highlightsEn": "Machine Learning: regression, classification, clustering models (Random Forest, XGBoost, SVM)\nDeep Learning: CNN and RNN neural networks with TensorFlow 2.x and PyTorch\nNLP: natural language processing, word embeddings, transformers (BERT, GPT)\nComputer Vision: object detection, image segmentation, transfer learning\nML Production: REST API with FastAPI, containerization, monitoring with Prometheus/Grafana"
   },
   {
     "id": "jedha-ds-2021",
@@ -58,6 +70,8 @@
     "startDate": "2021-09-01",
     "endDate": "2021-11-01",
     "description": "Bootcamp intensif en Data Science.",
+    "descriptionFr": "Bootcamp intensif en Data Science.",
+    "descriptionEn": "Intensive Data Science bootcamp.",
     "type": "diplome",
     "highlights": [
       "Exploratory Data Analysis (EDA) avec Python",
@@ -65,7 +79,9 @@
       "Big Data et traitement distribué",
       "Machine Learning supervisé et non supervisé",
       "Deep Learning et réseaux de neurones"
-    ]
+    ],
+    "highlightsFr": "Python Data Stack : NumPy, Pandas, Matplotlib, Seaborn pour l'analyse et la visualisation\nEDA : nettoyage de données, feature engineering, détection d'anomalies, statistiques descriptives\nWeb Scraping : extraction de données avec BeautifulSoup, Scrapy, gestion des APIs REST\nMachine Learning : scikit-learn, preprocessing, validation croisée, hyperparameter tuning\nProjets : prédiction de prix immobiliers, analyse de sentiments, système de recommandation",
+    "highlightsEn": "Python Data Stack: NumPy, Pandas, Matplotlib, Seaborn for analysis and visualization\nEDA: data cleaning, feature engineering, anomaly detection, descriptive statistics\nWeb Scraping: data extraction with BeautifulSoup, Scrapy, REST API management\nMachine Learning: scikit-learn, preprocessing, cross-validation, hyperparameter tuning\nProjects: real estate price prediction, sentiment analysis, recommendation system"
   },
   {
     "id": "iae-paris-2017",
@@ -75,6 +91,8 @@
     "startDate": "2017-01-01",
     "endDate": "2019-01-01",
     "description": "MBA avec spécialisation en Big Data & Management.",
+    "descriptionFr": "MBA avec spécialisation en Big Data & Management.",
+    "descriptionEn": "MBA with specialization in Big Data & Management.",
     "type": "diplome",
     "highlights": [
       "Strategy et Corporate Finance",
@@ -83,7 +101,9 @@
       "Marketing stratégique et opérationnel",
       "Supply Chain et logistique",
       "Droit des affaires et corporate law"
-    ]
+    ],
+    "highlightsFr": "Finance d'entreprise : analyse financière, valorisation DCF, gestion de trésorerie, M&A\nStratégie : analyse concurrentielle (Porter), business models, études de cas Harvard\nMarketing : segmentation, positionnement, stratégies digitales, CRM et data-driven marketing\nManagement SI : gouvernance IT, transformation digitale, architecture d'entreprise\nLeadership : management d'équipe, négociation, communication interpersonnelle\nBig Data : introduction au Machine Learning, analytics business, data visualization",
+    "highlightsEn": "Corporate Finance: financial analysis, DCF valuation, treasury management, M&A\nStrategy: competitive analysis (Porter), business models, Harvard case studies\nMarketing: segmentation, positioning, digital strategies, CRM and data-driven marketing\nIS Management: IT governance, digital transformation, enterprise architecture\nLeadership: team management, negotiation, interpersonal communication\nBig Data: introduction to Machine Learning, business analytics, data visualization"
   },
   {
     "id": "hec-2018",
@@ -93,6 +113,8 @@
     "startDate": "2018-01-01",
     "endDate": "2018-12-31",
     "description": "Certification en finance d'entreprise.",
+    "descriptionFr": "Certification en finance d'entreprise.",
+    "descriptionEn": "Corporate finance certification.",
     "type": "certification",
     "highlights": [
       "Analyse financière d'entreprise",
@@ -100,7 +122,9 @@
       "Décisions d'investissement et de financement",
       "Fusions et acquisitions (M&A)",
       "Leveraged Buyouts (LBO)"
-    ]
+    ],
+    "highlightsFr": "Analyse financière : lecture de bilans, comptes de résultat, tableaux de flux de trésorerie\nValorisation : méthodes DCF, multiples de marché (EV/EBITDA, P/E), Sum-of-the-Parts\nM&A : due diligence financière, synergies, structuration de deals, négociation\nLBO : montages financiers, dette senior/mezzanine, création de valeur, exit strategies\nCapital Markets : IPO, émissions obligataires, augmentations de capital, relations investisseurs",
+    "highlightsEn": "Financial Analysis: reading balance sheets, income statements, cash flow statements\nValuation: DCF methods, market multiples (EV/EBITDA, P/E), Sum-of-the-Parts\nM&A: financial due diligence, synergies, deal structuring, negotiation\nLBO: financial engineering, senior/mezzanine debt, value creation, exit strategies\nCapital Markets: IPO, bond issuances, capital increases, investor relations"
   },
   {
     "id": "uca-2016",
@@ -110,6 +134,8 @@
     "startDate": "2016-01-01",
     "endDate": "2016-12-31",
     "description": "Licence en Communication avec mémoire sur l'influence des Spin Doctors.",
+    "descriptionFr": "Licence en Communication avec mémoire sur l'influence des Spin Doctors.",
+    "descriptionEn": "Bachelor's in Communication with thesis on Spin Doctors' influence.",
     "type": "diplome",
     "highlights": [
       "Marketing Mix et stratégies d'identité",
@@ -117,6 +143,8 @@
       "Outils de communication et médias",
       "Droit de la communication",
       "Communication corporate et institutionnelle"
-    ]
+    ],
+    "highlightsFr": "Communication corporate : relations presse, communication de crise, réputation d'entreprise\nMarketing : stratégies de marque, communication 360°, médias traditionnels et digitaux\nProduction de contenus : rédaction web, storytelling, création audiovisuelle\nDroit des médias : propriété intellectuelle, droit à l'image, RGPD et données personnelles\nMémoire de recherche : analyse de l'influence des Spin Doctors sur la communication politique",
+    "highlightsEn": "Corporate Communication: media relations, crisis communication, corporate reputation\nMarketing: brand strategies, 360° communication, traditional and digital media\nContent Production: web writing, storytelling, audiovisual creation\nMedia Law: intellectual property, image rights, GDPR and personal data\nResearch Thesis: analysis of Spin Doctors' influence on political communication"
   }
 ]

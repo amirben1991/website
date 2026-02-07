@@ -1,17 +1,32 @@
 {
   "NAV": {
     "HOME": "Accueil",
-    "EDUCATION": "Parcours Académique",
+    "EDUCATION": "Formation",
     "EXPERIENCE": "Expérience",
     "PROJECTS": "Projets",
-    "LOGIN": "Se connecter",
+    "LOGIN": "Connexion",
     "LOGOUT": "Déconnexion",
     "REGISTER": "S'inscrire",
     "ADMIN": "Admin"
   },
   "HOME": {
-    "TITLE": "Bienvenue",
-    "SUBTITLE": "Développeur Fullstack & Data Scientist"
+    "TITLE": "Bienvenue sur mon site",
+    "SUBTITLE": "Développeur Fullstack & Data Scientist",
+    "INTRO": "Passionné par la tech, l'IA et le développement, je vous invite à explorer mon univers professionnel :",
+    "INTRO_PROJECTS": "projets",
+    "INTRO_EXPERIENCES": "expériences",
+    "INTRO_EDUCATION": "formations",
+    "INTRO_END": "et bien plus. Ici, chaque ligne de code raconte une histoire d'apprentissage, d'innovation et de partage.",
+    "CTA": "Suivez mon parcours de développeur",
+    "CARD_PROJECTS": "Projets",
+    "CARD_PROJECTS_DESC": "Découvrez mes réalisations techniques",
+    "CARD_EXPERIENCE": "Expérience",
+    "CARD_EXPERIENCE_DESC": "Mon parcours professionnel",
+    "CARD_EDUCATION": "Formation",
+    "CARD_EDUCATION_DESC": "Mes études et certifications",
+    "JARVIS_TEXT": "Au plaisir d'échanger avec vous de vive voix. En attendant, mon ami",
+    "JARVIS_NAME": "Jarvis",
+    "JARVIS_END": "se fera un plaisir de répondre à vos questions"
   },
   "EDUCATION": {
     "TITLE": "Parcours Académique",
@@ -50,7 +65,7 @@
     "DELETE": "Supprimer"
   },
   "AUTH": {
-    "LOGIN_TITLE": "Se connecter",
+    "LOGIN_TITLE": "Connexion",
     "REGISTER_TITLE": "Créer un compte",
     "USERNAME": "Nom d'utilisateur",
     "EMAIL": "Email",
@@ -62,7 +77,7 @@
     "SUBMIT_LOGIN": "Se connecter",
     "SUBMIT_REGISTER": "S'inscrire",
     "LOADING": "Chargement...",
-    "NO_ACCOUNT": "Pas de compte ?",
+    "NO_ACCOUNT": "Pas encore de compte ?",
     "HAS_ACCOUNT": "Déjà un compte ?",
     "BACK_HOME": "Retour à l'accueil",
     "ERRORS": {

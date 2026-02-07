@@ -40,6 +40,8 @@ public class ProjectController {
         Project project = new Project();
         project.setTitle(projectDTO.getTitle());
         project.setDescription(projectDTO.getDescription());
+        project.setDescriptionFr(projectDTO.getDescriptionFr());
+        project.setDescriptionEn(projectDTO.getDescriptionEn());
         project.setTechStack(projectDTO.getTechStack());
         project.setGithubLink(projectDTO.getGithubLink());
         project.setLiveUrl(projectDTO.getLiveUrl());
@@ -57,6 +59,8 @@ public class ProjectController {
 
         project.setTitle(projectDTO.getTitle());
         project.setDescription(projectDTO.getDescription());
+        project.setDescriptionFr(projectDTO.getDescriptionFr());
+        project.setDescriptionEn(projectDTO.getDescriptionEn());
         project.setTechStack(projectDTO.getTechStack());
         project.setGithubLink(projectDTO.getGithubLink());
         project.setLiveUrl(projectDTO.getLiveUrl());

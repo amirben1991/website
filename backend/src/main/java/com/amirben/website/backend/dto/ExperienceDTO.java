@@ -14,6 +14,12 @@ public class ExperienceDTO {
     private LocalDate startDate;
     private LocalDate endDate;
     private String description;
+    private String descriptionFr;
+    private String descriptionEn;
+    private String positionFr;
+    private String positionEn;
+    private String highlightsFr;
+    private String highlightsEn;
     private String techStack;
 
     // Constructeurs
@@ -75,5 +81,53 @@ public class ExperienceDTO {
 
     public void setTechStack(String techStack) {
         this.techStack = techStack;
+    }
+
+    public String getDescriptionFr() {
+        return descriptionFr;
+    }
+
+    public void setDescriptionFr(String descriptionFr) {
+        this.descriptionFr = descriptionFr;
+    }
+
+    public String getDescriptionEn() {
+        return descriptionEn;
+    }
+
+    public void setDescriptionEn(String descriptionEn) {
+        this.descriptionEn = descriptionEn;
+    }
+
+    public String getPositionFr() {
+        return positionFr;
+    }
+
+    public void setPositionFr(String positionFr) {
+        this.positionFr = positionFr;
+    }
+
+    public String getPositionEn() {
+        return positionEn;
+    }
+
+    public void setPositionEn(String positionEn) {
+        this.positionEn = positionEn;
+    }
+
+    public String getHighlightsFr() {
+        return highlightsFr;
+    }
+
+    public void setHighlightsFr(String highlightsFr) {
+        this.highlightsFr = highlightsFr;
+    }
+
+    public String getHighlightsEn() {
+        return highlightsEn;
+    }
+
+    public void setHighlightsEn(String highlightsEn) {
+        this.highlightsEn = highlightsEn;
     }
 }

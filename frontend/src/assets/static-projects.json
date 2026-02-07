@@ -3,84 +3,109 @@
     "id": "my-youtube",
     "title": "My YouTube",
     "description": "A YouTube clone built with Angular, showcasing video streaming and user interaction features.",
-    "tech_stack": ["TypeScript", "Angular"],
-    "github_link": "https://github.com/amirben1991/MyYoutube"
+    "descriptionFr": "Un clone de YouTube construit avec Angular, présentant des fonctionnalités de streaming vidéo et d'interaction utilisateur.",
+    "descriptionEn": "A YouTube clone built with Angular, showcasing video streaming and user interaction features.",
+    "techStack": "TypeScript, Angular",
+    "githubLink": "https://github.com/amirben1991/MyYoutube"
   },
   {
     "id": "ludotheque",
     "title": "Ludothèque",
     "description": "A Java project using Spring Boot for managing a library of games.",
-    "tech_stack": ["Java", "Spring Boot"],
-    "github_link": "https://github.com/amirben1991/Ludotheque"
+    "descriptionFr": "Un projet Java utilisant Spring Boot pour gérer une bibliothèque de jeux.",
+    "descriptionEn": "A Java project using Spring Boot for managing a library of games.",
+    "techStack": "Java, Spring Boot",
+    "githubLink": "https://github.com/amirben1991/Ludotheque"
   },
   {
     "id": "euromillion",
     "title": "Euromillion",
     "description": "A full-stack project for web scraping and deploying an application for lottery analysis.",
-    "tech_stack": ["Python", "Web Scraping", "Deployment"],
-    "github_link": "https://github.com/amirben1991/euromillion"
+    "descriptionFr": "Un projet full-stack pour le web scraping et le déploiement d'une application d'analyse de loterie.",
+    "descriptionEn": "A full-stack project for web scraping and deploying an application for lottery analysis.",
+    "techStack": "Python, Web Scraping, Streamlit",
+    "githubLink": "https://github.com/amirben1991/euromillion"
   },
   {
     "id": "speed-dating",
     "title": "Speed Dating",
-    "description": "A web application for organizing and managing speed-dating events.",
-    "tech_stack": ["JavaScript", "Node.js", "MongoDB"],
-    "github_link": "https://github.com/amirben1991/speed-dating"
+    "description": "A machine learning project analyzing speed dating data to predict match success.",
+    "descriptionFr": "Un projet de Machine Learning analysant les données de speed dating pour prédire le succès des matchs.",
+    "descriptionEn": "A machine learning project analyzing speed dating data to predict match success.",
+    "techStack": "Python, Scikit-learn, XGBoost, Pandas",
+    "githubLink": "https://github.com/amirben1991/speed-dating"
   },
   {
     "id": "timer-focus",
     "title": "TimerFocus",
     "description": "A productivity timer app to help users focus on tasks using the Pomodoro technique.",
-    "tech_stack": ["React", "TypeScript"],
-    "github_link": "https://github.com/amirben1991/timer-focus"
+    "descriptionFr": "Une application de minuterie Pomodoro pour aider les utilisateurs à se concentrer sur leurs tâches.",
+    "descriptionEn": "A productivity timer app to help users focus on tasks using the Pomodoro technique.",
+    "techStack": "React, TypeScript",
+    "githubLink": "https://github.com/amirben1991/timer-focus"
   },
   {
     "id": "generator",
     "title": "Generator",
     "description": "A tool for generating random data for testing and development purposes.",
-    "tech_stack": ["Python"],
-    "github_link": "https://github.com/amirben1991/generator"
-  },
-  {
-    "id": "x",
-    "title": "X",
-    "description": "An experimental project exploring new technologies and frameworks.",
-    "tech_stack": ["Go", "Kubernetes"],
-    "github_link": "https://github.com/amirben1991/x"
+    "descriptionFr": "Un outil pour générer des données aléatoires à des fins de test et de développement.",
+    "descriptionEn": "A tool for generating random data for testing and development purposes.",
+    "techStack": "Python",
+    "githubLink": "https://github.com/amirben1991/generator"
   },
   {
     "id": "getaround",
     "title": "Getaround",
-    "description": "A car-sharing platform for renting and lending vehicles.",
-    "tech_stack": ["Ruby on Rails", "PostgreSQL"],
-    "github_link": "https://github.com/amirben1991/getaround"
+    "description": "Analysis of car rental pricing and optimization using machine learning.",
+    "descriptionFr": "Analyse de la tarification de location de voitures et optimisation avec le Machine Learning.",
+    "descriptionEn": "Analysis of car rental pricing and optimization using machine learning.",
+    "techStack": "Python, FastAPI, Streamlit, MLflow",
+    "githubLink": "https://github.com/amirben1991/getaround"
   },
   {
     "id": "at-t-spam-detector",
     "title": "AT&T Spam Detector",
     "description": "A machine learning model to detect spam messages in telecommunications.",
-    "tech_stack": ["Python", "TensorFlow"],
-    "github_link": "https://github.com/amirben1991/at-t-spam-detector"
+    "descriptionFr": "Un modèle de Machine Learning pour détecter les messages spam dans les télécommunications.",
+    "descriptionEn": "A machine learning model to detect spam messages in telecommunications.",
+    "techStack": "Python, TensorFlow, NLP",
+    "githubLink": "https://github.com/amirben1991/at-t-spam-detector"
   },
   {
     "id": "conversion-rate",
     "title": "Conversion Rate",
     "description": "A data analysis project to optimize conversion rates for e-commerce platforms.",
-    "tech_stack": ["Python", "Pandas", "Matplotlib"],
-    "github_link": "https://github.com/amirben1991/conversion-rate"
+    "descriptionFr": "Un projet d'analyse de données pour optimiser les taux de conversion des plateformes e-commerce.",
+    "descriptionEn": "A data analysis project to optimize conversion rates for e-commerce platforms.",
+    "techStack": "Python, Pandas, Matplotlib, Scikit-learn",
+    "githubLink": "https://github.com/amirben1991/conversion-rate"
   },
   {
     "id": "steam",
     "title": "Steam",
     "description": "A project analyzing Steam game data to provide insights and recommendations.",
-    "tech_stack": ["Python", "Data Science"],
-    "github_link": "https://github.com/amirben1991/steam"
+    "descriptionFr": "Un projet analysant les données de jeux Steam pour fournir des insights et des recommandations.",
+    "descriptionEn": "A project analyzing Steam game data to provide insights and recommendations.",
+    "techStack": "Python, EDA, Recommendation Systems",
+    "githubLink": "https://github.com/amirben1991/steam"
   },
   {
     "id": "fraud-detection",
     "title": "Fraud Detection",
     "description": "A machine learning project to detect fraudulent transactions in financial systems.",
-    "tech_stack": ["Python", "Scikit-learn"],
-    "github_link": "https://github.com/amirben1991/fraud-detection"
+    "descriptionFr": "Un projet de Machine Learning pour détecter les transactions frauduleuses dans les systèmes financiers.",
+    "descriptionEn": "A machine learning project to detect fraudulent transactions in financial systems.",
+    "techStack": "Python, Scikit-learn, Imbalanced-learn",
+    "githubLink": "https://github.com/amirben1991/fraud-detection"
+  },
+  {
+    "id": "portfolio-website",
+    "title": "Portfolio Website",
+    "description": "This personal portfolio website built with Angular and Spring Boot.",
+    "descriptionFr": "Ce site portfolio personnel construit avec Angular et Spring Boot.",
+    "descriptionEn": "This personal portfolio website built with Angular and Spring Boot.",
+    "techStack": "Angular 19, TypeScript, Java, Spring Boot, PostgreSQL, Tailwind CSS",
+    "githubLink": "https://github.com/amirben1991/website",
+    "featured": true
   }
 ]

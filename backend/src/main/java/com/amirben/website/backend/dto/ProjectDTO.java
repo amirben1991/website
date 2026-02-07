@@ -11,6 +11,9 @@ public class ProjectDTO {
     @NotBlank(message = "Description is required")
     private String description;
 
+    private String descriptionFr;
+    private String descriptionEn;
+
     private String techStack;
     private String githubLink;
     private String liveUrl;
@@ -85,5 +88,21 @@ public class ProjectDTO {
 
     public void setFeatured(boolean featured) {
         this.featured = featured;
+    }
+
+    public String getDescriptionFr() {
+        return descriptionFr;
+    }
+
+    public void setDescriptionFr(String descriptionFr) {
+        this.descriptionFr = descriptionFr;
+    }
+
+    public String getDescriptionEn() {
+        return descriptionEn;
+    }
+
+    public void setDescriptionEn(String descriptionEn) {
+        this.descriptionEn = descriptionEn;
     }
 }

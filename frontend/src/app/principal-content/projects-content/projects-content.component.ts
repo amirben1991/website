@@ -6,11 +6,12 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs'; // Import Observable
 import { AuthService } from '../../services/auth.service'; // Import AuthService
 import { Project } from '../../models/project.model'; // Import Project model
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
     standalone: true,
     selector: 'app-projects-content',
-    imports: [RouterModule, CommonModule],
+    imports: [RouterModule, CommonModule, TranslateModule],
     templateUrl: './projects-content.component.html',
     styleUrls: ['./projects-content.component.scss']
 })
@@ -18,7 +19,7 @@ export class ProjectsContentComponent implements OnInit {
 
   projects$: Observable<Project[]>; // Properly typed Observable
 
-  constructor(private http: HttpClient, public authService: AuthService) { // Changed AuthService to public
+  constructor(private http: HttpClient, public authService: AuthService, private translateService: TranslateService) { // Changed AuthService to public
     this.projects$ = this.http.get<Project[]>('/assets/static-projects.json');
   }
 
@@ -32,5 +33,12 @@ export class ProjectsContentComponent implements OnInit {
   deleteProject(id: string): void {
     console.error('Delete functionality is not supported with static data.');
     alert('Delete functionality is not available in static mode.');
+  }
+
+  // Helper to get localized content
+  getLocalizedField(item: any, fieldName: string): string {
+    const lang = this.translateService.currentLang || 'fr';
+    const localizedField = `${fieldName}${lang.charAt(0).toUpperCase() + lang.slice(1)}`;
+    return item[localizedField] || item[fieldName] || '';
   }
 }

@@ -10,8 +10,23 @@
     "ADMIN": "Admin"
   },
   "HOME": {
-    "TITLE": "Welcome",
-    "SUBTITLE": "Fullstack Developer & Data Scientist"
+    "TITLE": "Welcome to my website",
+    "SUBTITLE": "Fullstack Developer & Data Scientist",
+    "INTRO": "Passionate about tech, AI and development, I invite you to explore my professional universe:",
+    "INTRO_PROJECTS": "projects",
+    "INTRO_EXPERIENCES": "experiences",
+    "INTRO_EDUCATION": "education",
+    "INTRO_END": "and more. Here, every line of code tells a story of learning, innovation and sharing.",
+    "CTA": "Follow my developer journey",
+    "CARD_PROJECTS": "Projects",
+    "CARD_PROJECTS_DESC": "Discover my technical achievements",
+    "CARD_EXPERIENCE": "Experience",
+    "CARD_EXPERIENCE_DESC": "My professional journey",
+    "CARD_EDUCATION": "Education",
+    "CARD_EDUCATION_DESC": "My studies and certifications",
+    "JARVIS_TEXT": "Looking forward to chatting with you in person. In the meantime, my friend",
+    "JARVIS_NAME": "Jarvis",
+    "JARVIS_END": "will be happy to answer your questions"
   },
   "EDUCATION": {
     "TITLE": "Education",
@@ -62,7 +77,7 @@
     "SUBMIT_LOGIN": "Login",
     "SUBMIT_REGISTER": "Register",
     "LOADING": "Loading...",
-    "NO_ACCOUNT": "No account?",
+    "NO_ACCOUNT": "Don't have an account?",
     "HAS_ACCOUNT": "Already have an account?",
     "BACK_HOME": "Back to home",
     "ERRORS": {

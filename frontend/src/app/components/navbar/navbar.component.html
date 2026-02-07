@@ -12,27 +12,27 @@
     <div class="hidden md:flex items-center justify-center flex-1 gap-8 ml-8">
       <a routerLink="/accueil" routerLinkActive="active" 
         class="text-[#cbd5e1] hover:text-[#60a5fa] transition-all duration-300 font-medium relative group">
-        Accueil
+        {{ 'NAV.HOME' | translate }}
         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#60a5fa] transition-all duration-300 group-hover:w-full"></span>
       </a>
       <a routerLink="/projects" routerLinkActive="active"
         class="text-[#cbd5e1] hover:text-[#60a5fa] transition-all duration-300 font-medium relative group">
-        Projets
+        {{ 'NAV.PROJECTS' | translate }}
         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#60a5fa] transition-all duration-300 group-hover:w-full"></span>
       </a>
       <a routerLink="/experience" routerLinkActive="active"
         class="text-[#cbd5e1] hover:text-[#60a5fa] transition-all duration-300 font-medium relative group">
-        Expérience
+        {{ 'NAV.EXPERIENCE' | translate }}
         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#60a5fa] transition-all duration-300 group-hover:w-full"></span>
       </a>
       <a routerLink="/education" routerLinkActive="active"
         class="text-[#cbd5e1] hover:text-[#60a5fa] transition-all duration-300 font-medium relative group">
-        Formation
+        {{ 'NAV.EDUCATION' | translate }}
         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#60a5fa] transition-all duration-300 group-hover:w-full"></span>
       </a>
       <a *ngIf="authService.isAdmin()" routerLink="/admin/users" routerLinkActive="active"
         class="text-[#cbd5e1] hover:text-[#f59e0b] transition-all duration-300 font-medium relative group">
-        Admin
+        {{ 'NAV.ADMIN' | translate }}
         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#f59e0b] transition-all duration-300 group-hover:w-full"></span>
       </a>
       <a href="https://github.com/amirben1991" target="_blank"
@@ -57,13 +57,13 @@
         <span class="text-[#60a5fa] text-sm font-medium">{{ (authService.currentUser$ | async) }}</span>
         <button (click)="logout()" 
           class="px-4 py-2 text-white bg-gradient-to-r from-[#60a5fa] to-[#3b82f6] hover:from-[#3b82f6] hover:to-[#2563eb] transition-all duration-300 rounded-lg text-sm font-medium hover:shadow-glow">
-          Déconnexion
+          {{ 'NAV.LOGOUT' | translate }}
         </button>
       </ng-container>
       <ng-template #notAuthenticated>
         <a routerLink="/login"
           class="px-4 py-2 text-white bg-gradient-to-r from-[#60a5fa] to-[#3b82f6] hover:from-[#3b82f6] hover:to-[#2563eb] transition-all duration-300 rounded-lg text-sm font-medium hover:shadow-glow">
-          Connexion
+          {{ 'NAV.LOGIN' | translate }}
         </a>
       </ng-template>
     </div>

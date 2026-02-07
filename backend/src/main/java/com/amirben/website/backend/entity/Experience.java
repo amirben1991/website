@@ -27,6 +27,24 @@ public class Experience {
     @Column(columnDefinition = "TEXT")
     private String description;
 
+    @Column(name = "description_fr", columnDefinition = "TEXT")
+    private String descriptionFr;
+
+    @Column(name = "description_en", columnDefinition = "TEXT")
+    private String descriptionEn;
+
+    @Column(name = "position_fr")
+    private String positionFr;
+
+    @Column(name = "position_en")
+    private String positionEn;
+
+    @Column(name = "highlights_fr", columnDefinition = "TEXT")
+    private String highlightsFr;
+
+    @Column(name = "highlights_en", columnDefinition = "TEXT")
+    private String highlightsEn;
+
     @Column(name = "tech_stack", columnDefinition = "TEXT")
     private String techStack;
 
@@ -99,6 +117,54 @@ public class Experience {
 
     public void setTechStack(String techStack) {
         this.techStack = techStack;
+    }
+
+    public String getDescriptionFr() {
+        return descriptionFr;
+    }
+
+    public void setDescriptionFr(String descriptionFr) {
+        this.descriptionFr = descriptionFr;
+    }
+
+    public String getDescriptionEn() {
+        return descriptionEn;
+    }
+
+    public void setDescriptionEn(String descriptionEn) {
+        this.descriptionEn = descriptionEn;
+    }
+
+    public String getPositionFr() {
+        return positionFr;
+    }
+
+    public void setPositionFr(String positionFr) {
+        this.positionFr = positionFr;
+    }
+
+    public String getPositionEn() {
+        return positionEn;
+    }
+
+    public void setPositionEn(String positionEn) {
+        this.positionEn = positionEn;
+    }
+
+    public String getHighlightsFr() {
+        return highlightsFr;
+    }
+
+    public void setHighlightsFr(String highlightsFr) {
+        this.highlightsFr = highlightsFr;
+    }
+
+    public String getHighlightsEn() {
+        return highlightsEn;
+    }
+
+    public void setHighlightsEn(String highlightsEn) {
+        this.highlightsEn = highlightsEn;
     }
 
     @Override

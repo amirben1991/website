@@ -43,6 +43,12 @@ public class ExperienceController {
         experience.setStartDate(experienceDTO.getStartDate());
         experience.setEndDate(experienceDTO.getEndDate());
         experience.setDescription(experienceDTO.getDescription());
+        experience.setDescriptionFr(experienceDTO.getDescriptionFr());
+        experience.setDescriptionEn(experienceDTO.getDescriptionEn());
+        experience.setPositionFr(experienceDTO.getPositionFr());
+        experience.setPositionEn(experienceDTO.getPositionEn());
+        experience.setHighlightsFr(experienceDTO.getHighlightsFr());
+        experience.setHighlightsEn(experienceDTO.getHighlightsEn());
         experience.setTechStack(experienceDTO.getTechStack());
 
         Experience savedExperience = experienceService.saveExperience(experience);
@@ -59,6 +65,12 @@ public class ExperienceController {
         experience.setStartDate(experienceDTO.getStartDate());
         experience.setEndDate(experienceDTO.getEndDate());
         experience.setDescription(experienceDTO.getDescription());
+        experience.setDescriptionFr(experienceDTO.getDescriptionFr());
+        experience.setDescriptionEn(experienceDTO.getDescriptionEn());
+        experience.setPositionFr(experienceDTO.getPositionFr());
+        experience.setPositionEn(experienceDTO.getPositionEn());
+        experience.setHighlightsFr(experienceDTO.getHighlightsFr());
+        experience.setHighlightsEn(experienceDTO.getHighlightsEn());
         experience.setTechStack(experienceDTO.getTechStack());
 
         Experience updatedExperience = experienceService.saveExperience(experience);

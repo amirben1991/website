@@ -17,6 +17,12 @@ public class Project {
     @Column(columnDefinition = "TEXT")
     private String description;
 
+    @Column(name = "description_fr", columnDefinition = "TEXT")
+    private String descriptionFr;
+
+    @Column(name = "description_en", columnDefinition = "TEXT")
+    private String descriptionEn;
+
     @Column(name = "tech_stack")
     private String techStack; // CSV: "Angular,Spring,PostgreSQL"
 
@@ -60,6 +66,12 @@ public class Project {
 
     public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }
+
+    public String getDescriptionFr() { return descriptionFr; }
+    public void setDescriptionFr(String descriptionFr) { this.descriptionFr = descriptionFr; }
+
+    public String getDescriptionEn() { return descriptionEn; }
+    public void setDescriptionEn(String descriptionEn) { this.descriptionEn = descriptionEn; }
 
     public String getTechStack() { return techStack; }
     public void setTechStack(String techStack) { this.techStack = techStack; }

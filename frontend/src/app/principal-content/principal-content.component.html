@@ -4,7 +4,7 @@
     <div class="text-center mb-12 animate-fade-in-up">
       <h1 class="text-5xl font-bold mb-4">
         <span class="bg-gradient-to-r from-[#60a5fa] via-[#a78bfa] to-[#34d399] bg-clip-text text-transparent">
-          Bienvenue sur mon site
+          {{ 'HOME.TITLE' | translate }}
         </span>
       </h1>
       <div class="w-24 h-1 bg-gradient-to-r from-[#60a5fa] to-[#a78bfa] mx-auto rounded-full mb-8"></div>
@@ -13,18 +13,18 @@
     <!-- Introduction -->
     <div class="bg-[#252d42]/60 backdrop-blur-sm rounded-2xl p-8 border border-[#60a5fa]/10 shadow-card mb-8 animate-fade-in-up" style="animation-delay: 0.2s;">
       <p class="text-lg text-[#e2e8f0] leading-relaxed text-center">
-        Passionné par la tech, l'IA et le développement, je vous invite à explorer mon univers professionnel : 
-        <span class="text-[#60a5fa]">projets</span>, 
-        <span class="text-[#a78bfa]">expériences</span>, 
-        <span class="text-[#34d399]">formations</span> et bien plus. 
-        Ici, chaque ligne de code raconte une histoire d'apprentissage, d'innovation et de partage.
+        {{ 'HOME.INTRO' | translate }} 
+        <span class="text-[#60a5fa]">{{ 'HOME.INTRO_PROJECTS' | translate }}</span>, 
+        <span class="text-[#a78bfa]">{{ 'HOME.INTRO_EXPERIENCES' | translate }}</span>, 
+        <span class="text-[#34d399]">{{ 'HOME.INTRO_EDUCATION' | translate }}</span> 
+        {{ 'HOME.INTRO_END' | translate }}
       </p>
     </div>
 
     <!-- Call to Action -->
     <div class="text-center mb-8 animate-fade-in-up" style="animation-delay: 0.3s;">
       <p class="text-xl text-[#cbd5e1] font-medium">
-        ✨ Suivez mon parcours de développeur ✨
+        ✨ {{ 'HOME.CTA' | translate }} ✨
       </p>
     </div>
 
@@ -34,31 +34,31 @@
         class="bg-[#252d42]/80 backdrop-blur-sm rounded-xl p-6 border border-[#60a5fa]/10 hover:border-[#60a5fa]/50 shadow-card hover:shadow-card-hover transition-all duration-300 group animate-fade-in-up cursor-pointer block"
         style="animation-delay: 0.4s;">
         <div class="text-3xl mb-3">💻</div>
-        <h3 class="text-[#60a5fa] font-bold text-lg mb-2 group-hover:text-[#93c5fd] transition-colors">Projets</h3>
-        <p class="text-[#94a3b8] text-sm">Découvrez mes réalisations techniques</p>
+        <h3 class="text-[#60a5fa] font-bold text-lg mb-2 group-hover:text-[#93c5fd] transition-colors">{{ 'HOME.CARD_PROJECTS' | translate }}</h3>
+        <p class="text-[#94a3b8] text-sm">{{ 'HOME.CARD_PROJECTS_DESC' | translate }}</p>
       </a>
       <a routerLink="/experience"
         class="bg-[#252d42]/80 backdrop-blur-sm rounded-xl p-6 border border-[#a78bfa]/10 hover:border-[#a78bfa]/50 shadow-card hover:shadow-card-hover transition-all duration-300 group animate-fade-in-up cursor-pointer block"
         style="animation-delay: 0.5s;">
         <div class="text-3xl mb-3">💼</div>
-        <h3 class="text-[#a78bfa] font-bold text-lg mb-2 group-hover:text-[#c4b5fd] transition-colors">Expérience</h3>
-        <p class="text-[#94a3b8] text-sm">Mon parcours professionnel</p>
+        <h3 class="text-[#a78bfa] font-bold text-lg mb-2 group-hover:text-[#c4b5fd] transition-colors">{{ 'HOME.CARD_EXPERIENCE' | translate }}</h3>
+        <p class="text-[#94a3b8] text-sm">{{ 'HOME.CARD_EXPERIENCE_DESC' | translate }}</p>
       </a>
       <a routerLink="/education"
         class="bg-[#252d42]/80 backdrop-blur-sm rounded-xl p-6 border border-[#34d399]/10 hover:border-[#34d399]/50 shadow-card hover:shadow-card-hover transition-all duration-300 group animate-fade-in-up cursor-pointer block"
         style="animation-delay: 0.6s;">
         <div class="text-3xl mb-3">🎓</div>
-        <h3 class="text-[#34d399] font-bold text-lg mb-2 group-hover:text-[#6ee7b7] transition-colors">Formation</h3>
-        <p class="text-[#94a3b8] text-sm">Mes études et certifications</p>
+        <h3 class="text-[#34d399] font-bold text-lg mb-2 group-hover:text-[#6ee7b7] transition-colors">{{ 'HOME.CARD_EDUCATION' | translate }}</h3>
+        <p class="text-[#94a3b8] text-sm">{{ 'HOME.CARD_EDUCATION_DESC' | translate }}</p>
       </a>
     </div>
 
     <!-- Jarvis Section -->
     <div class="bg-gradient-to-r from-[#60a5fa]/10 to-[#a78bfa]/10 rounded-2xl p-6 border border-[#60a5fa]/20 animate-fade-in-up" style="animation-delay: 0.7s;">
       <p class="text-lg text-[#e2e8f0] text-center">
-        Au plaisir d'échanger avec vous de vive voix. En attendant, mon ami 
-        <span class="text-[#60a5fa] font-semibold">Jarvis</span> 
-        se fera un plaisir de répondre à vos questions&nbsp;
+        {{ 'HOME.JARVIS_TEXT' | translate }} 
+        <span class="text-[#60a5fa] font-semibold">{{ 'HOME.JARVIS_NAME' | translate }}</span> 
+        {{ 'HOME.JARVIS_END' | translate }}&nbsp;
         <span class="inline-block animate-bounce">🤖</span>
       </p>
     </div>
