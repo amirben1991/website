@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject, Subject, tap } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export interface LoginRequest {
   username: string;
@@ -24,7 +25,7 @@ export interface AuthResponse {
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:8081/api/auth';
+  private apiUrl = environment.apiAuthUrl;
   private tokenKey = 'auth_token';
   private usernameKey = 'auth_username';
   private roleKey = 'auth_role';

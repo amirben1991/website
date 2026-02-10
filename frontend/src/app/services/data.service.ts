@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Education, Experience, Project } from '../models';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 
 
@@ -9,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DataService {
-  private apiUrl = 'http://localhost:8081/api';
+  private apiUrl = environment.apiUrl;
   constructor(private http: HttpClient) {}
 
   // Admin - Audit Log
