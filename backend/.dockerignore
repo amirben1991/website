@@ -1,0 +1,27 @@
+# Build outputs
+build/
+bin/
+out/
+target/
+
+# Gradle
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+application-local.properties
+
+# Test results
+test-results/

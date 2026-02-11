@@ -36,6 +36,7 @@ public class SecurityConfig {
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/api/auth/**").permitAll()
+                .requestMatchers("/actuator/health", "/actuator/info").permitAll()
                 // GET requests are public for all users/visitors
                 .requestMatchers(org.springframework.http.HttpMethod.GET, "/api/projects/**").permitAll()
                 .requestMatchers(org.springframework.http.HttpMethod.GET, "/api/education/**").permitAll()
