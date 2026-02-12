@@ -1,5 +1,11 @@
 # PrinceDev Portfolio Website
 
+![Angular](https://img.shields.io/badge/Angular-19-red?logo=angular)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.0.1-brightgreen?logo=springboot)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-blue?logo=postgresql)
+![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker)
+![License](https://img.shields.io/badge/License-Personal-lightgrey)
+
 Full-stack portfolio web application with AI-powered Chat assistant.
 
 ## 🎯 Features
@@ -12,8 +18,9 @@ Full-stack portfolio web application with AI-powered Chat assistant.
   - Dynamic context from portfolio data
   - Persistent conversation history
 - **JWT Authentication** for secure user access
+- **i18n Support** with ngx-translate (French/English)
 - **Responsive Design** with smooth page transitions
-- **French UI** with professional styling
+- **Professional styling** with Tailwind CSS
 
 ## 📋 Project Structure
 
@@ -25,7 +32,8 @@ website/
 │   │   ├── services/      # Auth, Chat, Data services
 │   │   ├── guards/        # Auth guard
 │   │   └── interceptors/  # JWT auth interceptor
-│   └── angular.json       # Dev proxy to backend
+│   ├── Dockerfile         # Multi-stage build (Node → Nginx)
+│   └── nginx.conf         # Production Nginx config
 ├── backend/               # Spring Boot REST API
 │   ├── src/main/java/
 │   │   ├── controller/    # REST endpoints
@@ -33,9 +41,11 @@ website/
 │   │   ├── entity/        # JPA entities
 │   │   ├── repository/    # Spring Data JPA repos
 │   │   └── security/      # JWT utils & config
+│   ├── Dockerfile         # Multi-stage build (JDK → JRE)
 │   └── build.gradle       # Gradle dependencies
+├── docker-compose.yml     # Full stack orchestration
+├── .env.example           # Environment template
 └── README.md
-
 ```
 
 ## 🚀 Getting Started
@@ -71,6 +81,29 @@ $env:OPENAI_API_KEY="sk-proj-..."    # PowerShell
 ```
 
 Server runs on `http://localhost:8081`.
+
+### 🐳 Docker (Recommended)
+
+The easiest way to run the full stack:
+
+```bash
+# 1. Copy environment template
+cp .env.example .env
+
+# 2. Edit .env with your secrets
+#    - JWT_SECRET (min 32 chars)
+#    - OPENAI_API_KEY
+
+# 3. Build and run all services
+docker-compose up --build
+
+# App available at http://localhost
+```
+
+Services started:
+- **Frontend** (Nginx): `http://localhost:80`
+- **Backend** (Spring Boot): `http://localhost:8081`
+- **Database** (PostgreSQL): `localhost:5432`
 
 ### Dev Proxy Configuration
 
@@ -133,7 +166,22 @@ Out-of-scope (politely declined):
 
 ## 📦 Build & Deployment
 
-### Frontend Build
+### Docker Deployment (Recommended)
+
+```bash
+# Production build and run
+docker-compose -f docker-compose.yml up -d --build
+
+# View logs
+docker-compose logs -f
+
+# Stop all services
+docker-compose down
+```
+
+### Manual Deployment
+
+#### Frontend Build
 
 ```bash
 cd frontend
@@ -141,7 +189,7 @@ npm run build
 # Output in dist/structure/
 ```
 
-### Backend Build
+#### Backend Build
 
 ```bash
 cd backend
@@ -149,7 +197,7 @@ cd backend
 # Output in build/libs/*.jar
 ```
 
-### Deploy to Production
+#### Deploy Without Docker
 
 1. **Frontend** : deploy `dist/structure/` to static hosting (Netlify, Vercel, etc.)
 2. **Backend** : deploy JAR to application server (Heroku, AWS EC2, etc.)
@@ -204,5 +252,5 @@ For issues or questions, check the code comments or the git commit history.
 
 ---
 
-**Last Updated:** January 26, 2026  
-**Status:** Jarvis Chat AI operational, ready for production review
+**Last Updated:** February 12, 2026  
+**Status:** Docker-ready, Jarvis Chat AI operational
