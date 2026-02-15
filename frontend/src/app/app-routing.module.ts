@@ -13,6 +13,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { AdminGuard } from './guards/admin.guard';
 import { EducationFormComponent } from './principal-content/education-form/education-form.component';
 import { AdminUsersComponent } from './components/admin-users/admin-users.component';
+import { CourseraCertificationsComponent } from './components/coursera-certifications/coursera-certifications.component';
 
 
 export const routes: Routes = [
@@ -33,6 +34,7 @@ export const routes: Routes = [
       {path: 'education/:id/edit', component: EducationFormComponent, canActivate: [AuthGuard]},
       {path: 'education', component: EducationContentComponent},
       {path: 'admin/users', component: AdminUsersComponent, canActivate: [AdminGuard]}
+      ,{path: 'coursera', component: CourseraCertificationsComponent}
     ]
   },
 ];
