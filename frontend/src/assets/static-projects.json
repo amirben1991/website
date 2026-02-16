@@ -97,15 +97,5 @@
     "descriptionEn": "A machine learning project to detect fraudulent transactions in financial systems.",
     "techStack": "Python, Scikit-learn, Imbalanced-learn",
     "githubLink": "https://github.com/amirben1991/fraud-detection"
-  },
-  {
-    "id": "portfolio-website",
-    "title": "Portfolio Website",
-    "description": "This personal portfolio website built with Angular and Spring Boot.",
-    "descriptionFr": "Ce site portfolio personnel construit avec Angular et Spring Boot.",
-    "descriptionEn": "This personal portfolio website built with Angular and Spring Boot.",
-    "techStack": "Angular 19, TypeScript, Java, Spring Boot, PostgreSQL, Tailwind CSS",
-    "githubLink": "https://github.com/amirben1991/website",
-    "featured": true
   }
 ]

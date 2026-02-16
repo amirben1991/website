@@ -23,6 +23,24 @@ export class CourseraCertificationsComponent {
       platform: 'Coursera',
       date: 'En cours',
       url: 'https://www.coursera.org/professional-certificates/ibm-full-stack-cloud-developer'
+    },
+    {
+      title: 'DevOps and Software Engineering Professional Certificate (En cours)',
+      platform: 'Coursera',
+      date: 'En cours',
+      url: 'https://www.coursera.org/professional-certificates/devops-and-software-engineering'
+    },
+    {
+      title: 'Java Developer Professional Certificate (En cours)',
+      platform: 'Coursera',
+      date: 'En cours',
+      url: 'https://www.coursera.org/professional-certificates/java-developer'
+    },
+    {
+      title: 'IBM Data Engineer Professional Certificate (En cours)',
+      platform: 'Coursera',
+      date: 'En cours',
+      url: 'https://www.coursera.org/professional-certificates/ibm-data-engineer'
     }
   ];
 }
