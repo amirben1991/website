@@ -40,7 +40,14 @@ export class EducationContentComponent implements OnInit {
       endDate: e.endDate ? new Date(e.endDate) : undefined,
       expanded: false
     }));
-    this.diplomas = allEducation.filter(e => e.type === 'diplome');
+    this.diplomas = allEducation
+      .filter(e => e.type === 'diplome')
+      .sort((a, b) => {
+        // Si endDate existe, trier par endDate décroissante, sinon par startDate décroissante
+        const aDate = a.endDate || a.startDate;
+        const bDate = b.endDate || b.startDate;
+        return bDate.getTime() - aDate.getTime();
+      });
     this.certifications = allEducation.filter(e => e.type === 'certification');
   }
 

@@ -16,9 +16,27 @@
       "Conception et gestion de bases de données (SQL Server)",
       "Introduction à l'Intelligence Artificielle et au Machine Learning",
       "Méthodologies Agile et gestion de projet"
+    ]
+  },
+  {
+    "id": "epitech-2028",
+    "school": "Epitech",
+    "degree": "RNCP Niveau 7 - MSc Architecture des Systèmes d'Information",
+    "field": "Spécialité Big Data",
+    "startDate": "2026-09-01",
+    "endDate": "2028-07-01",
+    "description": "Mastère spécialisé en architecture des SI et Big Data.",
+    "descriptionFr": "Mastère spécialisé en architecture des systèmes d'information et Big Data.",
+    "descriptionEn": "Master's degree in Information Systems Architecture, Big Data specialization.",
+    "type": "diplome",
+    "highlights": [
+      "Architecture des SI d'entreprise",
+      "Big Data : conception, stockage, traitement et analyse de données massives",
+      "Cloud, DevOps et sécurité des SI",
+      "Projet de fin d'études en environnement industriel"
     ],
-    "highlightsFr": "Développement Backend : création d'APIs REST sécurisées avec Java 21 et Spring Boot 3.x\nDéveloppement Frontend : applications réactives avec Angular 19, RxJS et state management\nBases de données : modélisation UML, conception de schémas normalisés, requêtes SQL avancées\nDevOps : CI/CD avec Jenkins, conteneurisation Docker, déploiement cloud\nMéthodologies Agile : gestion de projet Scrum, sprints, revues de code et pair programming",
-    "highlightsEn": "Backend Development: creating secure REST APIs with Java 21 and Spring Boot 3.x\nFrontend Development: reactive applications with Angular 19, RxJS and state management\nDatabases: UML modeling, normalized schema design, advanced SQL queries\nDevOps: CI/CD with Jenkins, Docker containerization, cloud deployment\nAgile methodologies: Scrum project management, sprints, code reviews and pair programming"
+    "highlightsFr": "Architecture SI : urbanisation, microservices, intégration continue, sécurité.\nBig Data : Hadoop, Spark, data lakes, data pipelines, analytics avancées.\nCloud & DevOps : déploiement cloud, CI/CD, monitoring, sécurité.\nProjet : réalisation d'un projet Big Data en partenariat industriel.",
+    "highlightsEn": "IS Architecture: urbanization, microservices, CI/CD, security.\nBig Data: Hadoop, Spark, data lakes, data pipelines, advanced analytics.\nCloud & DevOps: cloud deployment, CI/CD, monitoring, security.\nProject: completion of a Big Data project with industry partner."
   },
   {
     "id": "jedha-lead-2023",
