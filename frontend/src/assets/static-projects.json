@@ -6,7 +6,8 @@
     "descriptionFr": "Un clone de YouTube construit avec Angular, présentant des fonctionnalités de streaming vidéo et d'interaction utilisateur.",
     "descriptionEn": "A YouTube clone built with Angular, showcasing video streaming and user interaction features.",
     "techStack": "TypeScript, Angular",
-    "githubLink": "https://github.com/amirben1991/MyYoutube"
+    "githubLink": "https://github.com/amirben1991/MyYoutube",
+    "hidden": true
   },
   {
     "id": "ludotheque",
@@ -64,7 +65,8 @@
     "descriptionFr": "Analyse de la tarification de location de voitures et optimisation avec le Machine Learning.",
     "descriptionEn": "Analysis of car rental pricing and optimization using machine learning.",
     "techStack": "Python, FastAPI, Streamlit, MLflow",
-    "githubLink": "https://github.com/amirben1991/getaround"
+    "githubLink": "https://github.com/amirben1991/getaround",
+    "hidden": true
   },
   {
     "id": "at-t-spam-detector",
@@ -73,7 +75,8 @@
     "descriptionFr": "Un modèle de Machine Learning pour détecter les messages spam dans les télécommunications.",
     "descriptionEn": "A machine learning model to detect spam messages in telecommunications.",
     "techStack": "Python, TensorFlow, NLP",
-    "githubLink": "https://github.com/amirben1991/at-t-spam-detector"
+    "githubLink": "https://github.com/amirben1991/at-t-spam-detector",
+    "hidden": true
   },
   {
     "id": "conversion-rate",
