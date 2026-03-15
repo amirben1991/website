@@ -15,7 +15,8 @@
     "descriptionFr": "Un projet Java utilisant Spring Boot pour gérer une bibliothèque de jeux.",
     "descriptionEn": "A Java project using Spring Boot for managing a library of games.",
     "techStack": "Java, Spring Boot",
-    "githubLink": "https://github.com/amirben1991/Ludotheque"
+    "githubLink": "https://github.com/amirben1991/Ludotheque",
+    "hidden": true
   },
   {
     "id": "euromillion",
@@ -24,7 +25,8 @@
     "descriptionFr": "Un projet full-stack pour le web scraping et le déploiement d'une application d'analyse de loterie.",
     "descriptionEn": "A full-stack project for web scraping and deploying an application for lottery analysis.",
     "techStack": "Python, Web Scraping, Streamlit",
-    "githubLink": "https://github.com/amirben1991/euromillion"
+    "githubLink": "https://github.com/amirben1991/euromillion",
+    "hidden": true
   },
   {
     "id": "speed-dating",
@@ -33,7 +35,8 @@
     "descriptionFr": "Un projet de Machine Learning analysant les données de speed dating pour prédire le succès des matchs.",
     "descriptionEn": "A machine learning project analyzing speed dating data to predict match success.",
     "techStack": "Python, Scikit-learn, XGBoost, Pandas",
-    "githubLink": "https://github.com/amirben1991/speed-dating"
+    "githubLink": "https://github.com/amirben1991/speed-dating",
+    "hidden": true
   },
   {
     "id": "timer-focus",
@@ -51,7 +54,8 @@
     "descriptionFr": "Un outil pour générer des données aléatoires à des fins de test et de développement.",
     "descriptionEn": "A tool for generating random data for testing and development purposes.",
     "techStack": "Python",
-    "githubLink": "https://github.com/amirben1991/generator"
+    "githubLink": "https://github.com/amirben1991/generator",
+    "hidden": true
   },
   {
     "id": "getaround",
@@ -78,7 +82,8 @@
     "descriptionFr": "Un projet d'analyse de données pour optimiser les taux de conversion des plateformes e-commerce.",
     "descriptionEn": "A data analysis project to optimize conversion rates for e-commerce platforms.",
     "techStack": "Python, Pandas, Matplotlib, Scikit-learn",
-    "githubLink": "https://github.com/amirben1991/conversion-rate"
+    "githubLink": "https://github.com/amirben1991/conversion-rate",
+    "hidden": true
   },
   {
     "id": "steam",
@@ -87,7 +92,8 @@
     "descriptionFr": "Un projet analysant les données de jeux Steam pour fournir des insights et des recommandations.",
     "descriptionEn": "A project analyzing Steam game data to provide insights and recommendations.",
     "techStack": "Python, EDA, Recommendation Systems",
-    "githubLink": "https://github.com/amirben1991/steam"
+    "githubLink": "https://github.com/amirben1991/steam",
+    "hidden": true
   },
   {
     "id": "fraud-detection",
@@ -96,6 +102,7 @@
     "descriptionFr": "Un projet de Machine Learning pour détecter les transactions frauduleuses dans les systèmes financiers.",
     "descriptionEn": "A machine learning project to detect fraudulent transactions in financial systems.",
     "techStack": "Python, Scikit-learn, Imbalanced-learn",
-    "githubLink": "https://github.com/amirben1991/fraud-detection"
+    "githubLink": "https://github.com/amirben1991/fraud-detection",
+    "hidden": true
   }
 ]

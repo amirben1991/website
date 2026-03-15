@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs'; // Import Observable
+import { map } from 'rxjs/operators';
 import { AuthService } from '../../services/auth.service'; // Import AuthService
 import { Project } from '../../models/project.model'; // Import Project model
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -20,7 +21,9 @@ export class ProjectsContentComponent implements OnInit {
   projects$: Observable<Project[]>; // Properly typed Observable
 
   constructor(private http: HttpClient, public authService: AuthService, private translateService: TranslateService) { // Changed AuthService to public
-    this.projects$ = this.http.get<Project[]>('/assets/static-projects.json');
+    this.projects$ = this.http.get<Project[]>('/assets/static-projects.json').pipe(
+      map(projects => projects.filter(p => !p['hidden']))
+    );
   }
 
   ngOnInit(): void {

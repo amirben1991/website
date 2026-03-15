@@ -9,4 +9,5 @@ export interface Project {
   liveUrl?: string; // Lien vers la démo en ligne (optionnel)
   techStack?: string; // Technologies utilisées (séparées par des virgules)
   featured?: boolean; // Indique si le projet est mis en avant
+  hidden?: boolean; // Indique si le projet est masqué
 }
