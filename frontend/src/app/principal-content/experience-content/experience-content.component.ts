@@ -1,4 +1,4 @@
-import { COMPANY_URLS } from './company-urls';
+import { COMPANY_LOGOS, COMPANY_URLS } from './company-urls';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Experience } from '../../models';
@@ -21,6 +21,10 @@ export class ExperienceContentComponent implements OnInit {
   experiences: Experience[] = [];
   getCompanyUrl(company: string): string | null {
     return COMPANY_URLS[company.trim()] || null;
+  }
+
+  getCompanyLogo(company: string): string | null {
+    return COMPANY_LOGOS[company.trim()] || null;
   }
 
   constructor(

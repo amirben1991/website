@@ -16,7 +16,8 @@
         class="bg-[#252d42]/80 backdrop-blur-sm rounded-xl shadow-card p-5 hover:shadow-card-hover transition-all duration-300 border border-[#60a5fa]/10 hover:border-[#60a5fa]/30 animate-fade-in-up"
         [style.animation-delay]="(0.2 + i * 0.1) + 's'">
         <button (click)="experience.expanded = !experience.expanded" class="w-full text-left flex items-center justify-between focus:outline-none group">
-          <span class="font-semibold text-white group-hover:text-[#60a5fa] transition-colors duration-300">
+          <span class="font-semibold text-white group-hover:text-[#60a5fa] transition-colors duration-300 flex items-center gap-3">
+            <img *ngIf="getCompanyLogo(experience.company)" [src]="getCompanyLogo(experience.company)" [alt]="experience.company" class="w-6 h-6 rounded object-contain flex-shrink-0" />
             {{ getLocalizedField(experience, 'position') || experience.position }}
             <span class="text-[#94a3b8]"> {{ 'EXPERIENCE.AT' | translate }} </span>
             <ng-container *ngIf="getCompanyUrl(experience.company); else plainCompany">
