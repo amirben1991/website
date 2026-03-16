@@ -1,7 +1,11 @@
 <div class="h-full bg-gradient-to-br from-[#1a1f2e] via-[#1e2538] to-[#252d42] py-12 overflow-y-auto">
   <div class="max-w-6xl mx-auto px-8">
-    <h1 class="text-4xl font-bold text-white mb-12 text-center animate-fade-in-up">
+    <h1 class="text-4xl font-bold text-white mb-12 text-center animate-fade-in-up flex items-center justify-center gap-3 flex-wrap">
       <span class="bg-gradient-to-r from-[#60a5fa] to-[#a78bfa] bg-clip-text text-transparent">{{ 'EDUCATION.TITLE' | translate }}</span>
+      <a href="https://www.coursera.org/learner/amirb" target="_blank" rel="noopener noreferrer"
+        class="text-sm font-semibold px-3 py-1 bg-[#0056D2]/20 text-[#4d8ef0] border border-[#0056D2]/30 rounded-full hover:bg-[#0056D2]/30 transition-all duration-300">
+        Coursera
+      </a>
     </h1>
     
     <div class="mb-8 animate-fade-in-up" style="animation-delay: 0.1s;">
@@ -21,7 +25,10 @@
           class="bg-[#252d42]/80 backdrop-blur-sm rounded-xl shadow-card p-4 hover:shadow-card-hover transition-all duration-300 border border-[#60a5fa]/10 hover:border-[#60a5fa]/30 animate-fade-in-up"
           [style.animation-delay]="(0.3 + i * 0.1) + 's'">
           <button (click)="diploma.expanded = !diploma.expanded" class="w-full text-left flex items-center justify-between focus:outline-none group">
-            <span class="font-semibold text-white group-hover:text-[#60a5fa] transition-colors duration-300">{{ diploma.degree }}</span>
+            <span class="flex items-center gap-3">
+              <img *ngIf="getSchoolLogo(diploma.school)" [src]="getSchoolLogo(diploma.school)" [alt]="diploma.school" class="w-6 h-6 rounded object-contain" />
+              <span class="font-semibold text-white group-hover:text-[#60a5fa] transition-colors duration-300">{{ diploma.degree }}</span>
+            </span>
             <span class="text-[#60a5fa] transition-transform duration-300" [class.rotate-180]="diploma.expanded">▼</span>
           </button>
           <div *ngIf="diploma.expanded" class="mt-4 pt-4 border-t border-[#60a5fa]/10 animate-slide-down">

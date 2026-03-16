@@ -1,4 +1,4 @@
-import { SCHOOL_URLS } from './school-urls';
+import { SCHOOL_LOGOS, SCHOOL_URLS } from './school-urls';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Education } from '../../models';
@@ -62,6 +62,10 @@ export class EducationContentComponent implements OnInit {
 
   getSchoolUrl(school: string): string | null {
     return SCHOOL_URLS[school.trim()] || null;
+  }
+
+  getSchoolLogo(school: string): string | null {
+    return SCHOOL_LOGOS[school.trim()] || null;
   }
 
   // Helper to get localized content
