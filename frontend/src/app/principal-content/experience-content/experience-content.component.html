@@ -17,8 +17,8 @@
         [style.animation-delay]="(0.2 + i * 0.1) + 's'">
         <button (click)="experience.expanded = !experience.expanded" class="w-full text-left flex items-center justify-between focus:outline-none group">
           <span class="font-semibold text-white group-hover:text-[#60a5fa] transition-colors duration-300">
-            {{ getLocalizedField(experience, 'position') || experience.position }} 
-            <span class="text-[#94a3b8]">{{ 'EXPERIENCE.AT' | translate }}</span>
+            {{ getLocalizedField(experience, 'position') || experience.position }}
+            <span class="text-[#94a3b8]"> {{ 'EXPERIENCE.AT' | translate }} </span>
             <ng-container *ngIf="getCompanyUrl(experience.company); else plainCompany">
               <a [href]="getCompanyUrl(experience.company)" target="_blank" rel="noopener noreferrer" 
                 class="text-[#60a5fa] hover:text-[#93c5fd] underline transition-colors duration-300" 
