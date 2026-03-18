@@ -1,3 +1,21 @@
 .topics {
     align-items: center;
 }
+
+@keyframes wave {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+.wave-logo {
+  animation: wave 2s ease-in-out infinite;
+}
+.wave-logo:nth-child(1)  { animation-delay: 0.0s; }
+.wave-logo:nth-child(2)  { animation-delay: 0.15s; }
+.wave-logo:nth-child(3)  { animation-delay: 0.30s; }
+.wave-logo:nth-child(4)  { animation-delay: 0.45s; }
+.wave-logo:nth-child(5)  { animation-delay: 0.60s; }
+.wave-logo:nth-child(6)  { animation-delay: 0.75s; }
+.wave-logo:nth-child(7)  { animation-delay: 0.90s; }
+.wave-logo:nth-child(8)  { animation-delay: 1.05s; }
+.wave-logo:nth-child(9)  { animation-delay: 1.20s; }

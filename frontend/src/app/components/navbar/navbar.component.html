@@ -35,6 +35,11 @@
         Coursera
         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#a78bfa] transition-all duration-300 group-hover:w-full"></span>
       </a>
+      <a routerLink="/udemy" routerLinkActive="active"
+        class="text-[#cbd5e1] hover:text-[#a435f0] transition-all duration-300 font-medium relative group">
+        Udemy
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#a435f0] transition-all duration-300 group-hover:w-full"></span>
+      </a>
       <a *ngIf="authService.isAdmin()" routerLink="/admin/users" routerLinkActive="active"
         class="text-[#cbd5e1] hover:text-[#f59e0b] transition-all duration-300 font-medium relative group">
         {{ 'NAV.ADMIN' | translate }}

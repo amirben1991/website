@@ -1,0 +1,12 @@
+<section class="p-6">
+  <h2 class="text-2xl font-bold mb-4">Certifications Udemy</h2>
+  <ul class="space-y-4">
+    <li *ngFor="let cert of certifications" class="bg-white rounded shadow p-4 flex flex-col md:flex-row md:items-center md:justify-between">
+      <div class="flex items-center gap-3">
+        <img *ngIf="cert.logo" [src]="cert.logo" [alt]="cert.title" class="w-6 h-6 rounded object-contain flex-shrink-0" />
+        <span class="font-semibold text-lg">{{ cert.title }}</span>
+      </div>
+      <a [href]="cert.url" target="_blank" class="mt-2 md:mt-0 text-blue-600 hover:underline">Voir la certification</a>
+    </li>
+  </ul>
+</section>
