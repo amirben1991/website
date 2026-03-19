@@ -10,4 +10,5 @@ export interface Project {
   techStack?: string; // Technologies utilisées (séparées par des virgules)
   featured?: boolean; // Indique si le projet est mis en avant
   hidden?: boolean; // Indique si le projet est masqué
+  category?: 'saas' | 'pedagogique'; // Catégorie du projet
 }

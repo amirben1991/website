@@ -58,6 +58,9 @@
   },
   "PROJECTS": {
     "TITLE": "Mes Projets",
+    "SAAS_TITLE": "SaaS",
+    "PEDAGOGIQUE_TITLE": "Projets pédagogiques",
+    "NO_PROJECTS": "Aucun projet à afficher.",
     "ADD": "+ Ajouter un projet",
     "GITHUB": "GitHub",
     "LIVE_DEMO": "Live Demo",

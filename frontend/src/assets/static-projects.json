@@ -7,7 +7,7 @@
     "descriptionEn": "A YouTube clone built with Angular, showcasing video streaming and user interaction features.",
     "techStack": "TypeScript, Angular",
     "githubLink": "https://github.com/amirben1991/MyYoutube",
-    "hidden": true
+    "category": "pedagogique"
   },
   {
     "id": "ludotheque",
@@ -17,7 +17,7 @@
     "descriptionEn": "A Java project using Spring Boot for managing a library of games.",
     "techStack": "Java, Spring Boot",
     "githubLink": "https://github.com/amirben1991/Ludotheque",
-    "hidden": true
+    "category": "pedagogique"
   },
   {
     "id": "euromillion",
@@ -27,7 +27,7 @@
     "descriptionEn": "A full-stack project for web scraping and deploying an application for lottery analysis.",
     "techStack": "Python, Web Scraping, Streamlit",
     "githubLink": "https://github.com/amirben1991/euromillion",
-    "hidden": true
+    "category": "pedagogique"
   },
   {
     "id": "speed-dating",
@@ -37,7 +37,7 @@
     "descriptionEn": "A machine learning project analyzing speed dating data to predict match success.",
     "techStack": "Python, Scikit-learn, XGBoost, Pandas",
     "githubLink": "https://github.com/amirben1991/speed-dating",
-    "hidden": true
+    "category": "pedagogique"
   },
   {
     "id": "timer-focus",
@@ -46,7 +46,8 @@
     "descriptionFr": "Une application de minuterie Pomodoro pour aider les utilisateurs à se concentrer sur leurs tâches.",
     "descriptionEn": "A productivity timer app to help users focus on tasks using the Pomodoro technique.",
     "techStack": "React, TypeScript",
-    "githubLink": "https://github.com/amirben1991/timer-focus"
+    "githubLink": "https://github.com/amirben1991/timer-focus",
+    "category": "saas"
   },
   {
     "id": "generator",
@@ -56,7 +57,7 @@
     "descriptionEn": "A tool for generating random data for testing and development purposes.",
     "techStack": "Python",
     "githubLink": "https://github.com/amirben1991/generator",
-    "hidden": true
+    "category": "pedagogique"
   },
   {
     "id": "getaround",
@@ -66,7 +67,7 @@
     "descriptionEn": "Analysis of car rental pricing and optimization using machine learning.",
     "techStack": "Python, FastAPI, Streamlit, MLflow",
     "githubLink": "https://github.com/amirben1991/getaround",
-    "hidden": true
+    "category": "pedagogique"
   },
   {
     "id": "at-t-spam-detector",
@@ -76,7 +77,7 @@
     "descriptionEn": "A machine learning model to detect spam messages in telecommunications.",
     "techStack": "Python, TensorFlow, NLP",
     "githubLink": "https://github.com/amirben1991/at-t-spam-detector",
-    "hidden": true
+    "category": "pedagogique"
   },
   {
     "id": "conversion-rate",
@@ -86,7 +87,7 @@
     "descriptionEn": "A data analysis project to optimize conversion rates for e-commerce platforms.",
     "techStack": "Python, Pandas, Matplotlib, Scikit-learn",
     "githubLink": "https://github.com/amirben1991/conversion-rate",
-    "hidden": true
+    "category": "pedagogique"
   },
   {
     "id": "steam",
@@ -96,7 +97,7 @@
     "descriptionEn": "A project analyzing Steam game data to provide insights and recommendations.",
     "techStack": "Python, EDA, Recommendation Systems",
     "githubLink": "https://github.com/amirben1991/steam",
-    "hidden": true
+    "category": "pedagogique"
   },
   {
     "id": "fraud-detection",
@@ -106,6 +107,6 @@
     "descriptionEn": "A machine learning project to detect fraudulent transactions in financial systems.",
     "techStack": "Python, Scikit-learn, Imbalanced-learn",
     "githubLink": "https://github.com/amirben1991/fraud-detection",
-    "hidden": true
+    "category": "pedagogique"
   }
 ]

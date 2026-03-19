@@ -18,18 +18,24 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 })
 export class ProjectsContentComponent implements OnInit {
 
-  projects$: Observable<Project[]>; // Properly typed Observable
+  saasProjects$: Observable<Project[]>;
+  pedagogiqueProjects$: Observable<Project[]>;
 
-  constructor(private http: HttpClient, public authService: AuthService, private translateService: TranslateService) { // Changed AuthService to public
-    this.projects$ = this.http.get<Project[]>('/assets/static-projects.json').pipe(
+  constructor(private http: HttpClient, public authService: AuthService, private translateService: TranslateService) {
+    const visible$ = this.http.get<Project[]>('/assets/static-projects.json').pipe(
       map(projects => projects.filter(p => !p['hidden']))
     );
+    this.saasProjects$ = visible$.pipe(map(projects => projects.filter(p => p.category === 'saas')));
+    this.pedagogiqueProjects$ = visible$.pipe(map(projects => projects.filter(p => p.category === 'pedagogique')));
   }
 
   ngOnInit(): void {
     // Optional: logging for debugging
-    this.projects$.subscribe((data: Project[]) => { // Explicitly type data
-        console.log('Projects data loaded:', data);
+    this.saasProjects$.subscribe((data: Project[]) => {
+        console.log('SaaS projects loaded:', data);
+    });
+    this.pedagogiqueProjects$.subscribe((data: Project[]) => {
+        console.log('Pédagogique projects loaded:', data);
     });
   }
 

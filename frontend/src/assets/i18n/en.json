@@ -57,8 +57,9 @@
     "NO_EXPERIENCE": "No experience to display."
   },
   "PROJECTS": {
-    "TITLE": "My Projects",
-    "ADD": "+ Add project",
+    "TITLE": "My Projects",    "SAAS_TITLE": "SaaS",
+    "PEDAGOGIQUE_TITLE": "Educational Projects",
+    "NO_PROJECTS": "No projects to display.",    "ADD": "+ Add project",
     "GITHUB": "GitHub",
     "LIVE_DEMO": "Live Demo",
     "FEATURED": "⭐ Featured",
