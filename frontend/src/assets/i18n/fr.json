@@ -64,6 +64,7 @@
     "SAAS_TITLE": "SaaS",
     "PEDAGOGIQUE_TITLE": "Projets pédagogiques",
     "NO_PROJECTS": "Aucun projet à afficher.",
+    "IN_PROGRESS": "En cours de développement",
     "ADD": "+ Ajouter un projet",
     "GITHUB": "GitHub",
     "LIVE_DEMO": "Live Demo",

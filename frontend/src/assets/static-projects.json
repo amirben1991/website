@@ -46,8 +46,8 @@
     "descriptionFr": "Une application de minuterie Pomodoro pour aider les utilisateurs à se concentrer sur leurs tâches.",
     "descriptionEn": "A productivity timer app to help users focus on tasks using the Pomodoro technique.",
     "techStack": "React, TypeScript",
-    "githubLink": "https://github.com/amirben1991/timer-focus",
-    "category": "saas"
+    "category": "saas",
+    "inProgress": true
   },
   {
     "id": "generator",

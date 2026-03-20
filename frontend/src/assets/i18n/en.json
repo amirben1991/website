@@ -62,7 +62,8 @@
   "PROJECTS": {
     "TITLE": "My Projects",    "SAAS_TITLE": "SaaS",
     "PEDAGOGIQUE_TITLE": "Educational Projects",
-    "NO_PROJECTS": "No projects to display.",    "ADD": "+ Add project",
+    "NO_PROJECTS": "No projects to display.",
+    "IN_PROGRESS": "In development",    "ADD": "+ Add project",
     "GITHUB": "GitHub",
     "LIVE_DEMO": "Live Demo",
     "FEATURED": "⭐ Featured",

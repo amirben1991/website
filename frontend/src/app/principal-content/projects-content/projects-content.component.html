@@ -50,7 +50,9 @@
   </div>
   <div class="p-6">
     <div class="flex items-start justify-between mb-3">
-      <h3 class="text-xl font-semibold text-[#e0e0ff]">{{ project.title }}</h3>
+      <h3 class="text-xl font-semibold text-[#e0e0ff]">
+        {{ project.title }}<ng-container *ngIf="project.inProgress">&nbsp;<span class="text-[#6666aa] text-base font-normal">({{ 'PROJECTS.IN_PROGRESS' | translate }})</span></ng-container>
+      </h3>
       <span *ngIf="project.featured" class="px-3 py-1 bg-[#00f5ff] bg-opacity-20 text-[#00f5ff] text-xs font-semibold rounded-full animate-pulse-glow">{{ 'PROJECTS.FEATURED' | translate }}</span>
     </div>
     <p class="text-[#b8b8e0] mb-4 leading-relaxed">{{ getLocalizedField(project, 'description') }}</p>
@@ -61,7 +63,7 @@
       </span>
     </div>
     <div class="flex gap-3">
-      <a *ngIf="project.githubLink" [href]="project.githubLink" target="_blank"
+      <a *ngIf="project.githubLink && !project.inProgress" [href]="project.githubLink" target="_blank"
          class="flex-1 text-center px-4 py-2 bg-[#00f5ff] text-white rounded-lg hover:bg-[#00ccdd] hover:shadow-glow transition-all duration-300 btn-hover font-medium">
         {{ 'PROJECTS.GITHUB' | translate }}
       </a>
