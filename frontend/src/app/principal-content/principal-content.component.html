@@ -75,7 +75,7 @@
     </div>
 
     <!-- Navigation Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
       <a routerLink="/projects" 
         class="bg-[#252d42]/80 backdrop-blur-sm rounded-xl p-6 border border-[#60a5fa]/10 hover:border-[#60a5fa]/50 shadow-card hover:shadow-card-hover transition-all duration-300 group animate-fade-in-up cursor-pointer block"
         style="animation-delay: 0.4s;">
@@ -106,9 +106,18 @@
         <h3 class="text-[#4d8ef0] font-bold text-lg mb-2 group-hover:text-[#93c5fd] transition-colors">Coursera</h3>
         <p class="text-[#94a3b8] text-sm">{{ 'HOME.CARD_COURSERA_DESC' | translate }}</p>
       </a>
+      <a routerLink="/udemy"
+        class="bg-[#252d42]/80 backdrop-blur-sm rounded-xl p-6 border border-[#a435f0]/10 hover:border-[#a435f0]/50 shadow-card hover:shadow-card-hover transition-all duration-300 group animate-fade-in-up cursor-pointer block"
+        style="animation-delay: 0.8s;">
+        <div class="mb-3 h-8 flex items-center">
+          <img src="https://www.google.com/s2/favicons?domain=udemy.com&sz=64" alt="Udemy" class="h-8 w-8" />
+        </div>
+        <h3 class="text-[#a435f0] font-bold text-lg mb-2 group-hover:text-[#c084fc] transition-colors">Udemy</h3>
+        <p class="text-[#94a3b8] text-sm">{{ 'HOME.CARD_UDEMY_DESC' | translate }}</p>
+      </a>
     </div>
 
-    <!-- Jarvis Section -->
+    <!-- Jarvis Section — désactivé temporairement (feature à venir)
     <div class="bg-gradient-to-r from-[#60a5fa]/10 to-[#a78bfa]/10 rounded-2xl p-6 border border-[#60a5fa]/20 animate-fade-in-up" style="animation-delay: 0.7s;">
       <p class="text-lg text-[#e2e8f0] text-center">
         {{ 'HOME.JARVIS_TEXT' | translate }} 
@@ -117,5 +126,6 @@
         <span class="inline-block animate-bounce">🤖</span>
       </p>
     </div>
+    -->
   </div>
 </div>

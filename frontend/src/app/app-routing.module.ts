@@ -17,8 +17,8 @@ import { AdminUsersComponent } from './components/admin-users/admin-users.compon
 
 
 export const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
+  { path: 'login', redirectTo: 'accueil', pathMatch: 'full' },
+  { path: 'register', redirectTo: 'accueil', pathMatch: 'full' },
   {
     path: '', component: LayoutComponent, 
     children: [

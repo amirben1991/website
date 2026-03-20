@@ -55,7 +55,7 @@
       </a>
     </div>
 
-    <!-- Auth Buttons (Droite) -->
+      <!-- Auth Buttons (Droite) —— temporairement masqués pour le déploiement -->
     <div class="flex items-center gap-4">
       <!-- Bouton de changement de langue -->
       <button (click)="switchLanguage()" 
@@ -63,6 +63,7 @@
         {{ currentLang === 'fr' ? 'EN' : 'FR' }}
       </button>
 
+      <!-- LOGIN DÉSACTIVÉ (feature Jarvis à venir)
       <ng-container *ngIf="authService.isAuthenticated$ | async; else notAuthenticated">
         <span class="text-[#60a5fa] text-sm font-medium">{{ (authService.currentUser$ | async) }}</span>
         <button (click)="logout()" 
@@ -76,6 +77,7 @@
           {{ 'NAV.LOGIN' | translate }}
         </a>
       </ng-template>
+      -->
     </div>
   </div>
 </nav>
