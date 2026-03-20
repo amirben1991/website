@@ -6,37 +6,39 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Couleurs principales améliorées
         'dark': {
-          '900': '#0f1218',
-          '800': '#1a1f2e',
-          '700': '#2d3748',
-          '600': '#3f4b5d',
-          '500': '#4a5568',
+          '900': '#020208',
+          '800': '#050510',
+          '700': '#0a0a1a',
+          '600': '#0d0d20',
+          '500': '#12122e',
         },
-        'accent': {
-          '400': '#60a5fa',
-          '500': '#3b82f6',
-          '600': '#2563eb',
+        'neon': {
+          'cyan':    '#00f5ff',
+          'violet':  '#bf00ff',
+          'green':   '#00ff88',
+          'pink':    '#ff006e',
         },
         'text': {
-          'primary': '#f8fafc',
-          'secondary': '#e2e8f0',
-          'muted': '#cbd5e1',
+          'primary':   '#e0e0ff',
+          'secondary': '#b8b8e0',
+          'muted':     '#6666aa',
         }
       },
       animation: {
-        'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
-        'fade-in': 'fadeIn 0.4s ease-out forwards',
+        'fade-in-up':    'fadeInUp 0.5s ease-out forwards',
+        'fade-in':       'fadeIn 0.4s ease-out forwards',
         'slide-in-left': 'slideInLeft 0.5s ease-out forwards',
-        'slide-in-right': 'slideInRight 0.5s ease-out forwards',
-        'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+        'slide-in-right':'slideInRight 0.5s ease-out forwards',
+        'pulse-glow':    'pulse-glow 2s ease-in-out infinite',
+        'neon-flicker':  'neon-flicker 3s infinite',
       },
       boxShadow: {
-        'glow': '0 0 15px rgba(96, 165, 250, 0.3)',
-        'glow-lg': '0 0 30px rgba(96, 165, 250, 0.4)',
-        'card': '0 4px 6px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(96, 165, 250, 0.1)',
-        'card-hover': '0 12px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(96, 165, 250, 0.2)',
+        'glow':       '0 0 15px rgba(0, 245, 255, 0.4), 0 0 30px rgba(0, 245, 255, 0.2)',
+        'glow-lg':    '0 0 30px rgba(0, 245, 255, 0.6), 0 0 60px rgba(0, 245, 255, 0.3)',
+        'glow-violet':'0 0 15px rgba(191, 0, 255, 0.4), 0 0 30px rgba(191, 0, 255, 0.2)',
+        'card':       '0 4px 6px rgba(0,0,0,0.5), 0 0 0 1px rgba(0, 245, 255, 0.08)',
+        'card-hover': '0 12px 24px rgba(0,0,0,0.7), 0 0 0 1px rgba(0, 245, 255, 0.25), 0 0 20px rgba(0, 245, 255, 0.1)',
       },
       transitionTimingFunction: {
         'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',

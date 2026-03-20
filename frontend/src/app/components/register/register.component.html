@@ -1,12 +1,12 @@
-<div class="h-full flex items-center justify-center bg-gradient-to-br from-[#1a1f2e] via-[#1e2538] to-[#252d42] py-12 px-4 sm:px-6 lg:px-8 overflow-y-auto">
-  <div class="max-w-md w-full space-y-8 bg-[#252d42]/80 backdrop-blur-sm p-8 rounded-2xl shadow-card border border-[#60a5fa]/10 animate-fade-in-up">
+﻿<div class="h-full flex items-center justify-center bg-gradient-to-br from-[#050510] via-[#08081a] to-[#0d0d20] py-12 px-4 sm:px-6 lg:px-8 overflow-y-auto">
+  <div class="max-w-md w-full space-y-8 bg-[#0d0d20]/80 backdrop-blur-sm p-8 rounded-2xl shadow-card border border-[#00f5ff]/10 animate-fade-in-up">
     <div class="text-center">
       <h2 class="text-3xl font-bold">
-        <span class="bg-gradient-to-r from-[#60a5fa] to-[#34d399] bg-clip-text text-transparent">Créer un compte</span>
+        <span class="bg-gradient-to-r from-[#00f5ff] to-[#00ff88] bg-clip-text text-transparent">Créer un compte</span>
       </h2>
-      <div class="w-16 h-1 bg-gradient-to-r from-[#60a5fa] to-[#34d399] mx-auto rounded-full mt-4"></div>
+      <div class="w-16 h-1 bg-gradient-to-r from-[#00f5ff] to-[#00ff88] mx-auto rounded-full mt-4"></div>
       <div class="mt-4">
-        <a routerLink="/" class="inline-flex items-center text-[#94a3b8] hover:text-[#60a5fa] transition-colors duration-300 text-sm">
+        <a routerLink="/" class="inline-flex items-center text-[#6666aa] hover:text-[#00f5ff] transition-colors duration-300 text-sm">
           <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
           </svg>
@@ -18,13 +18,13 @@
     <form class="mt-8 space-y-5" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
       <div class="space-y-4">
         <div>
-          <label for="username" class="block text-sm font-medium text-[#94a3b8] mb-2">Nom d'utilisateur</label>
+          <label for="username" class="block text-sm font-medium text-[#6666aa] mb-2">Nom d'utilisateur</label>
           <input
             id="username"
             formControlName="username"
             type="text"
             required
-            class="w-full px-4 py-3 bg-[#1a1f2e] border border-[#60a5fa]/20 rounded-xl text-white placeholder-[#64748b] focus:outline-none focus:border-[#60a5fa] focus:ring-2 focus:ring-[#60a5fa]/20 transition-all duration-300"
+            class="w-full px-4 py-3 bg-[#050510] border border-[#00f5ff]/20 rounded-xl text-white placeholder-[#555580] focus:outline-none focus:border-[#00f5ff] focus:ring-2 focus:ring-[#00f5ff]/20 transition-all duration-300"
             placeholder="Entrez votre nom d'utilisateur"
           />
           <div *ngIf="username?.invalid && username?.touched" class="text-red-400 text-sm mt-2">
@@ -34,13 +34,13 @@
         </div>
 
         <div>
-          <label for="email" class="block text-sm font-medium text-[#94a3b8] mb-2">Email</label>
+          <label for="email" class="block text-sm font-medium text-[#6666aa] mb-2">Email</label>
           <input
             id="email"
             formControlName="email"
             type="email"
             required
-            class="w-full px-4 py-3 bg-[#1a1f2e] border border-[#60a5fa]/20 rounded-xl text-white placeholder-[#64748b] focus:outline-none focus:border-[#60a5fa] focus:ring-2 focus:ring-[#60a5fa]/20 transition-all duration-300"
+            class="w-full px-4 py-3 bg-[#050510] border border-[#00f5ff]/20 rounded-xl text-white placeholder-[#555580] focus:outline-none focus:border-[#00f5ff] focus:ring-2 focus:ring-[#00f5ff]/20 transition-all duration-300"
             placeholder="email@exemple.com"
           />
           <div *ngIf="email?.invalid && email?.touched" class="text-red-400 text-sm mt-2">
@@ -50,13 +50,13 @@
         </div>
         
         <div>
-          <label for="password" class="block text-sm font-medium text-[#94a3b8] mb-2">Mot de passe</label>
+          <label for="password" class="block text-sm font-medium text-[#6666aa] mb-2">Mot de passe</label>
           <input
             id="password"
             formControlName="password"
             type="password"
             required
-            class="w-full px-4 py-3 bg-[#1a1f2e] border border-[#60a5fa]/20 rounded-xl text-white placeholder-[#64748b] focus:outline-none focus:border-[#60a5fa] focus:ring-2 focus:ring-[#60a5fa]/20 transition-all duration-300"
+            class="w-full px-4 py-3 bg-[#050510] border border-[#00f5ff]/20 rounded-xl text-white placeholder-[#555580] focus:outline-none focus:border-[#00f5ff] focus:ring-2 focus:ring-[#00f5ff]/20 transition-all duration-300"
             placeholder="Mot de passe"
           />
           <div *ngIf="password?.invalid && password?.touched" class="text-red-400 text-sm mt-2">
@@ -66,13 +66,13 @@
         </div>
 
         <div>
-          <label for="confirmPassword" class="block text-sm font-medium text-[#94a3b8] mb-2">Confirmer le mot de passe</label>
+          <label for="confirmPassword" class="block text-sm font-medium text-[#6666aa] mb-2">Confirmer le mot de passe</label>
           <input
             id="confirmPassword"
             formControlName="confirmPassword"
             type="password"
             required
-            class="w-full px-4 py-3 bg-[#1a1f2e] border border-[#60a5fa]/20 rounded-xl text-white placeholder-[#64748b] focus:outline-none focus:border-[#60a5fa] focus:ring-2 focus:ring-[#60a5fa]/20 transition-all duration-300"
+            class="w-full px-4 py-3 bg-[#050510] border border-[#00f5ff]/20 rounded-xl text-white placeholder-[#555580] focus:outline-none focus:border-[#00f5ff] focus:ring-2 focus:ring-[#00f5ff]/20 transition-all duration-300"
             placeholder="Confirmer le mot de passe"
           />
           <div *ngIf="confirmPassword?.invalid && confirmPassword?.touched" class="text-red-400 text-sm mt-2">
@@ -82,11 +82,11 @@
         </div>
 
         <div>
-          <label for="role" class="block text-sm font-medium text-[#94a3b8] mb-2">Rôle</label>
+          <label for="role" class="block text-sm font-medium text-[#6666aa] mb-2">Rôle</label>
           <select
             id="role"
             formControlName="role"
-            class="w-full px-4 py-3 bg-[#1a1f2e] border border-[#60a5fa]/20 rounded-xl text-white focus:outline-none focus:border-[#60a5fa] focus:ring-2 focus:ring-[#60a5fa]/20 transition-all duration-300"
+            class="w-full px-4 py-3 bg-[#050510] border border-[#00f5ff]/20 rounded-xl text-white focus:outline-none focus:border-[#00f5ff] focus:ring-2 focus:ring-[#00f5ff]/20 transition-all duration-300"
           >
             <option value="USER">Utilisateur (lecture seule)</option>
             <option value="ADMIN">Administrateur (accès complet)</option>
@@ -102,7 +102,7 @@
         <button
           type="submit"
           [disabled]="registerForm.invalid || isLoading"
-          class="w-full py-3 px-4 bg-gradient-to-r from-[#60a5fa] to-[#34d399] hover:from-[#3b82f6] hover:to-[#10b981] text-white font-medium rounded-xl shadow-lg hover:shadow-glow disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+          class="w-full py-3 px-4 bg-gradient-to-r from-[#00f5ff] to-[#00ff88] hover:from-[#00ccdd] hover:to-[#00ff88] text-white font-medium rounded-xl shadow-lg hover:shadow-glow disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
         >
           <span *ngIf="!isLoading">S'inscrire</span>
           <span *ngIf="isLoading" class="flex items-center justify-center gap-2">
@@ -112,9 +112,9 @@
         </button>
       </div>
 
-      <div class="text-center mt-6 pt-6 border-t border-[#60a5fa]/10">
-        <span class="text-[#94a3b8]">Déjà un compte ? </span>
-        <a routerLink="/login" class="font-semibold text-[#60a5fa] hover:text-[#93c5fd] transition-colors duration-300">
+      <div class="text-center mt-6 pt-6 border-t border-[#00f5ff]/10">
+        <span class="text-[#6666aa]">Déjà un compte ? </span>
+        <a routerLink="/login" class="font-semibold text-[#00f5ff] hover:text-[#66ffff] transition-colors duration-300">
           Se connecter
         </a>
       </div>

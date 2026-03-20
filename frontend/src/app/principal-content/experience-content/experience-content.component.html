@@ -1,63 +1,63 @@
-<div class="h-full bg-gradient-to-br from-[#1a1f2e] via-[#1e2538] to-[#252d42] py-12 overflow-y-auto">
+﻿<div class="h-full bg-[#050510] py-12 overflow-y-auto">
   <div class="max-w-6xl mx-auto px-8">
     <h1 class="text-4xl font-bold text-white mb-12 text-center animate-fade-in-up">
-      <span class="bg-gradient-to-r from-[#60a5fa] to-[#34d399] bg-clip-text text-transparent">{{ 'EXPERIENCE.TITLE' | translate }}</span>
+      <span class="bg-gradient-to-r from-[#00f5ff] to-[#00ff88] bg-clip-text text-transparent">{{ 'EXPERIENCE.TITLE' | translate }}</span>
     </h1>
     
     <div class="mb-8 animate-fade-in-up" style="animation-delay: 0.1s;">
       <a *ngIf="authService.isAdmin()" [routerLink]="['/experience', 'new']" 
-        class="inline-block px-6 py-2 bg-gradient-to-r from-[#60a5fa] to-[#3b82f6] text-white rounded-lg hover:from-[#3b82f6] hover:to-[#2563eb] transition-all duration-300 hover:shadow-glow">
+        class="inline-block px-6 py-2 bg-gradient-to-r from-[#00f5ff] to-[#00ccdd] text-white rounded-lg hover:from-[#00ccdd] hover:to-[#0099bb] transition-all duration-300 hover:shadow-glow">
         {{ 'EXPERIENCE.ADD' | translate }}
       </a>
     </div>
 
     <div class="space-y-4" *ngIf="experiences.length > 0">
       <div *ngFor="let experience of experiences; let i = index" 
-        class="bg-[#252d42]/80 backdrop-blur-sm rounded-xl shadow-card p-5 hover:shadow-card-hover transition-all duration-300 border border-[#60a5fa]/10 hover:border-[#60a5fa]/30 animate-fade-in-up"
+        class="bg-[#0d0d20]/80 backdrop-blur-sm rounded-xl shadow-card p-5 hover:shadow-card-hover transition-all duration-300 border border-[#00f5ff]/10 hover:border-[#00f5ff]/30 animate-fade-in-up"
         [style.animation-delay]="(0.2 + i * 0.1) + 's'">
         <button (click)="experience.expanded = !experience.expanded" class="w-full text-left flex items-center justify-between focus:outline-none group">
-          <span class="font-semibold text-white group-hover:text-[#60a5fa] transition-colors duration-300 flex items-center gap-3">
+          <span class="font-semibold text-white group-hover:text-[#00f5ff] transition-colors duration-300 flex items-center gap-3">
             <img *ngIf="getCompanyLogo(experience.company)" [src]="getCompanyLogo(experience.company)" [alt]="experience.company" class="w-6 h-6 rounded object-contain flex-shrink-0" />
             {{ getLocalizedField(experience, 'position') || experience.position }}
-            <span class="text-[#94a3b8]"> {{ 'EXPERIENCE.AT' | translate }} </span>
+            <span class="text-[#6666aa]"> {{ 'EXPERIENCE.AT' | translate }} </span>
             <ng-container *ngIf="getCompanyUrl(experience.company); else plainCompany">
               <a [href]="getCompanyUrl(experience.company)" target="_blank" rel="noopener noreferrer" 
-                class="text-[#60a5fa] hover:text-[#93c5fd] underline transition-colors duration-300" 
+                class="text-[#00f5ff] hover:text-[#66ffff] underline transition-colors duration-300" 
                 (click)="$event.stopPropagation()">{{ experience.company }}</a>
             </ng-container>
-            <ng-template #plainCompany><span class="text-[#60a5fa]">{{ experience.company }}</span></ng-template>
+            <ng-template #plainCompany><span class="text-[#00f5ff]">{{ experience.company }}</span></ng-template>
           </span>
-          <span class="text-[#60a5fa] transition-transform duration-300" [class.rotate-180]="experience.expanded">▼</span>
+          <span class="text-[#00f5ff] transition-transform duration-300" [class.rotate-180]="experience.expanded">▼</span>
         </button>
-        <div *ngIf="experience.expanded" class="mt-4 pt-4 border-t border-[#60a5fa]/10 animate-slide-down">
-          <ul class="space-y-3 text-[#e2e8f0]">
+        <div *ngIf="experience.expanded" class="mt-4 pt-4 border-t border-[#00f5ff]/10 animate-slide-down">
+          <ul class="space-y-3 text-[#b8b8e0]">
             <li class="flex items-start gap-2">
-              <span class="text-[#60a5fa] font-medium min-w-[100px]">{{ 'EXPERIENCE.PERIOD' | translate }} :</span> 
+              <span class="text-[#00f5ff] font-medium min-w-[100px]">{{ 'EXPERIENCE.PERIOD' | translate }} :</span> 
               {{ experience.startDate | date:'MMM yyyy' }} - {{ experience.endDate ? (experience.endDate | date:'MMM yyyy') : ('EXPERIENCE.PRESENT' | translate) }}
             </li>
             <li *ngIf="getLocalizedField(experience, 'description')" class="flex items-start gap-2">
-              <span class="text-[#60a5fa] font-medium min-w-[100px]">{{ 'EXPERIENCE.DESCRIPTION' | translate }} :</span> {{ getLocalizedField(experience, 'description') }}
+              <span class="text-[#00f5ff] font-medium min-w-[100px]">{{ 'EXPERIENCE.DESCRIPTION' | translate }} :</span> {{ getLocalizedField(experience, 'description') }}
             </li>
             <li *ngIf="getLocalizedHighlights(experience).length > 0" class="mt-3">
-              <span class="text-[#60a5fa] font-medium">{{ 'EXPERIENCE.MISSIONS' | translate }} :</span>
+              <span class="text-[#00f5ff] font-medium">{{ 'EXPERIENCE.MISSIONS' | translate }} :</span>
               <ul class="mt-2 space-y-1">
-                <li *ngFor="let highlight of getLocalizedHighlights(experience)" class="flex items-start gap-2 text-[#cbd5e1]">
-                  <span class="text-[#34d399] mt-1">✓</span>
+                <li *ngFor="let highlight of getLocalizedHighlights(experience)" class="flex items-start gap-2 text-[#9090c0]">
+                  <span class="text-[#00ff88] mt-1">✓</span>
                   {{ highlight }}
                 </li>
               </ul>
             </li>
             <li *ngIf="experience.techStack && experience.techStack.length > 0" class="mt-3">
-              <span class="text-[#60a5fa] font-medium">{{ 'EXPERIENCE.TECHNOLOGIES' | translate }} :</span>
+              <span class="text-[#00f5ff] font-medium">{{ 'EXPERIENCE.TECHNOLOGIES' | translate }} :</span>
               <div class="flex flex-wrap gap-2 mt-2">
                 <ng-container *ngFor="let tech of experience.techStack.split(',')">
                   <a *ngIf="getTechUrl(tech)"
                      [href]="getTechUrl(tech)" target="_blank" rel="noopener noreferrer"
-                     class="inline-block px-3 py-1.5 bg-gradient-to-r from-[#60a5fa]/20 to-[#34d399]/20 text-[#60a5fa] text-sm rounded-full border border-[#60a5fa]/30 hover:border-[#60a5fa] hover:text-[#93c5fd] transition-all duration-300">
+                     class="inline-block px-3 py-1.5 bg-gradient-to-r from-[#00f5ff]/20 to-[#00ff88]/20 text-[#00f5ff] text-sm rounded-full border border-[#00f5ff]/30 hover:border-[#00f5ff] hover:text-[#66ffff] transition-all duration-300">
                     {{ tech.trim() }}
                   </a>
                   <span *ngIf="!getTechUrl(tech)"
-                        class="inline-block px-3 py-1.5 bg-[#60a5fa]/10 text-[#60a5fa] text-sm rounded-full border border-[#60a5fa]/20">
+                        class="inline-block px-3 py-1.5 bg-[#00f5ff]/10 text-[#00f5ff] text-sm rounded-full border border-[#00f5ff]/20">
                     {{ tech.trim() }}
                   </span>
                 </ng-container>
@@ -80,7 +80,7 @@
     </div>
 
     <div *ngIf="experiences.length === 0" class="text-center py-12 animate-fade-in-up">
-      <p class="text-[#94a3b8]">Aucune expérience à afficher.</p>
+      <p class="text-[#6666aa]">Aucune expérience à afficher.</p>
     </div>
   </div>
 </div>

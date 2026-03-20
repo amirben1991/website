@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { PageFooterComponent } from '../page-footer/page-footer.component';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from '../components/navbar/navbar.component';
-import { ChatWidgetComponent } from '../components/chat-widget/chat-widget.component';
 import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
@@ -11,8 +10,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
   imports: [
     PageFooterComponent, 
     RouterModule, 
-    NavbarComponent,
-    ChatWidgetComponent
+    NavbarComponent
   ],
   animations: [
     trigger('routeAnimations', [

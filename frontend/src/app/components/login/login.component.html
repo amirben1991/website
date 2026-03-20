@@ -1,22 +1,22 @@
-<div class="h-full flex items-center justify-center bg-gradient-to-br from-[#1a1f2e] via-[#1e2538] to-[#252d42] py-12 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-md w-full space-y-8 bg-[#252d42]/80 backdrop-blur-sm p-8 rounded-2xl shadow-card border border-[#60a5fa]/10 animate-fade-in-up">
+﻿<div class="h-full flex items-center justify-center bg-gradient-to-br from-[#050510] via-[#08081a] to-[#0d0d20] py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-md w-full space-y-8 bg-[#0d0d20]/80 backdrop-blur-sm p-8 rounded-2xl shadow-card border border-[#00f5ff]/10 animate-fade-in-up">
     <div class="text-center">
       <h2 class="text-3xl font-bold">
-        <span class="bg-gradient-to-r from-[#60a5fa] to-[#a78bfa] bg-clip-text text-transparent">Connexion</span>
+        <span class="bg-gradient-to-r from-[#00f5ff] to-[#bf00ff] bg-clip-text text-transparent">Connexion</span>
       </h2>
-      <div class="w-16 h-1 bg-gradient-to-r from-[#60a5fa] to-[#a78bfa] mx-auto rounded-full mt-4"></div>
+      <div class="w-16 h-1 bg-gradient-to-r from-[#00f5ff] to-[#bf00ff] mx-auto rounded-full mt-4"></div>
     </div>
     
     <form class="mt-8 space-y-6" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div class="space-y-4">
         <div>
-          <label for="username" class="block text-sm font-medium text-[#94a3b8] mb-2">Nom d'utilisateur</label>
+          <label for="username" class="block text-sm font-medium text-[#6666aa] mb-2">Nom d'utilisateur</label>
           <input
             id="username"
             formControlName="username"
             type="text"
             required
-            class="w-full px-4 py-3 bg-[#1a1f2e] border border-[#60a5fa]/20 rounded-xl text-white placeholder-[#64748b] focus:outline-none focus:border-[#60a5fa] focus:ring-2 focus:ring-[#60a5fa]/20 transition-all duration-300"
+            class="w-full px-4 py-3 bg-[#050510] border border-[#00f5ff]/20 rounded-xl text-white placeholder-[#555580] focus:outline-none focus:border-[#00f5ff] focus:ring-2 focus:ring-[#00f5ff]/20 transition-all duration-300"
             placeholder="Entrez votre nom d'utilisateur"
           />
           <div *ngIf="username?.invalid && username?.touched" class="text-red-400 text-sm mt-2">
@@ -26,13 +26,13 @@
         </div>
         
         <div>
-          <label for="password" class="block text-sm font-medium text-[#94a3b8] mb-2">Mot de passe</label>
+          <label for="password" class="block text-sm font-medium text-[#6666aa] mb-2">Mot de passe</label>
           <input
             id="password"
             formControlName="password"
             type="password"
             required
-            class="w-full px-4 py-3 bg-[#1a1f2e] border border-[#60a5fa]/20 rounded-xl text-white placeholder-[#64748b] focus:outline-none focus:border-[#60a5fa] focus:ring-2 focus:ring-[#60a5fa]/20 transition-all duration-300"
+            class="w-full px-4 py-3 bg-[#050510] border border-[#00f5ff]/20 rounded-xl text-white placeholder-[#555580] focus:outline-none focus:border-[#00f5ff] focus:ring-2 focus:ring-[#00f5ff]/20 transition-all duration-300"
             placeholder="Entrez votre mot de passe"
           />
           <div *ngIf="password?.invalid && password?.touched" class="text-red-400 text-sm mt-2">
@@ -50,7 +50,7 @@
         <button
           type="submit"
           [disabled]="loginForm.invalid || isLoading"
-          class="w-full py-3 px-4 bg-gradient-to-r from-[#60a5fa] to-[#3b82f6] hover:from-[#3b82f6] hover:to-[#2563eb] text-white font-medium rounded-xl shadow-lg hover:shadow-glow disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+          class="w-full py-3 px-4 bg-gradient-to-r from-[#00f5ff] to-[#00ccdd] hover:from-[#00ccdd] hover:to-[#0099bb] text-white font-medium rounded-xl shadow-lg hover:shadow-glow disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
         >
           <span *ngIf="!isLoading">Se connecter</span>
           <span *ngIf="isLoading" class="flex items-center justify-center gap-2">
@@ -60,9 +60,9 @@
         </button>
       </div>
 
-      <div class="text-center mt-6 pt-6 border-t border-[#60a5fa]/10">
-        <span class="text-[#94a3b8]">Pas encore de compte ? </span>
-        <a routerLink="/register" class="font-semibold text-[#60a5fa] hover:text-[#93c5fd] transition-colors duration-300">
+      <div class="text-center mt-6 pt-6 border-t border-[#00f5ff]/10">
+        <span class="text-[#6666aa]">Pas encore de compte ? </span>
+        <a routerLink="/register" class="font-semibold text-[#00f5ff] hover:text-[#66ffff] transition-colors duration-300">
           S'inscrire
         </a>
       </div>

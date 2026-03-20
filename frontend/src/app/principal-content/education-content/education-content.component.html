@@ -1,59 +1,59 @@
-<div class="h-full bg-gradient-to-br from-[#1a1f2e] via-[#1e2538] to-[#252d42] py-12 overflow-y-auto">
+﻿<div class="h-full bg-[#050510] py-12 overflow-y-auto">
   <div class="max-w-6xl mx-auto px-8">
     <h1 class="text-4xl font-bold text-white mb-12 text-center animate-fade-in-up flex items-center justify-center gap-3 flex-wrap">
-      <span class="bg-gradient-to-r from-[#60a5fa] to-[#a78bfa] bg-clip-text text-transparent">{{ 'EDUCATION.TITLE' | translate }}</span>
+      <span class="bg-gradient-to-r from-[#00f5ff] to-[#bf00ff] bg-clip-text text-transparent">{{ 'EDUCATION.TITLE' | translate }}</span>
       <a href="https://www.coursera.org/learner/amirb" target="_blank" rel="noopener noreferrer"
-        class="text-sm font-semibold px-3 py-1 bg-[#0056D2]/20 text-[#4d8ef0] border border-[#0056D2]/30 rounded-full hover:bg-[#0056D2]/30 transition-all duration-300">
+        class="text-sm font-semibold px-3 py-1 bg-[#00f5ff]/10 text-[#00f5ff] border border-[#00f5ff]/30 rounded-full hover:bg-[#00f5ff]/20 transition-all duration-300">
         Coursera
       </a>
     </h1>
     
     <div class="mb-8 animate-fade-in-up" style="animation-delay: 0.1s;">
       <a *ngIf="authService.isAdmin()" [routerLink]="['/education', 'new']" 
-        class="inline-block px-6 py-2 bg-gradient-to-r from-[#60a5fa] to-[#3b82f6] text-white rounded-lg hover:from-[#3b82f6] hover:to-[#2563eb] transition-all duration-300 hover:shadow-glow">
+        class="inline-block px-6 py-2 bg-gradient-to-r from-[#00f5ff] to-[#00ccdd] text-white rounded-lg hover:from-[#00ccdd] hover:to-[#0099bb] transition-all duration-300 hover:shadow-glow">
         {{ 'EDUCATION.ADD' | translate }}
       </a>
     </div>
 
     <section class="animate-fade-in-up" style="animation-delay: 0.2s;">
       <h2 class="text-xl font-bold mb-4 text-white flex items-center gap-2">
-        <span class="w-8 h-8 bg-[#60a5fa]/20 rounded-lg flex items-center justify-center text-[#60a5fa]">🎓</span>
+        <span class="w-8 h-8 bg-[#00f5ff]/20 rounded-lg flex items-center justify-center text-[#00f5ff]">🎓</span>
         {{ 'EDUCATION.DIPLOMAS' | translate }}
       </h2>
       <ul class="space-y-3">
         <li *ngFor="let diploma of diplomas; let i = index" 
-          class="bg-[#252d42]/80 backdrop-blur-sm rounded-xl shadow-card p-4 hover:shadow-card-hover transition-all duration-300 border border-[#60a5fa]/10 hover:border-[#60a5fa]/30 animate-fade-in-up"
+          class="bg-[#0d0d20]/80 backdrop-blur-sm rounded-xl shadow-card p-4 hover:shadow-card-hover transition-all duration-300 border border-[#00f5ff]/10 hover:border-[#00f5ff]/30 animate-fade-in-up"
           [style.animation-delay]="(0.3 + i * 0.1) + 's'">
           <button (click)="diploma.expanded = !diploma.expanded" class="w-full text-left flex items-center justify-between focus:outline-none group">
             <span class="flex items-center gap-3">
               <img *ngIf="getSchoolLogo(diploma.school)" [src]="getSchoolLogo(diploma.school)" [alt]="diploma.school" class="w-6 h-6 rounded object-contain" />
-              <span class="font-semibold text-white group-hover:text-[#60a5fa] transition-colors duration-300">{{ diploma.degree }}</span>
+              <span class="font-semibold text-white group-hover:text-[#00f5ff] transition-colors duration-300">{{ diploma.degree }}</span>
             </span>
-            <span class="text-[#60a5fa] transition-transform duration-300" [class.rotate-180]="diploma.expanded">▼</span>
+            <span class="text-[#00f5ff] transition-transform duration-300" [class.rotate-180]="diploma.expanded">▼</span>
           </button>
-          <div *ngIf="diploma.expanded" class="mt-4 pt-4 border-t border-[#60a5fa]/10 animate-slide-down">
-            <ul class="space-y-2 text-[#e2e8f0]">
+          <div *ngIf="diploma.expanded" class="mt-4 pt-4 border-t border-[#00f5ff]/10 animate-slide-down">
+            <ul class="space-y-2 text-[#b8b8e0]">
               <li class="flex items-start gap-2">
-                <span class="text-[#60a5fa] font-medium min-w-[100px]">{{ 'EDUCATION.SCHOOL' | translate }} :</span> 
+                <span class="text-[#00f5ff] font-medium min-w-[100px]">{{ 'EDUCATION.SCHOOL' | translate }} :</span> 
                 <ng-container *ngIf="getSchoolUrl(diploma.school); else plainSchool">
-                  <a [href]="getSchoolUrl(diploma.school)" target="_blank" rel="noopener noreferrer" class="text-[#60a5fa] hover:text-[#93c5fd] underline transition-colors duration-300">{{ diploma.school }}</a>
+                  <a [href]="getSchoolUrl(diploma.school)" target="_blank" rel="noopener noreferrer" class="text-[#00f5ff] hover:text-[#66ffff] underline transition-colors duration-300">{{ diploma.school }}</a>
                 </ng-container>
                 <ng-template #plainSchool>{{ diploma.school }}</ng-template>
               </li>
               <li class="flex items-start gap-2">
-                <span class="text-[#60a5fa] font-medium min-w-[100px]">{{ 'EDUCATION.FIELD' | translate }} :</span> {{ diploma.field }}
+                <span class="text-[#00f5ff] font-medium min-w-[100px]">{{ 'EDUCATION.FIELD' | translate }} :</span> {{ diploma.field }}
               </li>
               <li class="flex items-start gap-2">
-                <span class="text-[#60a5fa] font-medium min-w-[100px]">{{ 'EDUCATION.PERIOD' | translate }} :</span> {{ diploma.startDate | date:'MMM yyyy' }} - {{ diploma.endDate ? (diploma.endDate | date:'MMM yyyy') : ('EDUCATION.IN_PROGRESS' | translate) }}
+                <span class="text-[#00f5ff] font-medium min-w-[100px]">{{ 'EDUCATION.PERIOD' | translate }} :</span> {{ diploma.startDate | date:'MMM yyyy' }} - {{ diploma.endDate ? (diploma.endDate | date:'MMM yyyy') : ('EDUCATION.IN_PROGRESS' | translate) }}
               </li>
               <li *ngIf="diploma.description" class="flex items-start gap-2">
-                <span class="text-[#60a5fa] font-medium min-w-[100px]">{{ 'EDUCATION.DESCRIPTION' | translate }} :</span> {{ diploma.description }}
+                <span class="text-[#00f5ff] font-medium min-w-[100px]">{{ 'EDUCATION.DESCRIPTION' | translate }} :</span> {{ diploma.description }}
               </li>
               <li *ngIf="getLocalizedHighlights(diploma).length > 0" class="mt-3">
-                <span class="text-[#60a5fa] font-medium">{{ 'EDUCATION.SKILLS' | translate }} :</span>
+                <span class="text-[#00f5ff] font-medium">{{ 'EDUCATION.SKILLS' | translate }} :</span>
                 <ul class="mt-2 space-y-1">
-                  <li *ngFor="let highlight of getLocalizedHighlights(diploma)" class="flex items-start gap-2 text-[#cbd5e1]">
-                    <span class="text-[#60a5fa] mt-1">•</span>
+                  <li *ngFor="let highlight of getLocalizedHighlights(diploma)" class="flex items-start gap-2 text-[#9090c0]">
+                    <span class="text-[#00f5ff] mt-1">•</span>
                     {{ highlight }}
                   </li>
                 </ul>
@@ -77,43 +77,43 @@
 
     <section class="mt-10 animate-fade-in-up" style="animation-delay: 0.4s;">
       <h2 class="text-xl font-bold mb-4 text-white flex items-center gap-2">
-        <span class="w-8 h-8 bg-[#a78bfa]/20 rounded-lg flex items-center justify-center text-[#a78bfa]">📜</span>
+        <span class="w-8 h-8 bg-[#bf00ff]/20 rounded-lg flex items-center justify-center text-[#bf00ff]">📜</span>
         {{ 'EDUCATION.CERTIFICATIONS' | translate }}
       </h2>
       <ul class="space-y-3">
         <li *ngFor="let cert of certifications; let i = index" 
-          class="bg-[#252d42]/80 backdrop-blur-sm rounded-xl shadow-card p-4 hover:shadow-card-hover transition-all duration-300 border border-[#a78bfa]/10 hover:border-[#a78bfa]/30 animate-fade-in-up"
+          class="bg-[#0d0d20]/80 backdrop-blur-sm rounded-xl shadow-card p-4 hover:shadow-card-hover transition-all duration-300 border border-[#bf00ff]/10 hover:border-[#bf00ff]/30 animate-fade-in-up"
           [style.animation-delay]="(0.5 + i * 0.1) + 's'">
           <button (click)="cert.expanded = !cert.expanded" class="w-full text-left flex items-center justify-between focus:outline-none group">
             <span class="flex items-center gap-3">
               <img *ngIf="getSchoolLogo(cert.school)" [src]="getSchoolLogo(cert.school)" [alt]="cert.school" class="w-6 h-6 rounded object-contain" />
-              <span class="font-semibold text-white group-hover:text-[#a78bfa] transition-colors duration-300">{{ cert.degree }}</span>
+              <span class="font-semibold text-white group-hover:text-[#bf00ff] transition-colors duration-300">{{ cert.degree }}</span>
             </span>
-            <span class="text-[#a78bfa] transition-transform duration-300" [class.rotate-180]="cert.expanded">▼</span>
+            <span class="text-[#bf00ff] transition-transform duration-300" [class.rotate-180]="cert.expanded">▼</span>
           </button>
-          <div *ngIf="cert.expanded" class="mt-4 pt-4 border-t border-[#a78bfa]/10 animate-slide-down">
-            <ul class="space-y-2 text-[#e2e8f0]">
+          <div *ngIf="cert.expanded" class="mt-4 pt-4 border-t border-[#bf00ff]/10 animate-slide-down">
+            <ul class="space-y-2 text-[#b8b8e0]">
               <li class="flex items-start gap-2">
-                <span class="text-[#a78bfa] font-medium min-w-[100px]">{{ 'EDUCATION.SCHOOL' | translate }} :</span> 
+                <span class="text-[#bf00ff] font-medium min-w-[100px]">{{ 'EDUCATION.SCHOOL' | translate }} :</span> 
                 <ng-container *ngIf="getSchoolUrl(cert.school); else plainSchoolCert">
-                  <a [href]="getSchoolUrl(cert.school)" target="_blank" rel="noopener noreferrer" class="text-[#a78bfa] hover:text-[#c4b5fd] underline transition-colors duration-300">{{ cert.school }}</a>
+                  <a [href]="getSchoolUrl(cert.school)" target="_blank" rel="noopener noreferrer" class="text-[#bf00ff] hover:text-[#d966ff] underline transition-colors duration-300">{{ cert.school }}</a>
                 </ng-container>
                 <ng-template #plainSchoolCert>{{ cert.school }}</ng-template>
               </li>
               <li class="flex items-start gap-2">
-                <span class="text-[#a78bfa] font-medium min-w-[100px]">{{ 'EDUCATION.FIELD' | translate }} :</span> {{ cert.field }}
+                <span class="text-[#bf00ff] font-medium min-w-[100px]">{{ 'EDUCATION.FIELD' | translate }} :</span> {{ cert.field }}
               </li>
               <li class="flex items-start gap-2">
-                <span class="text-[#a78bfa] font-medium min-w-[100px]">{{ 'EDUCATION.PERIOD' | translate }} :</span> {{ cert.startDate | date:'MMM yyyy' }} - {{ cert.endDate ? (cert.endDate | date:'MMM yyyy') : ('EDUCATION.IN_PROGRESS' | translate) }}
+                <span class="text-[#bf00ff] font-medium min-w-[100px]">{{ 'EDUCATION.PERIOD' | translate }} :</span> {{ cert.startDate | date:'MMM yyyy' }} - {{ cert.endDate ? (cert.endDate | date:'MMM yyyy') : ('EDUCATION.IN_PROGRESS' | translate) }}
               </li>
               <li *ngIf="cert.description" class="flex items-start gap-2">
-                <span class="text-[#a78bfa] font-medium min-w-[100px]">{{ 'EDUCATION.DESCRIPTION' | translate }} :</span> {{ cert.description }}
+                <span class="text-[#bf00ff] font-medium min-w-[100px]">{{ 'EDUCATION.DESCRIPTION' | translate }} :</span> {{ cert.description }}
               </li>
               <li *ngIf="getLocalizedHighlights(cert).length > 0" class="mt-3">
-                <span class="text-[#a78bfa] font-medium">{{ 'EDUCATION.SKILLS' | translate }} :</span>
+                <span class="text-[#bf00ff] font-medium">{{ 'EDUCATION.SKILLS' | translate }} :</span>
                 <ul class="mt-2 space-y-1">
-                  <li *ngFor="let highlight of getLocalizedHighlights(cert)" class="flex items-start gap-2 text-[#cbd5e1]">
-                    <span class="text-[#a78bfa] mt-1">•</span>
+                  <li *ngFor="let highlight of getLocalizedHighlights(cert)" class="flex items-start gap-2 text-[#9090c0]">
+                    <span class="text-[#bf00ff] mt-1">•</span>
                     {{ highlight }}
                   </li>
                 </ul>

@@ -1,131 +1,146 @@
-<div class="h-full bg-gradient-to-br from-[#1a1f2e] via-[#1e2538] to-[#252d42] py-12 overflow-y-auto">
+﻿<div class="h-full bg-[#050510] py-12 overflow-y-auto">
   <div class="max-w-4xl mx-auto px-4">
     <!-- Hero Section -->
     <div class="text-center mb-12 animate-fade-in-up">
       <h1 class="text-5xl font-bold mb-4">
-        <span class="bg-gradient-to-r from-[#60a5fa] via-[#a78bfa] to-[#34d399] bg-clip-text text-transparent">
+        <span class="bg-gradient-to-r from-[#00f5ff] via-[#bf00ff] to-[#00ff88] bg-clip-text text-transparent" style="filter: drop-shadow(0 0 20px rgba(0,245,255,0.4))">
           {{ 'HOME.TITLE' | translate }}
         </span>
       </h1>
-      <div class="w-24 h-1 bg-gradient-to-r from-[#60a5fa] to-[#a78bfa] mx-auto rounded-full mb-6"></div>
+      <div class="w-24 h-1 mx-auto rounded-full mb-6" style="background: linear-gradient(90deg,#00f5ff,#bf00ff); box-shadow: 0 0 12px #00f5ff, 0 0 24px #bf00ff"></div>
 
-      <!-- Tech logos -->
-      <div class="flex flex-wrap items-end justify-center gap-8 mb-5">
+      <!-- Tech logos — Technologies utilisées -->
+      <p class="text-xs font-semibold uppercase tracking-widest text-[#00f5ff]/60 mb-3" style="letter-spacing: 0.2em">
+        {{ 'HOME.TECH_USED' | translate }}
+      </p>
+      <div class="flex flex-wrap items-end justify-center gap-8 mb-6">
         <div class="wave-logo flex flex-col items-center gap-1">
           <img src="https://www.google.com/s2/favicons?domain=python.org&sz=64" alt="Python" title="Python" class="w-8 h-8 rounded object-contain hover:scale-125 transition-transform duration-150" />
-          <span class="text-[#cbd5e1] text-xs">Python</span>
+          <span class="text-[#9090c0] text-xs">Python</span>
         </div>
         <div class="wave-logo flex flex-col items-center gap-1">
           <img src="https://www.google.com/s2/favicons?domain=java.com&sz=64" alt="Java" title="Java" class="w-8 h-8 rounded object-contain hover:scale-125 transition-transform duration-150" />
-          <span class="text-[#cbd5e1] text-xs">Java</span>
+          <span class="text-[#9090c0] text-xs">Java</span>
         </div>
         <div class="wave-logo flex flex-col items-center gap-1">
           <img src="https://www.google.com/s2/favicons?domain=spring.io&sz=64" alt="Spring Boot" title="Spring Boot" class="w-8 h-8 rounded object-contain hover:scale-125 transition-transform duration-150" />
-          <span class="text-[#cbd5e1] text-xs">Spring Boot</span>
+          <span class="text-[#9090c0] text-xs">Spring Boot</span>
         </div>
         <div class="wave-logo flex flex-col items-center gap-1">
           <img src="https://www.google.com/s2/favicons?domain=angular.io&sz=64" alt="Angular" title="Angular" class="w-8 h-8 rounded object-contain hover:scale-125 transition-transform duration-150" />
-          <span class="text-[#cbd5e1] text-xs">Angular</span>
-        </div>
-        <div class="wave-logo flex flex-col items-center gap-1">
-          <img src="https://www.google.com/s2/favicons?domain=dotnet.microsoft.com&sz=64" alt="C#" title="C#" class="w-8 h-8 rounded object-contain hover:scale-125 transition-transform duration-150" />
-          <span class="text-[#cbd5e1] text-xs">C#</span>
-        </div>
-        <div class="wave-logo flex flex-col items-center gap-1">
-          <img src="https://www.google.com/s2/favicons?domain=kx.com&sz=64" alt="KDB+ / q" title="KDB+ / q" class="w-8 h-8 rounded object-contain hover:scale-125 transition-transform duration-150" />
-          <span class="text-[#cbd5e1] text-xs">KDB+ / q</span>
+          <span class="text-[#9090c0] text-xs">Angular</span>
         </div>
         <div class="wave-logo flex flex-col items-center gap-1">
           <img src="https://www.google.com/s2/favicons?domain=aws.amazon.com&sz=64" alt="AWS" title="AWS" class="w-8 h-8 rounded object-contain hover:scale-125 transition-transform duration-150" />
-          <span class="text-[#cbd5e1] text-xs">AWS</span>
+          <span class="text-[#9090c0] text-xs">AWS</span>
         </div>
         <div class="wave-logo flex flex-col items-center gap-1">
           <img src="https://www.google.com/s2/favicons?domain=spark.apache.org&sz=64" alt="Apache Spark" title="Apache Spark" class="w-8 h-8 rounded object-contain hover:scale-125 transition-transform duration-150" />
-          <span class="text-[#cbd5e1] text-xs">Spark</span>
+          <span class="text-[#9090c0] text-xs">Spark</span>
         </div>
         <div class="wave-logo flex flex-col items-center gap-1">
           <img src="https://www.google.com/s2/favicons?domain=scikit-learn.org&sz=64" alt="scikit-learn" title="scikit-learn" class="w-8 h-8 rounded object-contain hover:scale-125 transition-transform duration-150" />
-          <span class="text-[#cbd5e1] text-xs">scikit-learn</span>
+          <span class="text-[#9090c0] text-xs">scikit-learn</span>
+        </div>
+      </div>
+
+      <!-- Tech logos — Technologies en cours d'apprentissage -->
+      <p class="text-xs font-semibold uppercase tracking-widest text-[#00ff88]/60 mb-3" style="letter-spacing: 0.2em">
+        {{ 'HOME.TECH_LEARNING' | translate }}
+      </p>
+      <div class="flex flex-wrap items-end justify-center gap-8 mb-5">
+        <div class="wave-logo flex flex-col items-center gap-1 relative">
+          <img src="https://www.google.com/s2/favicons?domain=dotnet.microsoft.com&sz=64" alt="C#" title="C#" class="w-8 h-8 rounded object-contain hover:scale-125 transition-transform duration-150 opacity-80" />
+          <span class="text-[#9090c0] text-xs">C#</span>
+        </div>
+        <div class="wave-logo flex flex-col items-center gap-1 relative">
+          <img src="https://www.google.com/s2/favicons?domain=kx.com&sz=64" alt="KDB+ / q" title="KDB+ / q" class="w-8 h-8 rounded object-contain hover:scale-125 transition-transform duration-150 opacity-80" />
+          <span class="text-[#9090c0] text-xs">KDB+ / q</span>
+        </div>
+        <div class="wave-logo flex flex-col items-center gap-1 relative">
+          <img src="https://www.google.com/s2/favicons?domain=isocpp.org&sz=64" alt="C++" title="C++" class="w-8 h-8 rounded object-contain hover:scale-125 transition-transform duration-150 opacity-80" />
+          <span class="text-[#9090c0] text-xs">C++</span>
         </div>
       </div>
 
       <!-- Hashtags -->
       <div class="flex flex-wrap items-center justify-center gap-2 mb-8">
-        <span class="px-3 py-1 bg-[#60a5fa]/10 border border-[#60a5fa]/30 text-[#60a5fa] rounded-full text-sm font-medium">#DataEngineer</span>
-        <span class="px-3 py-1 bg-[#a78bfa]/10 border border-[#a78bfa]/30 text-[#a78bfa] rounded-full text-sm font-medium">#FullstackDeveloper</span>
+        <span class="px-3 py-1 bg-[#00f5ff]/10 border border-[#00f5ff]/40 text-[#00f5ff] rounded-full text-sm font-medium" style="box-shadow: 0 0 8px rgba(0,245,255,0.2)">#DataEngineer</span>
+        <span class="px-3 py-1 bg-[#bf00ff]/10 border border-[#bf00ff]/40 text-[#bf00ff] rounded-full text-sm font-medium" style="box-shadow: 0 0 8px rgba(191,0,255,0.2)">#FullstackDeveloper</span>
       </div>
     </div>
 
     <!-- Introduction -->
-    <div class="bg-[#252d42]/60 backdrop-blur-sm rounded-2xl p-8 border border-[#60a5fa]/10 shadow-card mb-8 animate-fade-in-up" style="animation-delay: 0.2s;">
-      <p class="text-lg text-[#e2e8f0] leading-relaxed text-center">
+    <div class="bg-[#0d0d20]/80 backdrop-blur-sm rounded-2xl p-8 border border-[#00f5ff]/15 shadow-card mb-8 animate-fade-in-up" style="animation-delay: 0.2s; box-shadow: 0 0 20px rgba(0,245,255,0.06), inset 0 0 20px rgba(0,245,255,0.03)">
+      <p class="text-lg text-[#b8b8e0] leading-relaxed text-center">
         {{ 'HOME.INTRO' | translate }} 
-        <span class="text-[#60a5fa]">{{ 'HOME.INTRO_PROJECTS' | translate }}</span>, 
-        <span class="text-[#a78bfa]">{{ 'HOME.INTRO_EXPERIENCES' | translate }}</span>, 
-        <span class="text-[#34d399]">{{ 'HOME.INTRO_EDUCATION' | translate }}</span> 
+        <span class="text-[#00f5ff]" style="text-shadow: 0 0 8px #00f5ff">{{ 'HOME.INTRO_PROJECTS' | translate }}</span>, 
+        <span class="text-[#bf00ff]" style="text-shadow: 0 0 8px #bf00ff">{{ 'HOME.INTRO_EXPERIENCES' | translate }}</span>, 
+        <span class="text-[#00ff88]" style="text-shadow: 0 0 8px #00ff88">{{ 'HOME.INTRO_EDUCATION' | translate }}</span> 
         {{ 'HOME.INTRO_END' | translate }}
       </p>
     </div>
 
     <!-- Call to Action -->
     <div class="text-center mb-8 animate-fade-in-up" style="animation-delay: 0.3s;">
-      <p class="text-xl text-[#cbd5e1] font-medium">
-        ✨ {{ 'HOME.CTA' | translate }} ✨
+      <p class="text-xl text-[#9090c0] font-medium">
+        âœ¨ {{ 'HOME.CTA' | translate }} âœ¨
       </p>
     </div>
 
     <!-- Navigation Cards -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
       <a routerLink="/projects" 
-        class="bg-[#252d42]/80 backdrop-blur-sm rounded-xl p-6 border border-[#60a5fa]/10 hover:border-[#60a5fa]/50 shadow-card hover:shadow-card-hover transition-all duration-300 group animate-fade-in-up cursor-pointer block"
+        class="bg-[#0d0d20]/80 backdrop-blur-sm rounded-xl p-6 border border-[#00f5ff]/15 hover:border-[#00f5ff]/60 shadow-card hover:shadow-card-hover transition-all duration-300 group animate-fade-in-up cursor-pointer block"
         style="animation-delay: 0.4s;">
-        <div class="text-3xl mb-3">💻</div>
-        <h3 class="text-[#60a5fa] font-bold text-lg mb-2 group-hover:text-[#93c5fd] transition-colors">{{ 'HOME.CARD_PROJECTS' | translate }}</h3>
-        <p class="text-[#94a3b8] text-sm">{{ 'HOME.CARD_PROJECTS_DESC' | translate }}</p>
+        <div class="text-3xl mb-3">ðŸ’»</div>
+        <h3 class="text-[#00f5ff] font-bold text-lg mb-2 group-hover:text-white transition-colors" style="text-shadow: 0 0 8px rgba(0,245,255,0.6)">{{ 'HOME.CARD_PROJECTS' | translate }}</h3>
+        <p class="text-[#6666aa] text-sm">{{ 'HOME.CARD_PROJECTS_DESC' | translate }}</p>
       </a>
       <a routerLink="/experience"
-        class="bg-[#252d42]/80 backdrop-blur-sm rounded-xl p-6 border border-[#a78bfa]/10 hover:border-[#a78bfa]/50 shadow-card hover:shadow-card-hover transition-all duration-300 group animate-fade-in-up cursor-pointer block"
+        class="bg-[#0d0d20]/80 backdrop-blur-sm rounded-xl p-6 border border-[#bf00ff]/15 hover:border-[#bf00ff]/60 shadow-card hover:shadow-card-hover transition-all duration-300 group animate-fade-in-up cursor-pointer block"
         style="animation-delay: 0.5s;">
-        <div class="text-3xl mb-3">💼</div>
-        <h3 class="text-[#a78bfa] font-bold text-lg mb-2 group-hover:text-[#c4b5fd] transition-colors">{{ 'HOME.CARD_EXPERIENCE' | translate }}</h3>
-        <p class="text-[#94a3b8] text-sm">{{ 'HOME.CARD_EXPERIENCE_DESC' | translate }}</p>
+        <div class="text-3xl mb-3">ðŸ’¼</div>
+        <h3 class="text-[#bf00ff] font-bold text-lg mb-2 group-hover:text-white transition-colors" style="text-shadow: 0 0 8px rgba(191,0,255,0.6)">{{ 'HOME.CARD_EXPERIENCE' | translate }}</h3>
+        <p class="text-[#6666aa] text-sm">{{ 'HOME.CARD_EXPERIENCE_DESC' | translate }}</p>
       </a>
       <a routerLink="/education"
-        class="bg-[#252d42]/80 backdrop-blur-sm rounded-xl p-6 border border-[#34d399]/10 hover:border-[#34d399]/50 shadow-card hover:shadow-card-hover transition-all duration-300 group animate-fade-in-up cursor-pointer block"
+        class="bg-[#0d0d20]/80 backdrop-blur-sm rounded-xl p-6 border border-[#00ff88]/15 hover:border-[#00ff88]/60 shadow-card hover:shadow-card-hover transition-all duration-300 group animate-fade-in-up cursor-pointer block"
         style="animation-delay: 0.6s;">
-        <div class="text-3xl mb-3">🎓</div>
-        <h3 class="text-[#34d399] font-bold text-lg mb-2 group-hover:text-[#6ee7b7] transition-colors">{{ 'HOME.CARD_EDUCATION' | translate }}</h3>
-        <p class="text-[#94a3b8] text-sm">{{ 'HOME.CARD_EDUCATION_DESC' | translate }}</p>
+        <div class="text-3xl mb-3">ðŸŽ“</div>
+        <h3 class="text-[#00ff88] font-bold text-lg mb-2 group-hover:text-white transition-colors" style="text-shadow: 0 0 8px rgba(0,255,136,0.6)">{{ 'HOME.CARD_EDUCATION' | translate }}</h3>
+        <p class="text-[#6666aa] text-sm">{{ 'HOME.CARD_EDUCATION_DESC' | translate }}</p>
       </a>
       <a routerLink="/coursera"
-        class="bg-[#252d42]/80 backdrop-blur-sm rounded-xl p-6 border border-[#0056D2]/10 hover:border-[#0056D2]/50 shadow-card hover:shadow-card-hover transition-all duration-300 group animate-fade-in-up cursor-pointer block"
+        class="bg-[#0d0d20]/80 backdrop-blur-sm rounded-xl p-6 border border-[#00f5ff]/15 hover:border-[#00f5ff]/60 shadow-card hover:shadow-card-hover transition-all duration-300 group animate-fade-in-up cursor-pointer block"
         style="animation-delay: 0.7s;">
         <div class="mb-3 h-8 flex items-center">
           <img src="https://d3njjcbhbojbot.cloudfront.net/web/images/favicons/favicon-v2-32x32.png" alt="Coursera" class="h-8 w-8" />
         </div>
-        <h3 class="text-[#4d8ef0] font-bold text-lg mb-2 group-hover:text-[#93c5fd] transition-colors">Coursera</h3>
-        <p class="text-[#94a3b8] text-sm">{{ 'HOME.CARD_COURSERA_DESC' | translate }}</p>
+        <h3 class="text-[#00f5ff] font-bold text-lg mb-2 group-hover:text-white transition-colors" style="text-shadow: 0 0 8px rgba(0,245,255,0.6)">Coursera</h3>
+        <p class="text-[#6666aa] text-sm">{{ 'HOME.CARD_COURSERA_DESC' | translate }}</p>
       </a>
       <a routerLink="/udemy"
-        class="bg-[#252d42]/80 backdrop-blur-sm rounded-xl p-6 border border-[#a435f0]/10 hover:border-[#a435f0]/50 shadow-card hover:shadow-card-hover transition-all duration-300 group animate-fade-in-up cursor-pointer block"
+        class="bg-[#0d0d20]/80 backdrop-blur-sm rounded-xl p-6 border border-[#bf00ff]/15 hover:border-[#bf00ff]/60 shadow-card hover:shadow-card-hover transition-all duration-300 group animate-fade-in-up cursor-pointer block"
         style="animation-delay: 0.8s;">
         <div class="mb-3 h-8 flex items-center">
           <img src="https://www.google.com/s2/favicons?domain=udemy.com&sz=64" alt="Udemy" class="h-8 w-8" />
         </div>
-        <h3 class="text-[#a435f0] font-bold text-lg mb-2 group-hover:text-[#c084fc] transition-colors">Udemy</h3>
-        <p class="text-[#94a3b8] text-sm">{{ 'HOME.CARD_UDEMY_DESC' | translate }}</p>
+        <h3 class="text-[#bf00ff] font-bold text-lg mb-2 group-hover:text-white transition-colors" style="text-shadow: 0 0 8px rgba(191,0,255,0.6)">Udemy</h3>
+        <p class="text-[#6666aa] text-sm">{{ 'HOME.CARD_UDEMY_DESC' | translate }}</p>
       </a>
     </div>
 
-    <!-- Jarvis Section — désactivé temporairement (feature à venir)
-    <div class="bg-gradient-to-r from-[#60a5fa]/10 to-[#a78bfa]/10 rounded-2xl p-6 border border-[#60a5fa]/20 animate-fade-in-up" style="animation-delay: 0.7s;">
-      <p class="text-lg text-[#e2e8f0] text-center">
+    <!-- Jarvis Section â€” dÃ©sactivÃ© temporairement (feature Ã  venir)
+    <div class="bg-gradient-to-r from-[#00f5ff]/10 to-[#bf00ff]/10 rounded-2xl p-6 border border-[#00f5ff]/20 animate-fade-in-up" style="animation-delay: 0.7s;">
+      <p class="text-lg text-[#b8b8e0] text-center">
         {{ 'HOME.JARVIS_TEXT' | translate }} 
-        <span class="text-[#60a5fa] font-semibold">{{ 'HOME.JARVIS_NAME' | translate }}</span> 
+        <span class="text-[#00f5ff] font-semibold">{{ 'HOME.JARVIS_NAME' | translate }}</span> 
         {{ 'HOME.JARVIS_END' | translate }}&nbsp;
-        <span class="inline-block animate-bounce">🤖</span>
+        <span class="inline-block animate-bounce">ðŸ¤–</span>
       </p>
     </div>
     -->
   </div>
 </div>
+
