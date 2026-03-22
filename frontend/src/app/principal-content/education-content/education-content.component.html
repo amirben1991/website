@@ -41,13 +41,13 @@
                 <ng-template #plainSchool>{{ diploma.school }}</ng-template>
               </li>
               <li class="flex items-start gap-2">
-                <span class="text-[#00f5ff] font-medium min-w-[100px]">{{ 'EDUCATION.FIELD' | translate }} :</span> {{ diploma.field }}
+                <span class="text-[#00f5ff] font-medium min-w-[100px]">{{ 'EDUCATION.FIELD' | translate }} :</span> {{ getLocalizedField(diploma, 'field') }}
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-[#00f5ff] font-medium min-w-[100px]">{{ 'EDUCATION.PERIOD' | translate }} :</span> {{ diploma.startDate | date:'MMM yyyy' }} - {{ diploma.endDate ? (diploma.endDate | date:'MMM yyyy') : ('EDUCATION.IN_PROGRESS' | translate) }}
               </li>
               <li *ngIf="diploma.description" class="flex items-start gap-2">
-                <span class="text-[#00f5ff] font-medium min-w-[100px]">{{ 'EDUCATION.DESCRIPTION' | translate }} :</span> {{ diploma.description }}
+                <span class="text-[#00f5ff] font-medium min-w-[100px]">{{ 'EDUCATION.DESCRIPTION' | translate }} :</span> {{ getLocalizedField(diploma, 'description') }}
               </li>
               <li *ngIf="getLocalizedHighlights(diploma).length > 0" class="mt-3">
                 <span class="text-[#00f5ff] font-medium">{{ 'EDUCATION.SKILLS' | translate }} :</span>
@@ -101,13 +101,13 @@
                 <ng-template #plainSchoolCert>{{ cert.school }}</ng-template>
               </li>
               <li class="flex items-start gap-2">
-                <span class="text-[#bf00ff] font-medium min-w-[100px]">{{ 'EDUCATION.FIELD' | translate }} :</span> {{ cert.field }}
+                <span class="text-[#bf00ff] font-medium min-w-[100px]">{{ 'EDUCATION.FIELD' | translate }} :</span> {{ getLocalizedField(cert, 'field') }}
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-[#bf00ff] font-medium min-w-[100px]">{{ 'EDUCATION.PERIOD' | translate }} :</span> {{ cert.startDate | date:'MMM yyyy' }} - {{ cert.endDate ? (cert.endDate | date:'MMM yyyy') : ('EDUCATION.IN_PROGRESS' | translate) }}
               </li>
               <li *ngIf="cert.description" class="flex items-start gap-2">
-                <span class="text-[#bf00ff] font-medium min-w-[100px]">{{ 'EDUCATION.DESCRIPTION' | translate }} :</span> {{ cert.description }}
+                <span class="text-[#bf00ff] font-medium min-w-[100px]">{{ 'EDUCATION.DESCRIPTION' | translate }} :</span> {{ getLocalizedField(cert, 'description') }}
               </li>
               <li *ngIf="getLocalizedHighlights(cert).length > 0" class="mt-3">
                 <span class="text-[#bf00ff] font-medium">{{ 'EDUCATION.SKILLS' | translate }} :</span>

@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "id": "bpce-2024",
     "company": "BPCE Solutions informatiques",
@@ -11,15 +11,15 @@
     "descriptionEn": "Fullstack development in the banking sector using Agile methodology within a team of 8 developers.",
     "techStack": "TypeScript, Angular 19, Java 21, Spring Boot 3.x, Jenkins, Bitbucket, XL Release, JUnit, Mockito",
     "highlights": [
-      "Migration AngularJS vers Angular 19 : modernisation de 15+ composants legacy avec amélioration des performances de 40%",
-      "Développement d'APIs REST sécurisées avec Spring Security et OAuth2 pour la gestion de comptes bancaires",
-      "Mise en place de tests unitaires (JUnit/Mockito) et d'intégration avec couverture de code >80%",
-      "Automatisation CI/CD avec Jenkins : réduction du temps de déploiement de 3h à 45min",
-      "Participation active aux cérémonies Agile : daily stand-ups, sprint planning, rétrospectives",
-      "Collaboration avec les équipes métier pour traduire les besoins fonctionnels en spécifications techniques"
+      "Maintenance du portefeuille applicatif existant",
+      "Évolution de fonctionnalités existantes et développement de nouvelles fonctionnalités",
+      "Diagnostic et résolution d'incidents applicatifs",
+      "Réécriture d'une application legacy AngularJS migrée vers Angular 19",
+      "Réécriture et modernisation des APIs",
+      "Développement collaboratif en méthodologie Agile (Scrum) : sprint planning, daily stand-ups, rétrospectives et livraison itérative"
     ],
-    "highlightsFr": "Migration AngularJS vers Angular 19 : modernisation de 15+ composants legacy avec amélioration des performances de 40%\nDéveloppement d'APIs REST sécurisées avec Spring Security et OAuth2 pour la gestion de comptes bancaires\nMise en place de tests unitaires (JUnit/Mockito) et d'intégration avec couverture de code >80%\nAutomatisation CI/CD avec Jenkins : réduction du temps de déploiement de 3h à 45min\nParticipation active aux cérémonies Agile : daily stand-ups, sprint planning, rétrospectives\nCollaboration avec les équipes métier pour traduire les besoins fonctionnels en spécifications techniques",
-    "highlightsEn": "AngularJS to Angular 19 migration: modernization of 15+ legacy components with 40% performance improvement\nDevelopment of secure REST APIs with Spring Security and OAuth2 for bank account management\nImplementation of unit tests (JUnit/Mockito) and integration tests with >80% code coverage\nCI/CD automation with Jenkins: deployment time reduced from 3h to 45min\nActive participation in Agile ceremonies: daily stand-ups, sprint planning, retrospectives\nCollaboration with business teams to translate functional requirements into technical specifications"
+    "highlightsFr": "Maintenance du portefeuille applicatif existant\nÉvolution de fonctionnalités existantes et développement de nouvelles fonctionnalités\nDiagnostic et résolution d'incidents applicatifs\nRéécriture d'une application legacy AngularJS migrée vers Angular 19\nRéécriture et modernisation des APIs\nDéveloppement collaboratif en méthodologie Agile (Scrum) : sprint planning, daily stand-ups, rétrospectives et livraison itérative",
+    "highlightsEn": "Maintenance of the existing application portfolio\nUpdate of existing features and development of new features\nIncident troubleshooting and resolution\nRewriting of a legacy application originally built with AngularJS, migrated to Angular 19\nAPI rewriting and modernization\nCollaborative development in Agile (Scrum) framework: sprint planning, daily stand-ups, retrospectives, and iterative delivery"
   },
   {
     "id": "m2i-2024",
@@ -32,17 +32,7 @@
     "description": "Développement fullstack Java/Angular pour des projets de formation.",
     "descriptionFr": "Développement fullstack Java/Angular dans le cadre d'une formation professionnalisante.",
     "descriptionEn": "Fullstack Java/Angular development as part of a professional training program.",
-    "techStack": "Java 17, Jakarta EE 10, Spring Boot 3.x, Angular 17, TypeScript, PostgreSQL, Bootstrap 5, Git",
-    "highlights": [
-      "Développement from scratch d'une application de gestion de ludothèque avec 50+ endpoints REST",
-      "Conception du modèle de données relationnel (PostgreSQL) avec 12 entités et relations complexes",
-      "Implémentation d'un système d'authentification JWT avec gestion des rôles (admin/user)",
-      "Création d'une interface utilisateur responsive avec Angular Material et lazy loading",
-      "Documentation API complète avec Swagger/OpenAPI pour faciliter l'intégration frontend",
-      "Revues de code hebdomadaires avec feedback constructif et amélioration continue"
-    ],
-    "highlightsFr": "Développement from scratch d'une application de gestion de ludothèque avec 50+ endpoints REST\nConception du modèle de données relationnel (PostgreSQL) avec 12 entités et relations complexes\nImplémentation d'un système d'authentification JWT avec gestion des rôles (admin/user)\nCréation d'une interface utilisateur responsive avec Angular Material et lazy loading\nDocumentation API complète avec Swagger/OpenAPI pour faciliter l'intégration frontend\nRevues de code hebdomadaires avec feedback constructif et amélioration continue",
-    "highlightsEn": "From-scratch development of a game library management app with 50+ REST endpoints\nRelational data model design (PostgreSQL) with 12 entities and complex relationships\nJWT authentication system implementation with role management (admin/user)\nResponsive UI creation with Angular Material and lazy loading\nComplete API documentation with Swagger/OpenAPI for frontend integration\nWeekly code reviews with constructive feedback and continuous improvement"
+    "techStack": "Java 17, Jakarta EE 10, Spring Boot 3.x, Angular 17, TypeScript, PostgreSQL, Bootstrap 5, Git"
   },
   {
     "id": "jedha-ta-2023",
@@ -57,15 +47,13 @@
     "descriptionEn": "Supporting 60+ students in Fullstack and Lead Data Science bootcamps.",
     "techStack": "Python, Docker, MLflow, Streamlit, Scikit-learn, PostgreSQL, Apache Spark, AWS",
     "highlights": [
-      "Mentorat de 60+ étudiants sur les modules Python, Machine Learning et Big Data",
-      "Animation de sessions de live coding sur EDA, feature engineering et model training",
-      "Accompagnement au déploiement de 20+ projets ML sur Streamlit Cloud et Heroku",
-      "Création de notebooks de correction détaillés avec bonnes pratiques et optimisations",
-      "Support technique sur Apache Spark (PySpark) pour le traitement de datasets volumineux",
-      "Organisation de mock interviews techniques pour préparer les étudiants au marché du travail"
+      "Assistance aux formateurs sur les modules de programmation Python",
+      "Aide à l'analyse exploratoire des données (EDA)",
+      "Accompagnement sur les problématiques de Machine Learning",
+      "Support au déploiement d'applications et de modèles ML"
     ],
-    "highlightsFr": "Mentorat de 60+ étudiants sur les modules Python, Machine Learning et Big Data\nAnimation de sessions de live coding sur EDA, feature engineering et model training\nAccompagnement au déploiement de 20+ projets ML sur Streamlit Cloud et Heroku\nCréation de notebooks de correction détaillés avec bonnes pratiques et optimisations\nSupport technique sur Apache Spark (PySpark) pour le traitement de datasets volumineux\nOrganisation de mock interviews techniques pour préparer les étudiants au marché du travail",
-    "highlightsEn": "Mentoring 60+ students on Python, Machine Learning and Big Data modules\nLive coding sessions on EDA, feature engineering and model training\nDeployment support for 20+ ML projects on Streamlit Cloud and Heroku\nCreation of detailed correction notebooks with best practices and optimizations\nTechnical support on Apache Spark (PySpark) for large dataset processing\nOrganizing technical mock interviews to prepare students for the job market"
+    "highlightsFr": "Assistance aux formateurs sur les modules de programmation Python\nAide à l'analyse exploratoire des données (EDA)\nAccompagnement sur les problématiques de Machine Learning\nSupport au déploiement d'applications et de modèles ML",
+    "highlightsEn": "Assisting instructors in Python programming modules\nSupport in exploratory data analysis (EDA)\nGuidance on Machine Learning topics\nDeployment support for applications and ML models"
   },
   {
     "id": "pause-2023",
@@ -87,20 +75,17 @@
     "positionEn": "Machine Learning Engineer",
     "startDate": "2023-02-01",
     "endDate": "2023-05-01",
-    "description": "Développement et industrialisation de modèles Machine Learning.",
-    "descriptionFr": "Développement et industrialisation de modèles ML pour un client grand compte du secteur retail.",
-    "descriptionEn": "Development and industrialization of ML models for a major retail client.",
-    "techStack": "Python, Scikit-learn, Pandas, NumPy, pytest, Git, Azure DevOps",
+    "description": "Développement Machine Learning pour des clients grands comptes.",
+    "descriptionFr": "Mission de conseil en Machine Learning pour des clients grands comptes.",
+    "descriptionEn": "Machine Learning consulting mission for major clients.",
+    "techStack": "Python, Scikit-learn, Pandas, NumPy, GCP, AWS, PowerBI, Docker, Kubernetes, Git",
     "highlights": [
-      "Développement d'un modèle de prédiction de demande avec Random Forest (RMSE réduit de 25%)",
-      "Mise en place d'une pipeline de preprocessing automatisée avec gestion des valeurs manquantes",
-      "Création d'une suite de tests unitaires complète (pytest) avec 95% de couverture",
-      "Documentation technique détaillée (Sphinx) pour faciliter le transfert de connaissances",
-      "Collaboration avec les équipes client pour valider les hypothèses métier du modèle",
-      "Participation aux revues de code et amélioration des standards de qualité de l'équipe"
+      "Intervention chez le client GSF",
+      "Code review et optimisation d'algorithmes",
+      "Formations internes : GCP, AWS, PowerBI, Docker, Kubernetes"
     ],
-    "highlightsFr": "Développement d'un modèle de prédiction de demande avec Random Forest (RMSE réduit de 25%)\nMise en place d'une pipeline de preprocessing automatisée avec gestion des valeurs manquantes\nCréation d'une suite de tests unitaires complète (pytest) avec 95% de couverture\nDocumentation technique détaillée (Sphinx) pour faciliter le transfert de connaissances\nCollaboration avec les équipes client pour valider les hypothèses métier du modèle\nParticipation aux revues de code et amélioration des standards de qualité de l'équipe",
-    "highlightsEn": "Development of a demand prediction model with Random Forest (RMSE reduced by 25%)\nAutomated preprocessing pipeline setup with missing value handling\nComplete unit test suite creation (pytest) with 95% coverage\nDetailed technical documentation (Sphinx) to facilitate knowledge transfer\nCollaboration with client teams to validate model business assumptions\nParticipation in code reviews and team quality standards improvement"
+    "highlightsFr": "Intervention chez le client GSF\nCode review et optimisation d'algorithmes\nFormations internes : GCP, AWS, PowerBI, Docker, Kubernetes",
+    "highlightsEn": "Client mission at GSF\nCode review and algorithm optimization\nInternal training: GCP, AWS, PowerBI, Docker, Kubernetes"
   },
   {
     "id": "d4g-2021",
@@ -113,16 +98,7 @@
     "description": "Bénévolat sur des projets Data Science à impact social.",
     "descriptionFr": "Bénévolat sur des projets Data Science open source à impact social et environnemental.",
     "descriptionEn": "Volunteering on open source Data Science projects with social and environmental impact.",
-    "techStack": "Python, Pandas, Scikit-learn, Matplotlib, Jupyter, Git",
-    "highlights": [
-      "Participation au projet 'CarbonBomb' : analyse des émissions CO2 de l'industrie fossile mondiale",
-      "Nettoyage et consolidation de 500k+ lignes de données provenant de sources multiples",
-      "Création de visualisations interactives pour communiquer les résultats aux partenaires ONG",
-      "Collaboration avec une équipe pluridisciplinaire de 8 bénévoles (data, dev, design)",
-      "Présentation des résultats lors d'un demo day devant 100+ participants"
-    ],
-    "highlightsFr": "Participation au projet 'CarbonBomb' : analyse des émissions CO2 de l'industrie fossile mondiale\nNettoyage et consolidation de 500k+ lignes de données provenant de sources multiples\nCréation de visualisations interactives pour communiquer les résultats aux partenaires ONG\nCollaboration avec une équipe pluridisciplinaire de 8 bénévoles (data, dev, design)\nPrésentation des résultats lors d'un demo day devant 100+ participants",
-    "highlightsEn": "Participation in 'CarbonBomb' project: CO2 emissions analysis of the global fossil industry\nCleaning and consolidation of 500k+ data rows from multiple sources\nCreation of interactive visualizations to communicate results to NGO partners\nCollaboration with a multidisciplinary team of 8 volunteers (data, dev, design)\nResults presentation at a demo day in front of 100+ participants"
+    "techStack": "Python, Pandas, Scikit-learn, Matplotlib, Jupyter, Git"
   },
   {
     "id": "jedha-ds-2021",
@@ -145,93 +121,5 @@
     ],
     "highlightsFr": "Projet Speed Dating : modèle de classification (XGBoost) avec 78% d'accuracy sur la prédiction de matchs\nProjet Getaround : analyse de rentabilité et optimisation des prix de location de véhicules\nWeb scraping de 10k+ annonces immobilières pour analyse de marché avec BeautifulSoup/Selenium\nDéploiement d'une app de prédiction de prix immobiliers sur Streamlit avec API REST\nCertification obtenue avec mention 'Très Bien' et présentation devant jury professionnel",
     "highlightsEn": "Speed Dating Project: classification model (XGBoost) with 78% accuracy on match prediction\nGetaround Project: profitability analysis and vehicle rental price optimization\nWeb scraping of 10k+ real estate listings for market analysis with BeautifulSoup/Selenium\nDeployment of a real estate price prediction app on Streamlit with REST API\nCertification obtained with honors and presentation to professional jury"
-  },
-  {
-    "id": "textbrokers-2017",
-    "company": "TextBrokers",
-    "position": "Rédacteur indépendant",
-    "positionFr": "Rédacteur web indépendant",
-    "positionEn": "Freelance Web Writer",
-    "startDate": "2017-01-01",
-    "endDate": "2021-02-01",
-    "description": "Rédaction d'articles SEO pour divers secteurs.",
-    "descriptionFr": "Rédaction de 500+ articles optimisés SEO pour des clients B2B et B2C internationaux.",
-    "descriptionEn": "Writing 500+ SEO-optimized articles for international B2B and B2C clients.",
-    "techStack": "WordPress, SEO (Yoast), Google Analytics, Ahrefs, Copywriting",
-    "highlights": [
-      "Rédaction de 500+ articles SEO dans les secteurs tech, finance et lifestyle",
-      "Atteinte du niveau 4 étoiles (top 10% des rédacteurs) avec note moyenne client de 4.8/5",
-      "Spécialisation dans les contenus techniques : fintech, blockchain, SaaS, cybersécurité",
-      "Optimisation SEO : recherche de mots-clés, méta descriptions, structuration H1-H2-H3",
-      "Respect constant des deadlines avec 100% de livraisons dans les temps"
-    ],
-    "highlightsFr": "Rédaction de 500+ articles SEO dans les secteurs tech, finance et lifestyle\nAtteinte du niveau 4 étoiles (top 10% des rédacteurs) avec note moyenne client de 4.8/5\nSpécialisation dans les contenus techniques : fintech, blockchain, SaaS, cybersécurité\nOptimisation SEO : recherche de mots-clés, méta descriptions, structuration H1-H2-H3\nRespect constant des deadlines avec 100% de livraisons dans les temps",
-    "highlightsEn": "Writing 500+ SEO articles in tech, finance and lifestyle sectors\nReached 4-star level (top 10% of writers) with 4.8/5 average client rating\nSpecialization in technical content: fintech, blockchain, SaaS, cybersecurity\nSEO optimization: keyword research, meta descriptions, H1-H2-H3 structuring\nConsistent deadline compliance with 100% on-time deliveries"
-  },
-  {
-    "id": "cdr-2019",
-    "company": "Citigate Dewe Rogerson",
-    "position": "Financial communications",
-    "positionFr": "Chargé de communication financière",
-    "positionEn": "Financial Communications Officer",
-    "startDate": "2019-05-01",
-    "endDate": "2019-11-01",
-    "description": "Communication financière pour des entreprises cotées en bourse.",
-    "descriptionFr": "Communication financière pour des entreprises du CAC40 et SBF120 lors de publications de résultats.",
-    "descriptionEn": "Financial communication for CAC40 and SBF120 companies during earnings releases.",
-    "techStack": "Bloomberg Terminal, Factset, Cision, Business Wire, Microsoft Office Suite",
-    "highlights": [
-      "Gestion d'un portefeuille de 8 clients dont 3 entreprises du CAC40 (valorisation cumulée >50Mds€)",
-      "Rédaction et diffusion de 30+ communiqués de presse financiers (résultats semestriels/annuels)",
-      "Coordination de la diffusion réglementaire via AMF, Business Wire et journalistes financiers",
-      "Veille médiatique quotidienne et reporting des retombées presse aux clients",
-      "Organisation logistique de roadshows investisseurs à Paris et Londres"
-    ],
-    "highlightsFr": "Gestion d'un portefeuille de 8 clients dont 3 entreprises du CAC40 (valorisation cumulée >50Mds€)\nRédaction et diffusion de 30+ communiqués de presse financiers (résultats semestriels/annuels)\nCoordination de la diffusion réglementaire via AMF, Business Wire et journalistes financiers\nVeille médiatique quotidienne et reporting des retombées presse aux clients\nOrganisation logistique de roadshows investisseurs à Paris et Londres",
-    "highlightsEn": "Management of 8-client portfolio including 3 CAC40 companies (combined valuation >€50B)\nWriting and distribution of 30+ financial press releases (half-year/annual results)\nCoordination of regulatory distribution via AMF, Business Wire and financial journalists\nDaily media monitoring and press coverage reporting to clients\nLogistics organization of investor roadshows in Paris and London"
-  },
-  {
-    "id": "veolia-2015",
-    "company": "Veolia",
-    "position": "Internal Communications Intern",
-    "positionFr": "Stagiaire Communication interne",
-    "positionEn": "Internal Communications Intern",
-    "startDate": "2015-02-01",
-    "endDate": "2015-08-01",
-    "description": "Communication interne pour la Business Unit OTV LMP.",
-    "descriptionFr": "Communication interne pour la Business Unit OTV LMP (1500 collaborateurs, 12 pays).",
-    "descriptionEn": "Internal communication for OTV LMP Business Unit (1500 employees, 12 countries).",
-    "techStack": "SharePoint, Adobe Creative Suite, Mailchimp, WordPress, Microsoft Office",
-    "highlights": [
-      "Refonte complète de l'intranet SharePoint de la BU : nouvelle arborescence, design et contenus",
-      "Création de la newsletter mensuelle interne diffusée à 1500 collaborateurs dans 12 pays",
-      "Production de supports de communication : brochures, présentations, vidéos corporate",
-      "Coordination trilingue (FR/EN/ES) avec les correspondants communication locaux",
-      "Organisation d'événements internes : séminaires, team buildings, conventions annuelles"
-    ],
-    "highlightsFr": "Refonte complète de l'intranet SharePoint de la BU : nouvelle arborescence, design et contenus\nCréation de la newsletter mensuelle interne diffusée à 1500 collaborateurs dans 12 pays\nProduction de supports de communication : brochures, présentations, vidéos corporate\nCoordination trilingue (FR/EN/ES) avec les correspondants communication locaux\nOrganisation d'événements internes : séminaires, team buildings, conventions annuelles",
-    "highlightsEn": "Complete redesign of the BU's SharePoint intranet: new structure, design and content\nCreation of monthly internal newsletter distributed to 1500 employees in 12 countries\nProduction of communication materials: brochures, presentations, corporate videos\nTrilingual coordination (FR/EN/ES) with local communication correspondents\nOrganization of internal events: seminars, team buildings, annual conventions"
-  },
-  {
-    "id": "dusens-2013",
-    "company": "Tequilarapido (Dusens Group)",
-    "position": "Digital communication intern",
-    "positionFr": "Stagiaire communication digitale",
-    "positionEn": "Digital Communication Intern",
-    "startDate": "2013-02-01",
-    "endDate": "2013-05-01",
-    "description": "Communication digitale pour des clients grands comptes.",
-    "descriptionFr": "Communication digitale pour des clients grands comptes industriels (Dassault, Renault).",
-    "descriptionEn": "Digital communication for major industrial clients (Dassault, Renault).",
-    "techStack": "HTML/CSS, WordPress, Drupal, Adobe Photoshop, Google Analytics",
-    "highlights": [
-      "Participation à la refonte du site corporate Dassault Aviation : migration CMS et intégration contenus",
-      "Mise à jour de contenus web pour Renault : fiches produits, actualités, landing pages",
-      "Création de visuels et bannières web avec Adobe Creative Suite",
-      "Analyse de trafic web et recommandations d'optimisation SEO/UX",
-      "Veille concurrentielle digitale et benchmark des sites du secteur aéronautique"
-    ],
-    "highlightsFr": "Participation à la refonte du site corporate Dassault Aviation : migration CMS et intégration contenus\nMise à jour de contenus web pour Renault : fiches produits, actualités, landing pages\nCréation de visuels et bannières web avec Adobe Creative Suite\nAnalyse de trafic web et recommandations d'optimisation SEO/UX\nVeille concurrentielle digitale et benchmark des sites du secteur aéronautique",
-    "highlightsEn": "Participation in Dassault Aviation corporate website redesign: CMS migration and content integration\nWeb content updates for Renault: product sheets, news, landing pages\nCreation of visuals and web banners with Adobe Creative Suite\nWeb traffic analysis and SEO/UX optimization recommendations\nDigital competitive intelligence and benchmarking of aerospace sector websites"
   }
 ]
