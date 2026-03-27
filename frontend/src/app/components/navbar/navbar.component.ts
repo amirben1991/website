@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { ThemeService } from '../../services/theme.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -15,7 +16,8 @@ export class NavbarComponent implements OnInit {
   currentLang = 'fr';
 
   constructor(
-    public authService: AuthService, 
+    public authService: AuthService,
+    public themeService: ThemeService,
     private router: Router,
     private translate: TranslateService
   ) {

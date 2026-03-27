@@ -2,6 +2,153 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ========================================
+   THÈME — VARIABLES CSS
+   ======================================== */
+
+:root {
+  /* Dark theme (défaut) */
+  --bg-primary:       #050510;
+  --bg-secondary:     #0a0a1a;
+  --bg-card:          #0d0d20;
+  --bg-card-2:        #12122e;
+  --accent:           #00f5ff;
+  --accent-rgb:       0, 245, 255;
+  --accent-violet:    #bf00ff;
+  --accent-violet-rgb: 191, 0, 255;
+  --accent-green:     #00ff88;
+  --accent-amber:     #ffaa00;
+  --text-primary:     #e0e0ff;
+  --text-secondary:   #9090c0;
+  --text-muted:       #6666aa;
+  --text-white:       #ffffff;
+  --border:           rgba(0, 245, 255, 0.2);
+  --border-subtle:    rgba(0, 245, 255, 0.1);
+  --shadow-glow:      rgba(0, 245, 255, 0.1);
+  --shadow-glow-md:   rgba(0, 245, 255, 0.2);
+  --grid-line:        rgba(0, 245, 255, 0.03);
+  --nav-bg:           rgba(5, 5, 16, 0.95);
+  --scrollbar-thumb:  #00f5ff;
+  --scrollbar-track:  #0a0a1a;
+}
+
+html.light-theme {
+  --bg-primary:       #f8fafc;
+  --bg-secondary:     #f1f5f9;
+  --bg-card:          #ffffff;
+  --bg-card-2:        #e8f4f8;
+  --accent:           #0891b2;
+  --accent-rgb:       8, 145, 178;
+  --accent-violet:    #7c3aed;
+  --accent-violet-rgb: 124, 58, 237;
+  --accent-green:     #059669;
+  --accent-amber:     #d97706;
+  --text-primary:     #1e293b;
+  --text-secondary:   #475569;
+  --text-muted:       #94a3b8;
+  --text-white:       #1e293b;
+  --border:           rgba(8, 145, 178, 0.3);
+  --border-subtle:    rgba(8, 145, 178, 0.15);
+  --shadow-glow:      rgba(8, 145, 178, 0.1);
+  --shadow-glow-md:   rgba(8, 145, 178, 0.2);
+  --grid-line:        rgba(8, 145, 178, 0.03);
+  --nav-bg:           rgba(248, 250, 252, 0.95);
+  --scrollbar-thumb:  #0891b2;
+  --scrollbar-track:  #e2e8f0;
+}
+
+/* ========================================
+   OVERRIDES LIGHT THEME — CLASSES TAILWIND
+   (couvre les valeurs hex arbitraires)
+   ======================================== */
+
+html.light-theme {
+  /* Backgrounds — solides */
+  .bg-\[\#050510\]                { background-color: var(--bg-primary) !important; }
+  .bg-\[\#050510\]\/95            { background-color: var(--nav-bg) !important; }
+  .bg-\[\#050510\]\/80            { background-color: rgba(248, 250, 252, 0.9) !important; }
+  .bg-\[\#0a0a1a\]                { background-color: var(--bg-secondary) !important; }
+  .bg-\[\#0d0d20\]                { background-color: var(--bg-card) !important; }
+  /* Cartes avec opacité — clé pour home/experience/education */
+  .bg-\[\#0d0d20\]\/80            { background-color: var(--bg-card) !important; }
+  .bg-\[\#12122e\]                { background-color: var(--bg-card-2) !important; }
+  .bg-\[\#12122e\]\/80            { background-color: var(--bg-card-2) !important; }
+  /* Accents */
+  .bg-\[\#00f5ff\]                { background-color: var(--accent) !important; }
+  .bg-\[\#00f5ff\]\/10            { background-color: rgba(var(--accent-rgb), 0.1) !important; }
+  .bg-\[\#00f5ff\]\/20            { background-color: rgba(var(--accent-rgb), 0.2) !important; }
+  .bg-\[\#bf00ff\]\/10            { background-color: rgba(var(--accent-violet-rgb), 0.1) !important; }
+  .bg-\[\#bf00ff\]\/20            { background-color: rgba(var(--accent-violet-rgb), 0.1) !important; }
+  .bg-\[\#00ff88\]\/10            { background-color: rgba(5, 150, 105, 0.1) !important; }
+  .bg-\[\#00ff88\]\/20            { background-color: rgba(5, 150, 105, 0.15) !important; }
+
+  /* Texts */
+  .text-\[\#00f5ff\]              { color: var(--accent) !important; }
+  .text-\[\#e0e0ff\]              { color: var(--text-primary) !important; }
+  .text-\[\#b8b8e0\]              { color: var(--text-secondary) !important; }
+  .text-\[\#9090c0\]              { color: var(--text-secondary) !important; }
+  .text-\[\#6666aa\]              { color: var(--text-muted) !important; }
+  .text-\[\#bf00ff\]              { color: var(--accent-violet) !important; }
+  .text-\[\#00ff88\]              { color: var(--accent-green) !important; }
+  .text-\[\#ffaa00\]              { color: var(--accent-amber) !important; }
+  .text-white                     { color: var(--text-primary) !important; }
+
+  /* Borders */
+  .border-\[\#00f5ff\]            { border-color: var(--accent) !important; }
+  .border-\[\#00f5ff\]\/10        { border-color: rgba(var(--accent-rgb), 0.1) !important; }
+  .border-\[\#00f5ff\]\/15        { border-color: rgba(var(--accent-rgb), 0.15) !important; }
+  .border-\[\#00f5ff\]\/20        { border-color: rgba(var(--accent-rgb), 0.2) !important; }
+  .border-\[\#00f5ff\]\/30        { border-color: rgba(var(--accent-rgb), 0.3) !important; }
+  .border-\[\#00f5ff\]\/60        { border-color: rgba(var(--accent-rgb), 0.6) !important; }
+  .border-\[\#bf00ff\]\/10        { border-color: rgba(var(--accent-violet-rgb), 0.1) !important; }
+  .border-\[\#bf00ff\]\/20        { border-color: rgba(var(--accent-violet-rgb), 0.2) !important; }
+  .border-\[\#bf00ff\]\/30        { border-color: rgba(var(--accent-violet-rgb), 0.3) !important; }
+  .border-\[\#00ff88\]\/10        { border-color: rgba(5, 150, 105, 0.1) !important; }
+  .border-\[\#00ff88\]\/15        { border-color: rgba(5, 150, 105, 0.15) !important; }
+  .border-\[\#00ff88\]\/30        { border-color: rgba(5, 150, 105, 0.3) !important; }
+  .border-\[\#00ff88\]\/40        { border-color: rgba(5, 150, 105, 0.4) !important; }
+  .border-\[\#00ff88\]\/60        { border-color: rgba(5, 150, 105, 0.6) !important; }
+
+  /* Hover: text-[#00f5ff] etc. sont gérés par les overrides ci-dessus */
+  /* Les pseudo-classes hover sont héritées des overrides de couleur de base */
+  /* Hover "group-hover:text-white" → rester lisible sur fond blanc */
+  .group:hover .group-hover\:text-white { color: var(--text-primary) !important; }
+  .hover\:text-white:hover              { color: var(--text-primary) !important; }
+
+  /* Gradient texte (hero) */
+  .bg-gradient-to-r.from-\[\#00f5ff\].via-\[\#bf00ff\].to-\[\#00ff88\] {
+    background-image: linear-gradient(to right, var(--accent), var(--accent-violet), var(--accent-green)) !important;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar-track  { background: var(--scrollbar-track); }
+  ::-webkit-scrollbar-thumb  { background: var(--scrollbar-thumb); box-shadow: none; }
+
+  /* Glow/neon désactivés en light */
+  .shadow-\[0_0_20px_rgba\(0\2c 245\2c 255\2c 0\.1\)\] { box-shadow: 0 2px 8px rgba(8,145,178,0.15) !important; }
+  .shadow-card       { box-shadow: 0 2px 8px rgba(0,0,0,0.08), 0 0 0 1px rgba(8,145,178,0.1) !important; }
+  .shadow-card-hover { box-shadow: 0 8px 20px rgba(0,0,0,0.12), 0 0 0 1px rgba(8,145,178,0.25) !important; }
+  .shadow-glow       { box-shadow: 0 2px 8px rgba(8,145,178,0.3) !important; }
+  .hover\:shadow-card-hover:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.12), 0 0 0 1px rgba(8,145,178,0.25) !important; }
+  .border-glow { border-color: rgba(8, 145, 178, 0.3); }
+  .border-glow:hover { border-color: rgba(8, 145, 178, 0.6); box-shadow: 0 0 12px rgba(8,145,178,0.2) !important; }
+  .text-high-contrast { color: var(--text-primary); text-shadow: none; }
+
+  /* Skeleton */
+  .skeleton {
+    background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%);
+    background-size: 200% 100%;
+  }
+
+  /* Gradient bg utilities */
+  .bg-gradient-dark {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e8f4f8 100%);
+  }
+  .bg-gradient-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -230,16 +377,17 @@ a, button, input, select, textarea {
 }
 
 ::-webkit-scrollbar-track {
-  background: #050510;
+  background: var(--scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #00f5ff;
+  background: var(--scrollbar-thumb);
   border-radius: 3px;
-  box-shadow: 0 0 6px rgba(0, 245, 255, 0.6);
+  box-shadow: 0 0 6px rgba(var(--accent-rgb), 0.6);
   
   &:hover {
-    background: #66ffff;
+    background: var(--accent);
+    filter: brightness(1.2);
   }
 }
 

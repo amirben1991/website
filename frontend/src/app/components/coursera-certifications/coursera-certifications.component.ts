@@ -46,6 +46,20 @@ export class CourseraCertificationsComponent {
       date: 'En cours',
       url: 'https://www.coursera.org/professional-certificates/ibm-data-engineer',
       logo: 'https://www.google.com/s2/favicons?domain=ibm.com&sz=64'
+    },
+    {
+      title: 'Rust Programming Specialization (En cours)',
+      platform: 'Coursera',
+      date: 'En cours',
+      url: 'https://www.coursera.org/specializations/rust-programming',
+      logo: 'https://www.google.com/s2/favicons?domain=rust-lang.org&sz=64'
+    },
+    {
+      title: 'Microsoft Introduction to C++ Programming Professional Certificate (En cours)',
+      platform: 'Coursera',
+      date: 'En cours',
+      url: 'https://www.coursera.org/professional-certificates/cpp-microsoft',
+      logo: 'https://www.google.com/s2/favicons?domain=microsoft.com&sz=64'
     }
   ];
 }
