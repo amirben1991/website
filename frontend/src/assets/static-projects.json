@@ -20,16 +20,6 @@
     "category": "pedagogique"
   },
   {
-    "id": "euromillion",
-    "title": "Euromillion",
-    "description": "A full-stack project for web scraping and deploying an application for lottery analysis.",
-    "descriptionFr": "Un projet full-stack pour le web scraping et le déploiement d'une application d'analyse de loterie.",
-    "descriptionEn": "A full-stack project for web scraping and deploying an application for lottery analysis.",
-    "techStack": "Python, Web Scraping, Streamlit",
-    "githubLink": "https://github.com/amirben1991/euromillion",
-    "category": "pedagogique"
-  },
-  {
     "id": "speed-dating",
     "title": "Speed Dating",
     "description": "A machine learning project analyzing speed dating data to predict match success.",
