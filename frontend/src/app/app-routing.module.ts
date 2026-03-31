@@ -36,6 +36,7 @@ export const routes: Routes = [
       {path: 'admin/users', component: AdminUsersComponent, canActivate: [AdminGuard]}
   ,{path: 'coursera', loadComponent: () => import('./components/coursera-certifications/coursera-certifications.component').then(m => m.CourseraCertificationsComponent)}
   ,{path: 'udemy', loadComponent: () => import('./components/udemy-certifications/udemy-certifications.component').then(m => m.UdemyCertificationsComponent)}
+  ,{path: 'articles', loadComponent: () => import('./components/articles/articles.component').then(m => m.ArticlesComponent)}
     ]
   },
 ];

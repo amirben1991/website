@@ -40,6 +40,11 @@
         Udemy
         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#bf00ff] transition-all duration-300 group-hover:w-full" style="box-shadow: 0 0 8px #bf00ff"></span>
       </a>
+      <a routerLink="/articles" routerLinkActive="active"
+        class="text-[#9090c0] hover:text-[#00ff88] transition-all duration-300 font-medium relative group">
+        Articles
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#00ff88] transition-all duration-300 group-hover:w-full" style="box-shadow: 0 0 8px #00ff88"></span>
+      </a>
       <a *ngIf="authService.isAdmin()" routerLink="/admin/users" routerLinkActive="active"
         class="text-[#9090c0] hover:text-[#ffaa00] transition-all duration-300 font-medium relative group">
         {{ 'NAV.ADMIN' | translate }}
