@@ -57,7 +57,8 @@
     "descriptionEn": "A tool for generating random data for testing and development purposes.",
     "techStack": "Python",
     "githubLink": "https://github.com/amirben1991/generator",
-    "category": "pedagogique"
+    "category": "saas",
+    "inProgress": true
   },
   {
     "id": "getaround",
