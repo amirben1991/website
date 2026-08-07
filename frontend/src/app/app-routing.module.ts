@@ -20,19 +20,19 @@ export const routes: Routes = [
   { path: 'login', redirectTo: 'accueil', pathMatch: 'full' },
   { path: 'register', redirectTo: 'accueil', pathMatch: 'full' },
   {
-    path: '', component: LayoutComponent, 
+    path: '', component: LayoutComponent,
     children: [
       {path: '', redirectTo: 'accueil', pathMatch: 'full'},
-      {path: 'accueil', component: PrincipalContentComponent},
-      {path: 'projects/new', component: ProjectFormComponent, canActivate: [AuthGuard] },
-      {path: 'projects/:id/edit', component: ProjectFormComponent, canActivate: [AuthGuard]},
-      {path: 'projects', component: ProjectsContentComponent},
-      {path: 'experience/new', component: ExperienceFormComponent, canActivate: [AuthGuard]},
-      {path: 'experience/:id/edit', component: ExperienceFormComponent, canActivate: [AuthGuard]},
-      {path: 'experience', component: ExperienceContentComponent},
-      {path: 'education/new', component: EducationFormComponent, canActivate: [AuthGuard]},
-      {path: 'education/:id/edit', component: EducationFormComponent, canActivate: [AuthGuard]},
-      {path: 'education', component: EducationContentComponent},
+      {path: 'accueil', component: PrincipalContentComponent, title: 'Accueil'},
+      {path: 'projects/new', component: ProjectFormComponent, title: 'Projects/new', canActivate: [AuthGuard] },
+      {path: 'projects/:id/edit', component: ProjectFormComponent, title: 'Projects/edit', canActivate: [AuthGuard]},
+      {path: 'projects', component: ProjectsContentComponent, title: 'Projects'},
+      {path: 'experience/new', component: ExperienceFormComponent, title: 'Experience/new', canActivate: [AuthGuard]},
+      {path: 'experience/:id/edit', component: ExperienceFormComponent, title: 'Experience/edit',canActivate: [AuthGuard]},
+      {path: 'experience', component: ExperienceContentComponent,title: 'Experience'},
+      {path: 'education/new', component: EducationFormComponent, title: 'Education/new', canActivate: [AuthGuard]},
+      {path: 'education/:id/edit', component: EducationFormComponent, title: 'Education/edit', canActivate: [AuthGuard]},
+      {path: 'education', component: EducationContentComponent,title: 'Education'},
       {path: 'admin/users', component: AdminUsersComponent, canActivate: [AdminGuard]}
   ,{path: 'coursera', loadComponent: () => import('./components/coursera-certifications/coursera-certifications.component').then(m => m.CourseraCertificationsComponent)}
   ,{path: 'udemy', loadComponent: () => import('./components/udemy-certifications/udemy-certifications.component').then(m => m.UdemyCertificationsComponent)}
