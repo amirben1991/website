@@ -17,25 +17,25 @@ import { AdminUsersComponent } from './components/admin-users/admin-users.compon
 
 
 export const routes: Routes = [
-  { path: 'login', component: LoginComponent, title: 'Connexion | PrinceDev' },
-  { path: 'register', component: RegisterComponent, title: 'Inscription | PrinceDev' },
+  { path: 'login', component: LoginComponent, data: { titleKey: 'AUTH.LOGIN_TITLE' } },
+  { path: 'register', component: RegisterComponent, data: { titleKey: 'AUTH.REGISTER_TITLE' } },
   {
     path: '', component: LayoutComponent,
     children: [
       { path: '', redirectTo: 'accueil', pathMatch: 'full' },
-      { path: 'accueil', component: PrincipalContentComponent, title: 'PrinceDev' },
-      { path: 'projects/new', component: ProjectFormComponent, canActivate: [AuthGuard], title: 'Nouveau projet | PrinceDev' },
-      { path: 'projects/:id/edit', component: ProjectFormComponent, canActivate: [AuthGuard], title: 'Modifier projet | PrinceDev' },
-      { path: 'projects', component: ProjectsContentComponent, title: 'Projets | PrinceDev' },
-      { path: 'experience/new', component: ExperienceFormComponent, canActivate: [AuthGuard], title: 'Nouvelle expérience | PrinceDev' },
-      { path: 'experience/:id/edit', component: ExperienceFormComponent, canActivate: [AuthGuard], title: 'Modifier expérience | PrinceDev' },
-      { path: 'experience', component: ExperienceContentComponent, title: 'Expérience | PrinceDev' },
-      { path: 'education/new', component: EducationFormComponent, canActivate: [AuthGuard], title: 'Nouvelle formation | PrinceDev' },
-      { path: 'education/:id/edit', component: EducationFormComponent, canActivate: [AuthGuard], title: 'Modifier formation | PrinceDev' },
-      { path: 'education', component: EducationContentComponent, title: 'Formation | PrinceDev' },
-      { path: 'admin/users', component: AdminUsersComponent, canActivate: [AdminGuard], title: 'Administration | PrinceDev' },
-      { path: 'coursera', loadComponent: () => import('./components/coursera-certifications/coursera-certifications.component').then(m => m.CourseraCertificationsComponent), title: 'Coursera | PrinceDev' },
-      { path: 'udemy', loadComponent: () => import('./components/udemy-certifications/udemy-certifications.component').then(m => m.UdemyCertificationsComponent), title: 'Udemy | PrinceDev' }
+      { path: 'accueil', component: PrincipalContentComponent, data: { titleKey: 'NAV.HOME' } },
+      { path: 'projects/new', component: ProjectFormComponent, canActivate: [AuthGuard], data: { titleKey: 'PROJECTS.ADD' } },
+      { path: 'projects/:id/edit', component: ProjectFormComponent, canActivate: [AuthGuard], data: { titleKey: 'PROJECTS.EDIT' } },
+      { path: 'projects', component: ProjectsContentComponent, data: { titleKey: 'NAV.PROJECTS' } },
+      { path: 'experience/new', component: ExperienceFormComponent, canActivate: [AuthGuard], data: { titleKey: 'EXPERIENCE.ADD' } },
+      { path: 'experience/:id/edit', component: ExperienceFormComponent, canActivate: [AuthGuard], data: { titleKey: 'EXPERIENCE.EDIT' } },
+      { path: 'experience', component: ExperienceContentComponent, data: { titleKey: 'NAV.EXPERIENCE' } },
+      { path: 'education/new', component: EducationFormComponent, canActivate: [AuthGuard], data: { titleKey: 'EDUCATION.ADD' } },
+      { path: 'education/:id/edit', component: EducationFormComponent, canActivate: [AuthGuard], data: { titleKey: 'EDUCATION.EDIT' } },
+      { path: 'education', component: EducationContentComponent, data: { titleKey: 'NAV.EDUCATION' } },
+      { path: 'admin/users', component: AdminUsersComponent, canActivate: [AdminGuard], data: { titleKey: 'NAV.ADMIN' } },
+      { path: 'coursera', loadComponent: () => import('./components/coursera-certifications/coursera-certifications.component').then(m => m.CourseraCertificationsComponent), data: { titleKey: 'HOME.CARD_COURSERA_DESC' } },
+      { path: 'udemy', loadComponent: () => import('./components/udemy-certifications/udemy-certifications.component').then(m => m.UdemyCertificationsComponent), data: { titleKey: 'HOME.CARD_UDEMY_DESC' } }
     ]
   },
 ];
