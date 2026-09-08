@@ -4,9 +4,6 @@ $script = @'
 set -e
 cd /opt/portfolio
 find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} + 2>/dev/null || true
-# Keep the tarball location and extract the fresh app into place
-cd /opt
-rm -f /tmp/website_deploy.tar 2>/dev/null || true
 # If the tarball is not found on the VM, abort clearly
 if [ ! -f /tmp/website_deploy.tar ]; then
   echo 'Missing /tmp/website_deploy.tar on VM'
